@@ -221,7 +221,7 @@
 
     
         <meta property="article:published_time" content="Tue Feb 13 2018 00:44:40 GMT+0800" />
-        <meta property="article:modified_time" content="Tue Mar 20 2018 17:38:42 GMT+0800" />
+        <meta property="article:modified_time" content="Fri Mar 23 2018 21:07:40 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
@@ -248,7 +248,7 @@
     "mainEntityOfPage": "http://blog.yfree.cc/2018/02/13/Linux常用命令&基础知识/index.html",
     "headline": "Linux常用命令&基础知识",
     "datePublished": "Tue Feb 13 2018 00:44:40 GMT+0800",
-    "dateModified": "Tue Mar 20 2018 17:38:42 GMT+0800",
+    "dateModified": "Fri Mar 23 2018 21:07:40 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Arony",
@@ -782,6 +782,9 @@ chsh -s /sbin/nologin
 
 # usermod 也可以
 usermod -s /bin/bash username
+
+# 添加用户的附加群组
+usermod -G groupname username
 </code></pre><h2 id="2-文件所属、权限操作"><a href="#2-文件所属、权限操作" class="headerlink" title="2. 文件所属、权限操作"></a>2. 文件所属、权限操作</h2><h2 id="3-文档新建操作"><a href="#3-文档新建操作" class="headerlink" title="3. 文档新建操作"></a>3. 文档新建操作</h2><h3 id="3-1-nano"><a href="#3-1-nano" class="headerlink" title="3.1 nano"></a>3.1 nano</h3><p>打开一个文件，不存在则新建 —— nano<br><code>F1</code> 打开帮助文档。</p>
 <h3 id="3-2-vi"><a href="#3-2-vi" class="headerlink" title="3.2 vi"></a>3.2 vi</h3><h3 id="3-3-touch"><a href="#3-3-touch" class="headerlink" title="3.3 touch"></a>3.3 touch</h3><h1 id="六、答疑解惑"><a href="#六、答疑解惑" class="headerlink" title="六、答疑解惑"></a>六、答疑解惑</h1><h3 id="1-apt-和-apt-get-有什么区别？-了解更多"><a href="#1-apt-和-apt-get-有什么区别？-了解更多" class="headerlink" title="1. apt 和 apt-get 有什么区别？ 了解更多"></a>1. <code>apt</code> 和 <code>apt-get</code> 有什么区别？ <a href="https://www.sysgeek.cn/apt-vs-apt-get/" target="_blank" rel="noopener">了解更多</a></h3><blockquote>
 <p>简单来说就是：apt = apt-get、apt-cache 和 apt-config 中最常用命令选项的集合。另外 apt 命令可以在某些操作时显示进度条。以上应该是最直观的解释。</p>
