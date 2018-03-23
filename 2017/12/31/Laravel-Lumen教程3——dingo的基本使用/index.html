@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.0 -->
+    <script>
+        window.materialVersion = "1.5.0"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net"/>
+
+
+
+    <link rel="dns-prefetch" href="https://changyan.sohu.com"/>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Title -->
+    
+    <title>
+        
+            Laravel/Lumen教程（三）——dingo的基本使用 | 
+        
+        Arony&#39;s 技术博客
+    </title>
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="theme-color" content="#607d8b">
+    <meta name="author" content="Arony">
+    <meta name="description" itemprop="description" content="遗世独立的理想乡">
+    <meta name="keywords" content="skyArony，三翼,Laravel,Lumen,Dingo,PHP">
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/logo.png">
+    <link rel="icon" sizes="192x192" href="/img/logo.png">
+    <link rel="apple-touch-icon" href="/img/logo.png">
+
+    <!--iOS -->
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Arony&#39;s 技术博客">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?hC+LjCkUU4QF4sxU3O2Q9Q==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #2780e3;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #607d8b !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #607d8b !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #607d8b !important;
+  }
+
+  .toTop {
+    background: #607d8b !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #607d8b;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #607d8b;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #607d8b;
+  }
+
+  .post-toc a:hover {
+    color: #2780e3;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg2018.png);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icon -->
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://blog.yfree.cc">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Laravel/Lumen教程（三）——dingo的基本使用 | Arony&#39;s 技术博客">
+    <meta property="og:image" content="http://blog.yfree.cc/img/logo.png" />
+    <meta property="og:description" content="遗世独立的理想乡">
+    <meta property="og:article:tag" content="Laravel"> <meta property="og:article:tag" content="Lumen"> <meta property="og:article:tag" content="Dingo"> <meta property="og:article:tag" content="PHP"> 
+
+    
+        <meta property="article:published_time" content="Sun Dec 31 2017 23:59:18 GMT+0800" />
+        <meta property="article:modified_time" content="Fri Mar 23 2018 22:21:28 GMT+0800" />
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:title" content="Laravel/Lumen教程（三）——dingo的基本使用 | Arony&#39;s 技术博客">
+    <meta name="twitter:description" content="遗世独立的理想乡">
+    <meta name="twitter:image" content="http://blog.yfree.cc/img/logo.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="http://blog.yfree.cc" />
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://blog.yfree.cc/2017/12/31/Laravel-Lumen教程3——dingo的基本使用/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://blog.yfree.cc/2017/12/31/Laravel-Lumen教程3——dingo的基本使用/index.html",
+    "headline": "Laravel/Lumen教程（三）——dingo的基本使用",
+    "datePublished": "Sun Dec 31 2017 23:59:18 GMT+0800",
+    "dateModified": "Fri Mar 23 2018 22:21:28 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Arony",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://ooo.0o0.ooo/2017/06/19/5947a26ed9af5.jpg"
+        },
+        "description": "遗世独立的理想乡"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Arony&#39;s 技术博客",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/logo.png"
+        }
+    },
+    "keywords": ",Laravel,Lumen,Dingo,PHPskyArony，三翼",
+    "description": "遗世独立的理想乡",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+        <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1273154911&web_id=1273154911" language="JavaScript"></script>
+</div>
+    
+
+    <!-- Custom Head -->
+    
+        
+            <style>code{font-family: consolas, Menlo, 'PingFang SC', 'Microsoft YaHei', monospace;color:#c33;margin: 0 2px;padding: 0 5px;background-color: rgba(0,0,0,.04);border-radius: 3px;}</style>
+        
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#一、安装之前"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、安装之前</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#二、安装及基础配置"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、安装及基础配置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-使用-composer-安装"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">1. 使用 composer 安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-配置"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">2. 配置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Laravel"><span class="post-toc-number">2.2.1.</span> <span class="post-toc-text">Laravel</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Lumen"><span class="post-toc-number">2.2.2.</span> <span class="post-toc-text">Lumen</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#配置"><span class="post-toc-number">2.2.3.</span> <span class="post-toc-text">配置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Facades-这以后再写"><span class="post-toc-number">2.2.4.</span> <span class="post-toc-text">Facades(这以后再写)</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#三、简单demo"><span class="post-toc-number">3.</span> <span class="post-toc-text">三、简单demo</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-基本路由"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">1. 基本路由</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#routes-web-php"><span class="post-toc-number">3.1.1.</span> <span class="post-toc-text">routes/web.php</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-对返回数据进行统一格式化"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">2. 对返回数据进行统一格式化</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-1-用-migrate-新建数据表，用-seeder-填充数据"><span class="post-toc-number">3.2.1.</span> <span class="post-toc-text">2.1 用 migrate 新建数据表，用 seeder 填充数据</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#新建数据表"><span class="post-toc-number">3.2.1.1.</span> <span class="post-toc-text">新建数据表</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#数据填充"><span class="post-toc-number">3.2.1.2.</span> <span class="post-toc-text">数据填充</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-2-新建-Model-绑定数据表，新建-Controller-取出数据"><span class="post-toc-number">3.2.2.</span> <span class="post-toc-text">2.2 新建 Model 绑定数据表，新建 Controller 取出数据</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#新建模型绑定数据表"><span class="post-toc-number">3.2.2.1.</span> <span class="post-toc-text">新建模型绑定数据表</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#新建控制器取出数据"><span class="post-toc-number">3.2.2.2.</span> <span class="post-toc-text">新建控制器取出数据</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#设置路由"><span class="post-toc-number">3.2.2.3.</span> <span class="post-toc-text">设置路由</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-3-Transfomer-的使用"><span class="post-toc-number">3.2.3.</span> <span class="post-toc-text">2.3 Transfomer 的使用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#新建转换器"><span class="post-toc-number">3.2.3.1.</span> <span class="post-toc-text">新建转换器</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#修改控制器"><span class="post-toc-number">3.2.3.2.</span> <span class="post-toc-text">修改控制器</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#自定义转换层"><span class="post-toc-number">3.2.3.3.</span> <span class="post-toc-text">自定义转换层</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-响应"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">3. 响应</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-1-对数据进行再包装"><span class="post-toc-number">3.3.1.</span> <span class="post-toc-text">3.1 对数据进行再包装</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-2-修改默认的错误返回格式"><span class="post-toc-number">3.3.2.</span> <span class="post-toc-text">3.2 修改默认的错误返回格式</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-结合认证"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">4. 结合认证</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-Response-总结"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">5. Response 总结</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-Lumen-框架下的路由小坑"><span class="post-toc-number">3.6.</span> <span class="post-toc-text">6. Lumen 框架下的路由小坑</span></a></li></ol></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://osv9x79o9.bkt.clouddn.com/17-12-30/62162735.jpg)">
+    
+            <p class="article-headline-p">
+                Laravel/Lumen教程（三）——dingo的基本使用
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="https://ooo.0o0.ooo/2017/06/19/5947a26ed9af5.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Arony</strong>
+        <span>12月 31, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Dingo/">Dingo</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Laravel/">Laravel</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Lumen/">Lumen</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/PHP/">PHP</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    <!-- Leancloud Views -->
+        <a class="post_share-link" href="#">
+            <li class="mdl-menu__item">
+                <span id="/2017/12/31/Laravel-Lumen教程3——dingo的基本使用/" class="leancloud-views_num" data-flag-title="Laravel/Lumen教程（三）——dingo的基本使用">
+     &nbsp;浏览量
+</span>
+
+            </li>
+        </a>
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Laravel/Lumen教程（三）——dingo的基本使用&url=http://blog.yfree.cc/2017/12/31/Laravel-Lumen教程3——dingo的基本使用/index.html&pic=http://blog.yfree.cc/img/logo.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.yfree.cc/2017/12/31/Laravel-Lumen教程3——dingo的基本使用/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Arony&#39;s 技术博客&title=Laravel/Lumen教程（三）——dingo的基本使用&summary=遗世独立的理想乡&pics=http://blog.yfree.cc/img/logo.png&url=http://blog.yfree.cc/2017/12/31/Laravel-Lumen教程3——dingo的基本使用/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>dingo 是 Laravel/Lumen 下一款便捷开发 Api 的组件，本篇主要介绍其基本安装、配置和使用。</p>
+<h1 id="一、安装之前"><a href="#一、安装之前" class="headerlink" title="一、安装之前"></a>一、安装之前</h1><p>打开以下两个文档，准备随时翻阅：</p>
+<ul>
+<li><a href="https://github.com/dingo/api/wiki/Installation" target="_blank" rel="noopener">官方安装指导文档</a></li>
+<li><a href="https://github.com/liyu001989/dingo-api-wiki-zh" target="_blank" rel="noopener">中文翻译文档</a></li>
+</ul>
+<h1 id="二、安装及基础配置"><a href="#二、安装及基础配置" class="headerlink" title="二、安装及基础配置"></a>二、安装及基础配置</h1><h2 id="1-使用-composer-安装"><a href="#1-使用-composer-安装" class="headerlink" title="1. 使用 composer 安装"></a>1. 使用 composer 安装</h2><p>打开 <code>composer.json</code> 文件,增加以下内容：</p>
+<pre><code class="php">// 我当时可用的版本是这个
+&quot;require&quot;: {&quot;dingo/api&quot;:&quot;1.*@dev&quot;}
+</code></pre>
+<p>执行</p>
+<pre><code>composer update
+</code></pre><h2 id="2-配置"><a href="#2-配置" class="headerlink" title="2. 配置"></a>2. 配置</h2><p>根据框架决定后续</p>
+<h3 id="Laravel"><a href="#Laravel" class="headerlink" title="Laravel"></a>Laravel</h3><p>打开 <code>config/app.php</code> ,注册服务提供者：</p>
+<pre><code class="php">&#39;providers&#39; =&gt; [
+    Dingo\Api\Provider\LaravelServiceProvider::class
+]
+</code></pre>
+<p>如果你想进行额外的配置，执行以下命令即可发布一个配置文件（<code>api.php</code>）到 <code>config</code> 文件夹中（Lumen 中没有这个命令，当然你也可以安装这个命令，不过没必要）：</p>
+<pre><code>php artisan vendor:publish --provider=&quot;Dingo\Api\Provider\LaravelServiceProvider&quot;
+</code></pre><h3 id="Lumen"><a href="#Lumen" class="headerlink" title="Lumen"></a>Lumen</h3><p>打开 <code>bootstrap/app.php</code>，注册服务提供者：</p>
+<pre><code class="php">$app-&gt;register(Dingo\Api\Provider\LumenServiceProvider::class);
+</code></pre>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>大部分配置可以在 <code>.env</code> 文件中配置好，一些微调需要在你发布的配置文件（Laravel）或者 <code>bootstrap/app.php</code>（Lumen）中配置。<code>.env</code>文件的配置如下：</p>
+<pre><code>API_STANDARDS_TREE=x
+API_SUBTYPE=laravel-api
+API_NAME=MyAPI
+API_VERSION=v1
+API_PREFIX=api    // 这个前缀会体现在 URL 中
+API_CONDITIONAL_REQUEST=false
+API_STRICT=false
+API_DEFAULT_FORMAT=json
+API_DEBUG=true
+</code></pre><blockquote>
+<p>API_STANDARDS_TREE - API规格 </p>
+<blockquote>
+<p>x 本地或私有环境<br>prs 非商业销售的项目<br>vnd 公开的以及商业销售的项目 </p>
+</blockquote>
+<p>API_SUBTYPE - API简称<br>API_PREFIX - API前缀（或使用API_DOMAIN - API子域名）<br>API_VERSION - API默认版本<br>API_NAME - API名称<br>API_CONDITIONAL_REQUEST - 带条件的请求，由于缓存API请求的时候会使用客户端缓存功能，所以默认开启了带条件的请求<br>API_STRICT - 严格模式，要求客户端发送Accept头而不是默认在配置文件中指定的版本<br>API_DEFAULT_FORMAT - 响应格式，默认的响应格式是JSON<br>API_DEBUG - 调试模式</p>
+</blockquote>
+<h3 id="Facades-这以后再写"><a href="#Facades-这以后再写" class="headerlink" title="Facades(这以后再写)"></a>Facades(这以后再写)</h3><hr>
+<h1 id="三、简单demo"><a href="#三、简单demo" class="headerlink" title="三、简单demo"></a>三、简单demo</h1><h2 id="1-基本路由"><a href="#1-基本路由" class="headerlink" title="1. 基本路由"></a>1. 基本路由</h2><h3 id="routes-web-php"><a href="#routes-web-php" class="headerlink" title="routes/web.php"></a>routes/web.php</h3><pre><code class="php">// dingo 使用自有的路由器，所以你需要先获取其实例
+$api = app(&#39;Dingo\Api\Routing\Router&#39;);
+
+// 必须定义一个版本分组，“v1”来自于 .env 文件，必须填写才生效
+$api-&gt;version(&#39;v1&#39;, function ($api) {
+  $api-&gt;get(&#39;test&#39;, function () {
+    return &#39;It is ok&#39;;
+  })
+});
+</code></pre>
+<p>访问 <code>127.0.0.1:8003/api/test</code> (8003 是我在 Nginx 中设置的端口)</p>
+<h2 id="2-对返回数据进行统一格式化"><a href="#2-对返回数据进行统一格式化" class="headerlink" title="2. 对返回数据进行统一格式化"></a>2. 对返回数据进行统一格式化</h2><p>有时候我们需要对从数据库取得的数据进行处理，然后才返回，这就需要用到 <code>transformer</code>，接下来简单介绍一下如何使用 <code>transformer</code>。</p>
+<h3 id="2-1-用-migrate-新建数据表，用-seeder-填充数据"><a href="#2-1-用-migrate-新建数据表，用-seeder-填充数据" class="headerlink" title="2.1 用 migrate 新建数据表，用 seeder 填充数据"></a>2.1 用 <code>migrate</code> 新建数据表，用 <code>seeder</code> 填充数据</h3><p>首先我们要新建一个 <code>users</code> 表，然后填充几条测试数据，<code>Laravel</code> 中用 <code>数据迁移</code> 来进行表的创建和管理。</p>
+<h4 id="新建数据表"><a href="#新建数据表" class="headerlink" title="新建数据表"></a>新建数据表</h4><p><code>Laravel</code> 的 <code>database/migrations</code> 下有两个默认文件，执行以下命令即可生成两个默认表：</p>
+<pre><code>php artisan migrate
+</code></pre><p><code>Lumen</code> 的对应目录下默认没有那两个文件，可以从 <code>Laravel</code> 复制过去在用同样的命令生成。</p>
+<h4 id="数据填充"><a href="#数据填充" class="headerlink" title="数据填充"></a>数据填充</h4><p>在 <code>database/seeds</code> 中新建文件 <code>UsersTableSeeder.php</code>，写入：</p>
+<pre><code class="php">&lt;?php
+use Illuminate\Database\Seeder;
+
+class UsersTableSeeder extends Seeder
+{
+  public function run()
+  {
+    DB::table(&#39;users&#39;)-&gt;insert([
+      &#39;name&#39; =&gt; str_random(10),
+      &#39;email&#39; =&gt; str_random(10).&#39;@gmail.com&#39;,
+      &#39;password&#39; =&gt; bcrypt(&#39;secret&#39;),
+      // Lumen 中没有 bcrypt() 这个函数，可以用下面一行代替
+      // &#39;password&#39; =&gt; app(&#39;hash&#39;)-&gt;make(&#39;secret&#39;),
+    ]);
+  }
+}
+</code></pre>
+<p>把 <code>database/seeds/DatabaseSeeder.php</code> 中</p>
+<pre><code class="php">// $this-&gt;call(&#39;UsersTableSeeder&#39;);
+</code></pre>
+<p>取消注释。</p>
+<p>执行以下其中一句即可生成一条数据，执行三次，生成三条测试数据。</p>
+<pre><code>composer dump-autoload  // 如果以下运行不成功，先运行这个
+
+php artisan db:seed  // 不指定的话，默认调用DatabaseSeeder
+
+php artisan db:seed --class=UsersTableSeeder
+</code></pre><h3 id="2-2-新建-Model-绑定数据表，新建-Controller-取出数据"><a href="#2-2-新建-Model-绑定数据表，新建-Controller-取出数据" class="headerlink" title="2.2 新建 Model 绑定数据表，新建 Controller 取出数据"></a>2.2 新建 <code>Model</code> 绑定数据表，新建 <code>Controller</code> 取出数据</h3><h4 id="新建模型绑定数据表"><a href="#新建模型绑定数据表" class="headerlink" title="新建模型绑定数据表"></a>新建模型绑定数据表</h4><p>在 <code>app</code> 目录下，新建 <code>Models/DB/api_lumen2/User.php</code> （目录也是新建的，分这么多级目录是个人习惯），写入：</p>
+<pre><code class="php">&lt;?php
+namespace App\Models\DB\api_lumen2;
+
+use Illuminate\Database\Eloquent\Model;
+
+class User extends Model
+{
+    protected $connection = &#39;mysql&#39;;  // 多数据库操作时最好进行绑定
+    protected $table = &#39;users&#39;; // 指定表
+    protected $primaryKey = &#39;id&#39;; // 指定主键
+    public $timestamps = true;  // 是否自动维护时间戳
+}
+</code></pre>
+<h4 id="新建控制器取出数据"><a href="#新建控制器取出数据" class="headerlink" title="新建控制器取出数据"></a>新建控制器取出数据</h4><p>在 <code>app/Http/Controllers</code> 中新建 <code>UserController.php</code>，写入：</p>
+<pre><code class="php">&lt;?php
+namespace App\Http\Controllers;
+
+use App\Models\DB\api_lumen2\User;
+
+class UserController extends Controller
+{
+  // 返回所有的user
+  public function index()
+  {
+    $user = User::all();
+    return $user;
+  }
+
+  // 按ID返回user
+  public function show($id)
+  {
+    $user = User::findOrFail($id);  
+    return $user;
+  }
+}
+</code></pre>
+<h4 id="设置路由"><a href="#设置路由" class="headerlink" title="设置路由"></a>设置路由</h4><pre><code class="php">$api-&gt;version(&#39;v1&#39;, function ($api) {
+  $api-&gt;group([&#39;namespace&#39; =&gt; &#39;App\Http\Controllers&#39;], function ($api) {
+    $api-&gt;resource(&#39;users&#39;, &#39;UserController&#39;);  // 这里用到了资源路由，具体看文档
+  }); 
+});
+</code></pre>
+<p>访问 <code>http://127.0.0.1:8003/api/users</code> 和 <code>http://127.0.0.1:8003/api/users/1</code> 就可以看到返回的数据</p>
+<p><strong>这样就成功实现了数据的取出操作，接下来介绍如何使用 <code>tansfomer</code> 来进行数据的格式化</strong></p>
+<h3 id="2-3-Transfomer-的使用"><a href="#2-3-Transfomer-的使用" class="headerlink" title="2.3 Transfomer 的使用"></a>2.3 <code>Transfomer</code> 的使用</h3><h4 id="新建转换器"><a href="#新建转换器" class="headerlink" title="新建转换器"></a>新建转换器</h4><p>在 <code>app/Http/</code> 目录下新建 <code>Tansfomer</code> 文件夹，新建 <code>UserTransfomer.php</code>，写入：</p>
+<pre><code class="php">&lt;?php
+namespace App\Http\Transformers;
+
+use App\Models\DB\api_lumen2\User;
+use League\Fractal\TransformerAbstract;
+
+class UserTransformer extends TransformerAbstract
+{
+  public function transform(User $user)
+  {
+    return [
+        &#39;id&#39; =&gt; $user-&gt;id,
+        &#39;user_name&#39; =&gt; $user-&gt;name,
+        &#39;user_email&#39; =&gt; $user-&gt;email,
+    ];
+  }
+}
+</code></pre>
+<h4 id="修改控制器"><a href="#修改控制器" class="headerlink" title="修改控制器"></a>修改控制器</h4><p>使用 <code>transfomer</code>，需要用到 <code>Dingo\Api\Routing\Helpers</code> 这个 <code>trait</code>，可以新建一个 <code>ApiController.php</code> 继承自基础控制器，在这个控制器中使用 <code>trait</code>，然后其他控制器继承这个控制器。</p>
+<p><strong>ApiController</strong></p>
+<pre><code class="php">&lt;?php
+namespace App\Http\Controllers;
+
+use Dingo\Api\Routing\Helpers;
+use Laravel\Lumen\Routing\Controller as BaseController;
+
+class ApiController extends BaseController
+{
+  use Helpers;
+}
+</code></pre>
+<p><strong>UserController</strong></p>
+<pre><code class="php">&lt;?php
+namespace App\Http\Controllers;
+
+use App\Models\DB\api_lumen2\User;
+use App\Http\Transformers\UserTransformer;
+
+class UserController extends ApiController
+{
+  // 返回所有的user
+  public function index()
+  {
+    $user = User::all();
+    return $this-&gt;response-&gt;collection($user, new UserTransformer);
+  }
+
+  // 按ID返回user
+  public function show($id)
+  {
+    // 这里返回的数据类型是 collection，后面的响应大部分是要以 collection 来进行转换
+    $user = User::findOrFail($id);  
+
+    // 这里有诸多的响应方式，可以参考官方文档
+    return $this-&gt;response-&gt;item($user, new UserTransformer);
+  }
+}
+</code></pre>
+<p>再访问 <code>http://127.0.0.1:8003/api/users</code> 和 <code>http://127.0.0.1:8003/api/users/1</code> 就可以看到格式化返回的数据</p>
+<h4 id="自定义转换层"><a href="#自定义转换层" class="headerlink" title="自定义转换层"></a>自定义转换层</h4><p>一直没弄懂怎么用，以后有时间具体在研究</p>
+<hr>
+<h2 id="3-响应"><a href="#3-响应" class="headerlink" title="3. 响应"></a>3. 响应</h2><h3 id="3-1-对数据进行再包装"><a href="#3-1-对数据进行再包装" class="headerlink" title="3.1 对数据进行再包装"></a>3.1 对数据进行再包装</h3><p>有时候，我们需要把需要的数据放在 <code>data</code> 中，然后 <code>data</code> 的同级，有一个 <code>code</code> 或 <code>errMsg</code>，要实现这种效果，我本来该想过进行两次 <code>tansfomer</code>，但是一直没成功，后来换了个思路，在 <code>ApiController</code> 中新建一个方法，对数据进行打包，用这种办法的话就不好用 <code>transfomer</code> 进行数据转换，因为 <code>transfomer</code> 直接返回了一个 <code>response</code> 对象，并不好再继续修改，所以必须自己实现数据转换。</p>
+<p><strong>ApiController.php</strong></p>
+<pre><code class="php">&lt;?php
+namespace App\Http\Controllers;
+
+use Dingo\Api\Routing\Helpers;
+use Laravel\Lumen\Routing\Controller as BaseController;
+
+class ApiController extends BaseController
+{
+    use Helpers;
+
+    public $errcode;
+    public $errmsg;
+    public $status;
+    public $header = &#39;未封包&#39;;
+    public $debug = &#39;未调试&#39;;
+
+    // 构造响应基本框架
+    public function createResponse($data, $status, $errcode)
+    {
+        // 设置 errMsg
+        $this-&gt;__setErrMsg($errcode);
+        $body = array(
+            &#39;errcode&#39; =&gt; $errcode,
+            &#39;status&#39; =&gt; $status,
+            &#39;errmsg&#39; =&gt; $this-&gt;errmsg,
+            &#39;header&#39; =&gt; $this-&gt;header,
+            &#39;debug&#39; =&gt; $this-&gt;debug,
+            &#39;data&#39; =&gt; $data
+        );
+        // 如果对返回数据有更多设置需求，安装文档指导改这里即可。
+        return $this-&gt;response-&gt;array($body)-&gt;setStatusCode($status);
+    }
+
+    // 设置debug内容，个人习惯，可以无视
+    public function setDebug($debug)
+    {
+        $this-&gt;debug = $debug;
+    }
+
+    // 当 envelope=true 时将，将 header 头插入返回体中，个人想要实现一个特效，可以无视
+    public function setHeader($header)
+    {
+        $this-&gt;header = $header;
+    }
+
+    // 设置错误码和错误内容
+    public function __setErrMsg($errcode)
+    {
+        $msgForCode = array(
+            0 =&gt; &#39;成功&#39;,
+            1 =&gt; &#39;成功(未修改密码)&#39;,
+            2 =&gt; &#39;成功(未绑定邮箱) 请前往教务系统绑定邮箱 ：http://jwxt.***.edu.cn/jsxsd/&#39;,
+            3 =&gt; &#39;删除了不存在的数据&#39;,
+            -1 =&gt; &#39;网络故障&#39;,
+            -2 =&gt; &#39;未知错误&#39;,
+            -3 =&gt; &#39;验证码错误&#39;,
+            -4 =&gt; &#39;用户名或密码错误&#39;,
+            -5 =&gt; &#39;HTTP错误&#39;,
+            -6 =&gt; &#39;唯一性限制&#39;,
+            -7 =&gt; &#39;更新不存在的数据，导致失败&#39;,
+            -8 =&gt; &#39;数据不存在&#39;,
+            -9 =&gt; &#39;越权限操作&#39;,
+            -10 =&gt; &#39;账户可调用次数不足&#39;,
+            -65535 =&gt; &#39;参数错误&#39;
+        );
+        $this-&gt;errmsg = $msgForCode[$errcode];
+    }
+}
+</code></pre>
+<p><strong>UserController.php</strong></p>
+<pre><code class="php">// 返回所有的user
+public function index()
+{
+  $user = User::all();
+  $userArray = $user-&gt;toArray();
+  $userData = array();
+
+  foreach ($userArray as $key =&gt; $value) {
+    $array = array(
+      &#39;id&#39; =&gt; $value[&#39;id&#39;],
+      &#39;user_name&#39; =&gt; $value[&#39;name&#39;],
+      &#39;user_email&#39; =&gt; $value[&#39;email&#39;]
+    );
+    $userData[] = $array;
+  }
+  $data = json_encode($userData);
+
+  return $this-&gt;createResponse($data, 201, 0);
+}
+</code></pre>
+<p><strong>最后返回的数据</strong></p>
+<pre><code class="json">{
+  &quot;errcode&quot;: 0,
+  &quot;status&quot;: 201,
+  &quot;errmsg&quot;: &quot;成功&quot;,
+  &quot;header&quot;: &quot;未封包&quot;,
+  &quot;debug&quot;: &quot;未调试&quot;,
+  &quot;data&quot;: &quot;数据略...&quot;
+}
+</code></pre>
+<h3 id="3-2-修改默认的错误返回格式"><a href="#3-2-修改默认的错误返回格式" class="headerlink" title="3.2 修改默认的错误返回格式"></a>3.2 修改默认的错误返回格式</h3><p>在上面，我返回的数据格式是我自定义的，但是有时候返回一些错误的时候，其格式和我定义的格式并不相符，作为接口，当然最后是错误和正确的返回格式一致，所以就需要对错误的返回格式进行修改。</p>
+<p><strong>错误示例：</strong></p>
+<pre><code class="php">return $this-&gt;response-&gt;errorNotFound();
+</code></pre>
+<pre><code class="json">{
+  &quot;message&quot;: &quot;Not Found&quot;,
+  &quot;status_code&quot;: 404
+}
+</code></pre>
+<p><strong>设置方法：</strong><br>在 <code>bootstrap/app.php</code> 中配置：</p>
+<pre><code class="php">$app[&#39;Dingo\Api\Exception\Handler&#39;]-&gt;setErrorFormat([
+    &#39;errcode&#39; =&gt; -5,
+    &#39;status&#39; =&gt; &#39;:status_code&#39;,
+    &#39;errmsg&#39; =&gt; &#39;:message&#39;,
+    &#39;data&#39; =&gt; null,
+    &#39;header&#39; =&gt; &quot;未封包&quot;,
+    &#39;debug&#39; =&gt; &#39;:debug&#39;
+]);
+</code></pre>
+<p>注意放在 <code>$app-&gt;register(Dingo\Api\Provider\LumenServiceProvider::class);</code> 之后。</p>
+<p>这样错误返回为：</p>
+<pre><code class="json">{
+  &quot;errcode&quot;: -5,  // 这里-5固定为HTTP错误
+  &quot;status&quot;: 404,
+  &quot;errmsg&quot;: &quot;NOT FOUND&quot;,
+  &quot;data&quot;: null,
+  &quot;header&quot;: &quot;未封包&quot;,
+  &quot;debug&quot;: &quot;数据略...&quot;
+}
+</code></pre>
+<h2 id="4-结合认证"><a href="#4-结合认证" class="headerlink" title="4. 结合认证"></a>4. 结合认证</h2><p><code>dingo</code> 支持三种认证方式</p>
+<blockquote>
+<p>HTTP Basic (Dingo\Api\Auth\Provider\Basic)<br>JSON Web Tokens (Dingo\Api\Auth\Provider\JWT)<br>OAuth 2.0 (Dingo\Api\Auth\Provider\OAuth2)</p>
+</blockquote>
+<p>因为我个人主要使用 <code>JWT</code> 方式，所以接下来另开几篇文章来介绍如何使用 <code>JWT</code>。</p>
+<h2 id="5-Response-总结"><a href="#5-Response-总结" class="headerlink" title="5. Response 总结"></a>5. Response 总结</h2><pre><code class="php">// dingo：controller 中
+return $this-&gt;response-&gt;error(&#39;This is an error.&#39;, 404);
+return $this-&gt;response-&gt;errorNotFound();
+
+// laravel/lumen 自带的响应
+return response(&#39;Unauthorized.&#39;, 401);
+return response()-&gt;json([&#39;errmsg&#39; =&gt; &#39;Unauthorized&#39;], 401);
+</code></pre>
+<h2 id="6-Lumen-框架下的路由小坑"><a href="#6-Lumen-框架下的路由小坑" class="headerlink" title="6. Lumen 框架下的路由小坑"></a>6. Lumen 框架下的路由小坑</h2><p>假设路由是这样的：</p>
+<pre><code class="php">$api-&gt;get(&#39;/edu/grade/{term}&#39;, &#39;EduGradeController@getGrade&#39;);
+</code></pre>
+<p>本来 <code>Laravel</code> 框架下，获取路由路径中的参数可以用以下两种方式：</p>
+<pre><code class="php">$term = $request-&gt;term;
+
+$term = $request-&gt;route(&#39;term&#39;);
+</code></pre>
+<p>但是 <code>Lumen</code> 都不可以，你必须自己解析 <code>$request-&gt;route()</code>:</p>
+<pre><code class="php">// 定义这个方法
+function route_parameter($name, $default = null)
+{
+    $routeInfo = app(&#39;request&#39;)-&gt;route();
+
+    return array_get($routeInfo[2], $name, $default);
+}
+
+// 打印你的参数
+dd($this-&gt;route_parameter(&#39;term&#39;));
+</code></pre>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 changyan -->
+<div id="changyan-comment">
+    <!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="2017/12/31/Laravel-Lumen教程3——dingo的基本使用/"  ></div>
+<script type="text/javascript">
+(function(){
+var appid = 'cyt4hOWBJ';
+var conf = '80d25ad8e61164f63c15273437d47890';
+var width = window.innerWidth || document.documentElement.clientWidth;
+if (width < 960) {
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+
+</div>
+<style>
+    #changyan-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/01/11/Laravel-Lumen教程4——JWT的基本使用/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/12/30/Laravel-Lumen教程2——安装Laravel-Lumen并新建项目/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(https://ooo.0o0.ooo/2017/06/19/5947a4c3a936a.jpg);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="https://ooo.0o0.ooo/2017/06/19/5947a26ed9af5.jpg" alt="Arony's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        sky.arony@qq.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">二月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="标签云">
+                
+                    <i class="material-icons sidebar-material-icons">label outline</i>
+                
+                标签云
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/gallery" title="相册">
+                
+                    <i class="material-icons sidebar-material-icons">photo</i>
+                
+                相册
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline" title="时间轴">
+                
+                    <i class="material-icons sidebar-material-icons">timeline</i>
+                
+                时间轴
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/about" title="关于我">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                关于我
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/links" title="友情链接">
+                
+                    <i class="material-icons sidebar-material-icons">link</i>
+                
+                友情链接
+            </a>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+        <a href="http://weibo.com/2112550135/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/skyArony" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+        <a href="http://space.bilibili.com/30387945/#!/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-bilibili">
+                <span class="visuallyhidden">Bilibili</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;2017&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Arony's 技术博客
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+    <!-- Leancloud -->
+    <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+    <script>
+        AV.initialize('MA3ePB77pgSwRAhI6NTRHcd5-gzGzoHsz', '5tEL3rl9PsLi9hrcoVky3VYp');
+    </script>
+    <script type="text/ls-javascript" id="leancloud-views-script">
+    function showTime(Counter) {
+        var query = new AV.Query(Counter);
+        $('.leancloud-views_num').each(function() {
+            var url = $(this).attr('id').trim();
+            query.equalTo('url', url);
+            query.find({
+                success: function(results) {
+                    if (results.length === 0) {
+                        var content = '0 ' + $(document.getElementById(url)).text();
+                        $(document.getElementById(url)).text(content);
+                        return;
+                    }
+                    for (var i = 0; i < results.length; i++) {
+                        var object = results[i];
+                        var content = object.get('time') + ' ' + $(document.getElementById(url)).text();
+                        $(document.getElementById(url)).text(content);
+                    }
+                },
+                error: function(object, error) {
+                    console.log('Error: ' + error.code + ' ' + error.message);
+                }
+            });
+        });
+    }
+
+    function addCount(Counter) {
+      var Counter = AV.Object.extend('Counter');
+      url = $('.leancloud-views_num').attr('id').trim();
+      title = $('.leancloud-views_num').attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+      query.equalTo('url', url);
+      query.find({
+          success: function(results) {
+            if (results.length > 0) {
+                var counter = results[0];
+                counter.fetchWhenSave(true);
+                counter.increment('time');
+                counter.save(null, {
+                    success: function(counter) {
+                        var content =  counter.get('time') + ' ' + $(document.getElementById(url)).text();
+                        $(document.getElementById(url)).text(content);
+                    },
+                    error: function(counter, error) {
+                        console.log('Failed to save Visitor num, with error message: ' + error.message);
+                    }
+                });
+            } else {
+              var newcounter = new Counter();
+              newcounter.set('title', title);
+              newcounter.set('url', url);
+              newcounter.set('time', 1);
+              newcounter.save(null, {
+                  success: function(newcounter) {
+                      console.log('newcounter.get(\'time\')='+newcounter.get('time'));
+                      var content = newcounter.get('time') + ' ' + $(document.getElementById(url)).text();
+                      $(document.getElementById(url)).text(content);
+                  },
+                  error: function(newcounter, error) {
+                      console.log('Failed to create');
+                  }
+              });
+            }
+        },
+        error: function(error) {
+            console.log('Error:' + error.code + ' ' + error.message);
+        }
+      });
+    }
+    $(function() {
+        var Counter = AV.Object.extend('Counter');
+        if ($('.leancloud-views_num').length === 1) {
+            addCount(Counter);
+        } else if ($('.post-title-link').length > 1) {
+            showTime(Counter);
+        }
+    });
+</script>
+
+
+
+
+
+
+   <!-- 畅言公共 js 代码 start -->
+<script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cyt4hOWBJ">
+</script>
+<!-- 畅言公共 js 代码 end -->
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
