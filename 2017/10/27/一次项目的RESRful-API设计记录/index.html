@@ -53,7 +53,7 @@
     <meta name="theme-color" content="#607d8b">
     <meta name="author" content="Arony">
     <meta name="description" itemprop="description" content="遗世独立的理想乡">
-    <meta name="keywords" content="skyArony，三翼,RESTful,API">
+    <meta name="keywords" content="skyArony，三翼,API,RESTful">
 
     <!-- Import lsloader -->
     <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
@@ -217,11 +217,11 @@
     <meta property="og:title" content="一次项目的 RESRful API 设计记录 | Arony&#39;s 技术博客">
     <meta property="og:image" content="http://blog.yfree.cc/img/logo.png" />
     <meta property="og:description" content="遗世独立的理想乡">
-    <meta property="og:article:tag" content="RESTful"> <meta property="og:article:tag" content="API"> 
+    <meta property="og:article:tag" content="API"> <meta property="og:article:tag" content="RESTful"> 
 
     
         <meta property="article:published_time" content="Fri Oct 27 2017 10:49:50 GMT+0800" />
-        <meta property="article:modified_time" content="Sat Mar 31 2018 21:53:10 GMT+0800" />
+        <meta property="article:modified_time" content="Sat Mar 31 2018 23:31:28 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
@@ -248,7 +248,7 @@
     "mainEntityOfPage": "http://blog.yfree.cc/2017/10/27/一次项目的RESRful-API设计记录/index.html",
     "headline": "一次项目的 RESRful API 设计记录",
     "datePublished": "Fri Oct 27 2017 10:49:50 GMT+0800",
-    "dateModified": "Sat Mar 31 2018 21:53:10 GMT+0800",
+    "dateModified": "Sat Mar 31 2018 23:31:28 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Arony",
@@ -266,7 +266,7 @@
             "url": "/img/logo.png"
         }
     },
-    "keywords": ",RESTful,APIskyArony，三翼",
+    "keywords": ",API,RESTfulskyArony，三翼",
     "description": "遗世独立的理想乡",
 }
 </script>
@@ -560,7 +560,8 @@ https://api.example.com/v1/employees
 ?sortby=name&amp;order=asc：指定返回结果按照哪个属性排序，以及排序顺序。
 ?animal_type_id=1：指定筛选条件
 </code></pre><p>参数的设计允许存在冗余，即允许API路径和URL参数偶尔有重复。比如，<code>GET /zoo/ID/animals</code> 与 <code>GET /animals?zoo_id=ID</code> 的含义是相同的。</p>
-<h2 id="8-状态码-amp-数据缓存"><a href="#8-状态码-amp-数据缓存" class="headerlink" title="8. 状态码 &amp; 数据缓存"></a>8. 状态码 &amp; 数据缓存</h2><h3 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a>状态码</h3><p>在 Response header 中设置http状态码<br>同时还应在 Response body 中设置其他信息：</p>
+<h2 id="8-状态码-amp-数据缓存"><a href="#8-状态码-amp-数据缓存" class="headerlink" title="8. 状态码 &amp; 数据缓存"></a>8. 状态码 &amp; 数据缓存</h2><h3 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a>状态码</h3><p><a href="http://clojure-liberator.github.io/liberator/doc/decisions.html" target="_blank" rel="noopener">完整的状态码处理逻辑图</a></p>
+<p>在 Response header 中设置http状态码<br>同时还应在 Response body 中设置其他信息：</p>
 <ul>
 <li>错误code</li>
 <li>错误信息</li>
@@ -576,7 +577,7 @@ https://api.example.com/v1/employees
 <li>200 OK - [GET]：服务器成功返回用户请求的数据，该操作是幂等的（Idempotent）。</li>
 <li>201 CREATED - [POST/PUT/PATCH]：用户新建或修改数据成功。</li>
 <li>202 Accepted - [*]：表示一个请求已经进入后台排队（异步任务）</li>
-<li>204 NO CONTENT - [DELETE]：用户删除数据成功，没有需要返回的内容，不需要刷新当前视图。<strong>但是要真这么写的话，dingo中一旦用了204就什么都不返回了，包括code和msg，随机应变，所以我们api中还是用200</strong></li>
+<li>204 NO CONTENT - [DELETE]：用户删除数据成功，没有需要返回的内容，不需要刷新当前视图。<strong>但是要真这么写的话，dingo中一旦用了204就什么都不返回了，所以看到不要奇怪</strong></li>
 </ul>
 <ul>
 <li>304 Not Modified - [GET]：请求的数据没有更新。</li>
@@ -600,7 +601,7 @@ https://api.example.com/v1/employees
 <li>503 Service Unavailable - [*]：服务暂时不可用。比如说，服务器正好在更新代码重启。</li>
 </ul>
 </blockquote>
-<p>状态码的完全列表参见<a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html" target="_blank" rel="noopener">这里</a>。</p>
+<p>状态码的完全列表参见<a href="https://httpstatuses.com/" target="_blank" rel="noopener">这里</a>。</p>
 <blockquote>
 <ul>
 <li><p>1xx范围的状态码是保留给底层HTTP功能使用的，并且估计在你的职业生涯里面也用不着手动发送这样一个状态码出来。</p>
