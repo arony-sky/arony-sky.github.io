@@ -227,7 +227,7 @@
 
     
         <meta property="article:published_time" content="Tue Apr 03 2018 19:48:08 GMT+0800">
-        <meta property="article:modified_time" content="Thu Apr 05 2018 00:55:13 GMT+0800">
+        <meta property="article:modified_time" content="Thu Apr 05 2018 01:04:31 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -250,7 +250,7 @@
     "mainEntityOfPage": "http://blog.yfree.cc/2018/04/03/快查-C语言/index.html",
     "headline": "快查-C语言",
     "datePublished": "Tue Apr 03 2018 19:48:08 GMT+0800",
-    "dateModified": "Thu Apr 05 2018 00:55:13 GMT+0800",
+    "dateModified": "Thu Apr 05 2018 01:04:31 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Arony",
@@ -879,6 +879,7 @@ int main() {
 <p>局部变量定义时，带有static关键字，表示其为静态局部变量，只被初始化一次，之后每次调用函数时，该变量值为上次函数退出时的值。即，改变量的生存周期被扩展到整个程序运行时间段内。</p>
 </li>
 </ol>
+<p>static 关键字修饰的变量只有一次能被初始化，即时在此调用这个函数，也不会再被初始化。</p>
 </blockquote>
 <h3 id="3-复杂指针"><a href="#3-复杂指针" class="headerlink" title="3. 复杂指针"></a>3. 复杂指针</h3><h4 id="指向数组的指针"><a href="#指向数组的指针" class="headerlink" title="指向数组的指针"></a>指向数组的指针</h4><pre><code class="c">double *p;
 double balance[10];
