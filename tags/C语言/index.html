@@ -41,7 +41,7 @@
     
     <title>
         
-            Laravel/Lumen教程（二）——安装Laravel/Lumen并新建项目 | 
+            标签: C语言 | 
         
         Arony&#39;s 技术博客
     </title>
@@ -53,7 +53,7 @@
     <meta name="theme-color" content="#607d8b">
     <meta name="author" content="Arony">
     <meta name="description" itemprop="description" content="遗世独立的理想乡">
-    <meta name="keywords" content="skyArony，三翼,Laravel,Lumen,PHP">
+    <meta name="keywords" content="skyArony，三翼">
 
     <!-- Import lsloader -->
     <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
@@ -214,18 +214,15 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://blog.yfree.cc">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Laravel/Lumen教程（二）——安装Laravel/Lumen并新建项目 | Arony&#39;s 技术博客">
+    <meta property="og:title" content="标签: C语言 | Arony&#39;s 技术博客">
     <meta property="og:image" content="http://blog.yfree.cc/img/logo.png" />
     <meta property="og:description" content="遗世独立的理想乡">
-    <meta property="og:article:tag" content="Laravel"> <meta property="og:article:tag" content="Lumen"> <meta property="og:article:tag" content="PHP"> 
-
     
-        <meta property="article:published_time" content="Sat Dec 30 2017 18:19:54 GMT+0800" />
-        <meta property="article:modified_time" content="Fri Mar 23 2018 22:21:18 GMT+0800" />
+
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="Laravel/Lumen教程（二）——安装Laravel/Lumen并新建项目 | Arony&#39;s 技术博客">
+    <meta name="twitter:title" content="标签: C语言 | Arony&#39;s 技术博客">
     <meta name="twitter:description" content="遗世独立的理想乡">
     <meta name="twitter:image" content="http://blog.yfree.cc/img/logo.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -233,43 +230,13 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://blog.yfree.cc/2017/12/30/Laravel-Lumen教程2——安装Laravel-Lumen并新建项目/index.html" />
+        <link rel="canonical" href="http://blog.yfree.cc/tags/C语言/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
-
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "mainEntityOfPage": "http://blog.yfree.cc/2017/12/30/Laravel-Lumen教程2——安装Laravel-Lumen并新建项目/index.html",
-    "headline": "Laravel/Lumen教程（二）——安装Laravel/Lumen并新建项目",
-    "datePublished": "Sat Dec 30 2017 18:19:54 GMT+0800",
-    "dateModified": "Fri Mar 23 2018 22:21:18 GMT+0800",
-    "author": {
-        "@type": "Person",
-        "name": "Arony",
-        "image": {
-            "@type": "ImageObject",
-            "url": "https://ooo.0o0.ooo/2017/06/19/5947a26ed9af5.jpg"
-        },
-        "description": "遗世独立的理想乡"
-    },
-    "publisher": {
-        "@type": "Organization",
-        "name": "Arony&#39;s 技术博客",
-        "logo": {
-            "@type":"ImageObject",
-            "url": "/img/logo.png"
-        }
-    },
-    "keywords": ",Laravel,Lumen,PHPskyArony，三翼",
-    "description": "遗世独立的理想乡",
-}
-</script>
 
 
     
@@ -311,366 +278,105 @@
                         </button>
                     
 
-                    <!-- Post TOC -->
-
+                    <!-- Index Module -->
+<div class="material-index mdl-grid">
     
-    <!-- Back Button -->
-    <!--
-    <div class="material-back" id="backhome-div" tabindex="0">
-        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
-           href="#" onclick="window.history.back();return false;"
-           target="_self"
-           role="button"
-           data-upgraded=",MaterialButton,MaterialRipple">
-            <i class="material-icons" role="presentation">arrow_back</i>
-            <span class="mdl-button__ripple-container">
-                <span class="mdl-ripple"></span>
-            </span>
-        </a>
+    <div class="locate-thumbnail-symbol"></div>
+
+    <!-- Pin on top -->
+    
+
+    <!-- Normal Post -->
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Pure Thumbnail -->
+            <div class="post-thumbnail-pure mdl-card__media mdl-color-text--grey-50" style="background-color:#222 !important">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2018/04/03/快查-C语言/">快查-C语言</a></p>
     </div>
-    -->
 
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            平常除了刷题不常用 C ，为了方便能够快速拾起，整理了此文档，前面的仅是常用的部分，不常的内容会单独列出。
 
-    <!-- Left aligned menu below button -->
-    
-    
-    <button id="post-toc-trigger-btn"
-        class="mdl-button mdl-js-button mdl-button--icon">
-        <i class="material-icons">format_list_numbered</i>
-    </button>
-
-    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#一、安装之前"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、安装之前</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#找到-composer-vendor-bin-目录"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">找到 .composer/vendor/bin 目录</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#把找到的路径放到全局变量中"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">把找到的路径放到全局变量中</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#二、安装"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、安装</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Laravel"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Laravel</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Lumen"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">Lumen</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#三、新建项目"><span class="post-toc-number">3.</span> <span class="post-toc-text">三、新建项目</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Laravel-1"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">Laravel</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Lumen-1"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">Lumen</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#四、配置参数"><span class="post-toc-number">4.</span> <span class="post-toc-text">四、配置参数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-加密key"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">1. 加密key</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-数据库"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">2. 数据库</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-1-多数据库配置"><span class="post-toc-number">4.2.1.</span> <span class="post-toc-text">2.1 多数据库配置</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-nginx"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">3. nginx</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-测试是否可以访问"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">4. 测试是否可以访问</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-其他一些配置"><span class="post-toc-number">4.5.</span> <span class="post-toc-text">5. 其他一些配置</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#五、插一嘴关于-Lumen-的配置"><span class="post-toc-number">5.</span> <span class="post-toc-text">五、插一嘴关于 Lumen 的配置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#默认配置"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">默认配置</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#自定义配置文件"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">自定义配置文件</span></a></li></ol></li></ol>
-    </ul>
-    
-
-
-
-
-<!-- Layouts -->
-
-    <!-- Post Module -->
-    <div class="material-post_container">
-
-        <div class="material-post mdl-grid">
-            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
-
-                <!-- Post Header(Thumbnail & Title) -->
-                
-    <!-- Paradox Post Header -->
-    
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://osv9x79o9.bkt.clouddn.com/17-12-30/62162735.jpg)">
-    
-            <p class="article-headline-p">
-                Laravel/Lumen教程（二）——安装Laravel/Lumen并新建项目
-            </p>
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2018/04/03/快查-C语言/" target="_self">阅读全文</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="https://ooo.0o0.ooo/2017/06/19/5947a26ed9af5.jpg" width="44px" height="44px" alt="Arony's avatar">
+            </div>
+            <div>
+                <strong>Arony</strong>
+                <span>4月 03, 2018</span>
+            </div>
         </div>
+        <div id="post_entry-right-info">
+          
+              <!-- Category -->
+              <span class="post_entry-category">
+                  <a class="post_category-link" href="/categories/快查/">快查</a>, <a class="post_category-link" href="/categories/快查/C语言/">C语言</a>
+              </span>
+            
 
+            
 
+            
+                <!-- Comment Number -->
+                &nbsp;|&nbsp;
+                <span class="post_entry-comment" >
+                        <span id = "sourceId::2018/04/03/快查-C语言/" class = "cy_cmt_count" ></span>条评论
+                </span>
+            
 
-
-
-                
-                    <!-- Paradox Post Info -->
-                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
-
-    <!-- Author Avatar -->
-    <div id="author-avatar">
-        <img src="https://ooo.0o0.ooo/2017/06/19/5947a26ed9af5.jpg" width="44px" height="44px" alt="Author Avatar"/>
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
     </div>
-    <!-- Author Name & Date -->
-    <div>
-        <strong>Arony</strong>
-        <span>12月 30, 2017</span>
-    </div>
-
-    <div class="section-spacer"></div>
-
-    <!-- Favorite -->
-    <!--
-        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
-            <i class="material-icons" role="presentation">favorite</i>
-            <span class="visuallyhidden">favorites</span>
-        </button>
-    -->
-
-    <!-- Qrcode -->
-    
-
-    <!-- Tags (bookmark) -->
-    
-    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-        <i class="material-icons" role="presentation">bookmark</i>
-        <span class="visuallyhidden">bookmark</span>
-    </button>
-    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
-        <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/Laravel/">Laravel</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Lumen/">Lumen</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/PHP/">PHP</a>
-    </ul>
-    
-
-    <!-- Share -->
-    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">share</i>
-    <span class="visuallyhidden">share</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
-    
-    <!-- Leancloud Views -->
-        <a class="post_share-link" href="#">
-            <li class="mdl-menu__item">
-                <span id="/2017/12/30/Laravel-Lumen教程2——安装Laravel-Lumen并新建项目/" class="leancloud-views_num" data-flag-title="Laravel/Lumen教程（二）——安装Laravel/Lumen并新建项目">
-     &nbsp;浏览量
-</span>
-
-            </li>
-        </a>
-    
-
-    
-
-    <!-- Share Weibo -->
-    
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Laravel/Lumen教程（二）——安装Laravel/Lumen并新建项目&url=http://blog.yfree.cc/2017/12/30/Laravel-Lumen教程2——安装Laravel-Lumen并新建项目/index.html&pic=http://blog.yfree.cc/img/logo.png&searchPic=false&style=simple" target="_blank">
-            <li class="mdl-menu__item">
-                分享到微博
-            </li>
-        </a>
-    
-
-    <!-- Share Twitter -->
-    
-
-    <!-- Share Facebook -->
-    
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.yfree.cc/2017/12/30/Laravel-Lumen教程2——安装Laravel-Lumen并新建项目/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Facebook
-            </li>
-        </a>
-    
-
-    <!-- Share Google+ -->
-    
-
-    <!-- Share LinkedIn -->
-    
-
-    <!-- Share QQ -->
-    
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Arony&#39;s 技术博客&title=Laravel/Lumen教程（二）——安装Laravel/Lumen并新建项目&summary=遗世独立的理想乡&pics=http://blog.yfree.cc/img/logo.png&url=http://blog.yfree.cc/2017/12/30/Laravel-Lumen教程2——安装Laravel-Lumen并新建项目/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 QQ
-            </li>
-        </a>
-    
-
-    <!-- Share Telegram -->
-    
-</ul>
-
 </div>
 
-                
-
-                <!-- Post Content -->
-                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
-    
-        <p>这一篇主要介绍如何安装 Laravel 和 Lumen ，以及如何新建一个项目。</p>
-<h1 id="一、安装之前"><a href="#一、安装之前" class="headerlink" title="一、安装之前"></a>一、安装之前</h1><p>在安装之前先确保 <code>.composer/vendor/bin</code> 目录已经在系统环境变量中，确保系统能够找到 Laravel 或 Lumen 的可执行文件。</p>
-<h2 id="找到-composer-vendor-bin-目录"><a href="#找到-composer-vendor-bin-目录" class="headerlink" title="找到 .composer/vendor/bin 目录"></a>找到 <code>.composer/vendor/bin</code> 目录</h2><p>Windows 系统的一般在“我的文档”的 <code>AppData\Roaming</code> 里；</p>
-<p>Linux 系统的一般在 <code>home/你的账户/</code> 里，如果是 deepin ，该目录下有个 <code>.config</code> 文件夹，一般在这里；</p>
-<h2 id="把找到的路径放到全局变量中"><a href="#把找到的路径放到全局变量中" class="headerlink" title="把找到的路径放到全局变量中"></a>把找到的路径放到全局变量中</h2><p>Windows 系统不多说；</p>
-<p>Linux 系统（deepin）如下：</p>
-<pre><code>cd /etc
-sudo vim bash.bashrc
-
-//末尾加上
-PATH=&quot;$PATH:/home/arony/.config/composer/vendor/bin&quot;
-
-// 保存后执行更新命令
-source bash.bashrc
-</code></pre><h1 id="二、安装"><a href="#二、安装" class="headerlink" title="二、安装"></a>二、安装</h1><h2 id="Laravel"><a href="#Laravel" class="headerlink" title="Laravel"></a>Laravel</h2><pre><code>composer global require &quot;laravel/installer&quot;
-</code></pre><h2 id="Lumen"><a href="#Lumen" class="headerlink" title="Lumen"></a>Lumen</h2><pre><code>composer global require &quot;laravel/lumen-installer&quot;
-</code></pre><h1 id="三、新建项目"><a href="#三、新建项目" class="headerlink" title="三、新建项目"></a>三、新建项目</h1><h2 id="Laravel-1"><a href="#Laravel-1" class="headerlink" title="Laravel"></a>Laravel</h2><pre><code>laravel new blog
-
-// or
-
-composer create-project --prefer-dist laravel/laravel blog
-</code></pre><h2 id="Lumen-1"><a href="#Lumen-1" class="headerlink" title="Lumen"></a>Lumen</h2><pre><code>lumen new blog
-// 执行完上面一句，会发现没有 vendor 目录，需要在 blog 目录下
-composer install
-
-// or
-
-composer create-project --prefer-dist laravel/lumen blog
-</code></pre><p>新建项目后把目录的可写权限给web服务器。</p>
-<h1 id="四、配置参数"><a href="#四、配置参数" class="headerlink" title="四、配置参数"></a>四、配置参数</h1><h2 id="1-加密key"><a href="#1-加密key" class="headerlink" title="1. 加密key"></a>1. 加密key</h2><ol>
-<li>修改 <code>.env.example</code> 文件为 <code>.env</code> ；</li>
-<li><p>执行 <code>php artisan key:generate</code> 生成 <code>.env</code> 文件中的加密 key ，Lumen 中没有这个命令，可以用其他方法生成，例如：</p>
-<pre><code>APP_KEY=base64:Dje+SgXpfHHxCuelIzeTnxtmcHZmoVCXk/PLoefUOW8=
-</code></pre></li>
-<li><p>可以安装 <a href="https://packagist.org/packages/flipbox/lumen-generator" target="_blank" rel="noopener">flipbox/lumen-generator</a> 增加 <code>lumen</code> 中缺失的 <code>Laravel</code> 中的 <code>aritisan</code> 命令。</p>
-</li>
-</ol>
-<h2 id="2-数据库"><a href="#2-数据库" class="headerlink" title="2. 数据库"></a>2. 数据库</h2><p>打开 <code>.env</code> 文件</p>
-<pre><code class="php">DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=api_lumen  // 填入需要访问的数据库名
-DB_USERNAME=root       // 账号
-DB_PASSWORD=root       // 密码
-</code></pre>
-<h3 id="2-1-多数据库配置"><a href="#2-1-多数据库配置" class="headerlink" title="2.1 多数据库配置"></a>2.1 多数据库配置</h3><p><strong>.env</strong></p>
-<pre><code class="php">DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=api_lumen  // 填入需要访问的数据库名
-DB_DATABASE2=passport  // 填入需要访问的第二个数据库名
-DB_USERNAME=root       // 账号
-DB_PASSWORD=root       // 密码
-</code></pre>
-<p><strong>config/database.php</strong></p>
-<pre><code class="php">&#39;mysql-passport&#39; =&gt; [
-    &#39;driver&#39; =&gt; &#39;mysql&#39;,
-    &#39;host&#39; =&gt; env(&#39;DB_HOST&#39;, &#39;127.0.0.1&#39;),
-    &#39;port&#39; =&gt; env(&#39;DB_PORT&#39;, &#39;3306&#39;),
-    &#39;database&#39; =&gt; env(&#39;DB_DATABASE2&#39;, &#39;passport&#39;),
-    &#39;username&#39; =&gt; env(&#39;DB_USERNAME&#39;, &#39;root&#39;),
-    &#39;password&#39; =&gt; env(&#39;DB_PASSWORD&#39;, &#39;root&#39;),
-    &#39;unix_socket&#39; =&gt; env(&#39;DB_SOCKET&#39;, &#39;&#39;),
-    &#39;charset&#39; =&gt; &#39;utf8mb4&#39;,
-    &#39;collation&#39; =&gt; &#39;utf8mb4_unicode_ci&#39;,
-    &#39;prefix&#39; =&gt; &#39;&#39;,
-    &#39;strict&#39; =&gt; true,
-    &#39;engine&#39; =&gt; null,
-],
-</code></pre>
-<p><strong>migrate</strong></p>
-<pre><code class="php">// users表，用户状态信息表
-Schema::connection(&#39;mysql-passport&#39;)-&gt;create(&#39;users&#39;, function (Blueprint $table) {
-    $table-&gt;increments(&#39;id&#39;);
-    $table-&gt;timestamps();
-});
-</code></pre>
-<p><strong>ORM模型操作数据库时</strong></p>
-<pre><code class="php">protected $connection = &#39;mysql-passport&#39;;  // 在该model中使用testdb2库
-protected $table = &#39;article&#39;;
-</code></pre>
-<p><strong>DB Facade</strong></p>
-<pre><code class="php">DB::connection(&#39;mysql-passport&#39;)-&gt;select(...);
-php
-</code></pre>
-<h2 id="3-nginx"><a href="#3-nginx" class="headerlink" title="3. nginx"></a>3. nginx</h2><p>我这是 phpstudy 下的配置：</p>
-<ol>
-<li>打开 <code>phpstudy/nginx/conf/vhosts.conf</code> ;</li>
-<li><p>写入以下配置，配置多个时，写入多个即可，配置完记得重启 nginx</p>
-<pre><code>server {
- listen       8001;      // 改成你想要的端口
- server_name  localhost;
- root   D:/phpStudy/WWW/lumen/api/public;   // 改成你的项目 public 目录
- index index.html index.htm index.php;
-
- location / {
-     try_files $uri $uri/ /index.php?$query_string;  // 如果是403，多半是这个没加
- }
- location ~ \.php$ {
-     fastcgi_pass   127.0.0.1:9000;
-     fastcgi_index  index.php;
-     fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
-     include        fastcgi_params;
- }
- location ~ /.ht {
-     deny  all;
- }
- error_page   500 502 503 504  /50x.html;
- location = /50x.html {
-     root   /usr/share/nginx/html;
- }        
-}
-</code></pre></li>
-</ol>
-<h2 id="4-测试是否可以访问"><a href="#4-测试是否可以访问" class="headerlink" title="4. 测试是否可以访问"></a>4. 测试是否可以访问</h2><p>浏览器打开：<a href="http://127.0.0.1:8001" target="_blank" rel="noopener">http://127.0.0.1:8001</a></p>
-<h2 id="5-其他一些配置"><a href="#5-其他一些配置" class="headerlink" title="5. 其他一些配置"></a>5. 其他一些配置</h2><p>打开 <code>bootstrap/app/php</code> ，把下面两行去掉注释，以开启 Facades 功能和 Eloquent 功能。</p>
-<pre><code>$app-&gt;withFacades();
-
-$app-&gt;withEloquent();
-</code></pre><h1 id="五、插一嘴关于-Lumen-的配置"><a href="#五、插一嘴关于-Lumen-的配置" class="headerlink" title="五、插一嘴关于 Lumen 的配置"></a>五、插一嘴关于 Lumen 的配置</h1><h2 id="默认配置"><a href="#默认配置" class="headerlink" title="默认配置"></a>默认配置</h2><p>默认情况下, Lumen 使用单一的 .env 文件来配置你的应用, 然而, 你也可以使用 Laravel 风格 的配置方法.</p>
-<p>只需要把 <code>vendor/laravel/lumen-framework/config</code> 文件夹下对应的配置文件复制到根目录下的 <code>config</code> 文件（没有的话自己创建）里面就行，并且例如 <code>JWT</code> 这样的库，也可以直接在 <code>vendor</code> 下找到这样的配置文件复制过去。</p>
-<p>使用这种方法, 能有更多的配置灵活度。例如可以把其下的 <code>database.php</code> 复制过来，便于进行多数据库连接。</p>
-<h2 id="自定义配置文件"><a href="#自定义配置文件" class="headerlink" title="自定义配置文件"></a>自定义配置文件</h2><p>你可以创建自定义的配置文件, 并使用 <code>$app-&gt;configure()</code> 方法进行加载.</p>
-<p>举个栗子, 把自定义配置文件放置于 <code>config/options.php</code>, 可以这样加载:</p>
-<pre><code class="php">// 在 bootstrap/app.php 中
-$app-&gt;configure(&#39;options&#39;);
-</code></pre>
-
+            
+            
         
     
 
     
-</div>
 
+    
+        <script type="text/ls-javascript" id="thumbnail-script">
+    var randomNum;
 
-                
+    var locatePost = $('.locate-thumbnail-symbol').next();
+    for(var i = 0; i < 10; i++) {
+        randomNum = Math.floor(Math.random() *  + 1);
 
-                <!-- Post Comments -->
-                
-                    
-    <!-- 使用 changyan -->
-<div id="changyan-comment">
-    <!--PC和WAP自适应版-->
-<div id="SOHUCS" sid="2017/12/30/Laravel-Lumen教程2——安装Laravel-Lumen并新建项目/"  ></div>
-<script type="text/javascript">
-(function(){
-var appid = 'cyt4hOWBJ';
-var conf = '80d25ad8e61164f63c15273437d47890';
-var width = window.innerWidth || document.documentElement.clientWidth;
-if (width < 960) {
-window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
+        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
 
-</div>
-<style>
-    #changyan-comment{
-        background-color: #eee;
-        padding: 2pc;
+        locatePost = locatePost.next();
     }
-</style>
+</script>
 
-                
-            </div>
-
-            <!-- Post Prev & Next Nav -->
-            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
-    <!-- Prev Nav -->
     
-        <a href="/2017/12/31/Laravel-Lumen教程3——dingo的基本使用/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
-
-    <!-- Section Spacer -->
-    <div class="section-spacer"></div>
-
-    <!-- Next Nav -->
-    
-        <a href="/2017/12/30/Laravel-Lumen教程1——基础环境搭建/" id="post_nav-older" class="next-content">
-            旧篇
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_forward</i>
-            </button>
-        </a>
-    
-</nav>
-
-        </div>
-    </div>
-
+</div>
 
 
                     
@@ -868,14 +574,6 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
-
-                    
-                        <!-- Footer Top Button -->
-                        <div id="back-to-top" class="toTop-wrap">
-    <a href="#top" class="toTop">
-        <i class="material-icons footer_top-i">expand_less</i>
-    </a>
-</div>
 
                     
 
