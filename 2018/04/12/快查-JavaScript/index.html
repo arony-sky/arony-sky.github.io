@@ -1,0 +1,1673 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.2 -->
+    <script>
+        window.materialVersion = "1.5.2"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net"/>
+
+
+
+    <link rel="dns-prefetch" href="https://changyan.sohu.com"/>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            快查-JavaScript | 
+        
+        Arony&#39;s 技术博客
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/logo.png">
+    <link rel="icon" href="/img/logo.png">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="遗世独立的理想乡">
+    <meta name="keywords" content="skyArony，三翼,JavaScript">
+    <meta name="theme-color" content="#607d8b">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/tranquil-heart.min.css?ul3p9I9MsbOxK0L+BHzDDg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #2780e3;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #607d8b !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #607d8b !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #607d8b !important;
+  }
+
+  .toTop {
+    background: #607d8b !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #607d8b;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #607d8b;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #607d8b;
+  }
+
+  .post-toc a:hover {
+    color: #2780e3;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg2018.png);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Arony&#39;s 技术博客">
+    <meta name="msapplication-starturl" content="http://blog.yfree.cc/2018/04/12/快查-JavaScript/">
+    <meta name="msapplication-navbutton-color" content="#607d8b">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Arony&#39;s 技术博客">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/logo.png">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://blog.yfree.cc/2018/04/12/快查-JavaScript/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="快查-JavaScript | Arony&#39;s 技术博客">
+    <meta property="og:image" content="/img/logo.png">
+    <meta property="og:description" content="遗世独立的理想乡">
+    <meta property="og:article:tag" content="JavaScript"> 
+
+    
+        <meta property="article:published_time" content="Thu Apr 12 2018 17:05:10 GMT+0800">
+        <meta property="article:modified_time" content="Fri Apr 20 2018 20:28:49 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://blog.yfree.cc/2018/04/12/快查-JavaScript/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://blog.yfree.cc/2018/04/12/快查-JavaScript/index.html",
+    "headline": "快查-JavaScript",
+    "datePublished": "Thu Apr 12 2018 17:05:10 GMT+0800",
+    "dateModified": "Fri Apr 20 2018 20:28:49 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Arony",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://ooo.0o0.ooo/2017/06/19/5947a26ed9af5.jpg"
+        },
+        "description": "遗世独立的理想乡"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Arony&#39;s 技术博客",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/logo.png"
+        }
+    },
+    "keywords": ",JavaScriptskyArony，三翼",
+    "description": "遗世独立的理想乡",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+        <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1273154911&web_id=1273154911" language="JavaScript"></script>
+</div>
+    
+
+    <!-- Custom Head -->
+    
+        
+            <style>code{font-family: consolas, Menlo, 'PingFang SC', 'Microsoft YaHei', monospace;color:#c33;margin: 0 2px;padding: 0 5px;background-color: rgba(0,0,0,.04);border-radius: 3px;}</style>
+        
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#一、语法"><span class="post-toc-text">一、语法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-数据类型"><span class="post-toc-text">1. 数据类型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数组-Array"><span class="post-toc-text">数组-Array</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#对象-Object"><span class="post-toc-text">对象-Object</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#字符串-String"><span class="post-toc-text">字符串-String</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数字-Number"><span class="post-toc-text">数字-Number</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#日期-Date"><span class="post-toc-text">日期-Date</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-关键字"><span class="post-toc-text">2. 关键字</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#typeof"><span class="post-toc-text">typeof</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#instanceof"><span class="post-toc-text">instanceof</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#undifined-和-null"><span class="post-toc-text">undifined 和 null</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#debugger-关键字"><span class="post-toc-text">debugger 关键字</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#constructor-属性"><span class="post-toc-text">constructor 属性</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-正则表达式"><span class="post-toc-text">3. 正则表达式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#正则式和修饰符"><span class="post-toc-text">正则式和修饰符</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#search"><span class="post-toc-text">search</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#replace"><span class="post-toc-text">replace</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#RegExp-对象"><span class="post-toc-text">RegExp 对象</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-函数"><span class="post-toc-text">4. 函数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#匿名函数"><span class="post-toc-text">匿名函数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#自调用函数"><span class="post-toc-text">自调用函数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#显式参数-Parameters"><span class="post-toc-text">显式参数(Parameters)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#隐式参数-Arguments"><span class="post-toc-text">隐式参数(Arguments)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#默认参数"><span class="post-toc-text">默认参数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#call-和-apply"><span class="post-toc-text">call() 和 apply()</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-其他"><span class="post-toc-text">5. 其他</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#事件"><span class="post-toc-text">事件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#循环"><span class="post-toc-text">循环</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#标签"><span class="post-toc-text">标签</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#错误"><span class="post-toc-text">错误</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#变量提升"><span class="post-toc-text">变量提升</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#严格模式"><span class="post-toc-text">严格模式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#“-”-号运算符"><span class="post-toc-text">“+” 号运算符</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#JSON"><span class="post-toc-text">JSON</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#javascript-void-0"><span class="post-toc-text">javascript:void(0)</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#二、常见用法"><span class="post-toc-text">二、常见用法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-正则校验中文"><span class="post-toc-text">1. 正则校验中文</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-表单校验"><span class="post-toc-text">2. 表单校验</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-算术运算"><span class="post-toc-text">3. 算术运算</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#三、注意"><span class="post-toc-text">三、注意</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-var-与变量作用域"><span class="post-toc-text">1. var 与变量作用域</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-this"><span class="post-toc-text">2. this</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-闭包"><span class="post-toc-text">3. 闭包</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-DOM"><span class="post-toc-text">4. DOM</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-BOM"><span class="post-toc-text">5. BOM</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#计时"><span class="post-toc-text">计时</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#cookie"><span class="post-toc-text">cookie</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-浮点型数据"><span class="post-toc-text">6. 浮点型数据</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-传值和传址"><span class="post-toc-text">7. 传值和传址</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#四、框架"><span class="post-toc-text">四、框架</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-jQuery"><span class="post-toc-text">1. jQuery</span></a></li></ol></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Pure Thumbnail -->
+            <div class="post_thumbnail-pure mdl-card__media mdl-color-text--grey-50" style="background-color:#222 !important">
+        
+    
+            <p class="article-headline-p">
+                快查-JavaScript
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="https://ooo.0o0.ooo/2017/06/19/5947a26ed9af5.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Arony</strong>
+        <span>4月 12, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/JavaScript/">JavaScript</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    <!-- Leancloud Views -->
+        <a class="post_share-link" href="#">
+            <li class="mdl-menu__item">
+                <span id="/2018/04/12/快查-JavaScript/" class="leancloud-views_num" data-flag-title="快查-JavaScript">
+     &nbsp;浏览量
+</span>
+
+            </li>
+        </a>
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=快查-JavaScript&url=http://blog.yfree.cc/2018/04/12/快查-JavaScript/index.html&pic=http://blog.yfree.cc/img/logo.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.yfree.cc/2018/04/12/快查-JavaScript/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Arony&#39;s 技术博客&title=快查-JavaScript&summary=遗世独立的理想乡&pics=http://blog.yfree.cc/img/logo.png&url=http://blog.yfree.cc/2018/04/12/快查-JavaScript/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>整理一些基础语法，主要记了下容易和其他语言混淆的一些地方和 JavaScript 的一些特点。</p>
+<h1 id="一、语法"><a href="#一、语法" class="headerlink" title="一、语法"></a>一、语法</h1><h2 id="1-数据类型"><a href="#1-数据类型" class="headerlink" title="1. 数据类型"></a>1. 数据类型</h2><p>在 JavaScript 中有 5 种不同的数据类型：</p>
+<ul>
+<li>string</li>
+<li>number</li>
+<li>boolean</li>
+<li>object</li>
+<li>function</li>
+</ul>
+<p>3 种对象类型：</p>
+<ul>
+<li>Object</li>
+<li>Date</li>
+<li>Array</li>
+</ul>
+<p>2 个不包含任何值的数据类型：</p>
+<ul>
+<li>null</li>
+<li>undefined</li>
+</ul>
+<p>声明新变量时，可以使用关键词 “new” 来声明其类型：</p>
+<pre><code class="javascript">var carname=new String;
+var x=      new Number;
+var y=      new Boolean;
+var cars=   new Array;
+var person= new Object;
+</code></pre>
+<h3 id="数组-Array"><a href="#数组-Array" class="headerlink" title="数组-Array"></a>数组-Array</h3><p>三种方式</p>
+<pre><code class="javascript">// #1
+var cars=new Array();
+cars[0]=&quot;Saab&quot;;
+cars[1]=&quot;Volvo&quot;;
+cars[2]=&quot;BMW&quot;;
+
+// #2
+var cars=new Array(&quot;Saab&quot;,&quot;Volvo&quot;,&quot;BMW&quot;);
+
+// #3
+var cars=[&quot;Saab&quot;,&quot;Volvo&quot;,&quot;BMW&quot;];
+
+// array 会把数值字符串转化为合适的数字
+var a=new Array();
+a[&#39;a1&#39;]=1;    // 这是对象属性
+a[2]=2;        // 这才是数组元素
+a.length  // 输出3
+
+var b = new Array();
+b[&#39;100&#39;] = 100;
+b.length  // 输出101
+</code></pre>
+<h3 id="对象-Object"><a href="#对象-Object" class="headerlink" title="对象-Object"></a>对象-Object</h3><pre><code class="JavaScript">// #1 对象定义方式
+var person = {
+    firstName: &quot;John&quot;,
+    lastName : &quot;Doe&quot;,
+    id : 5566,
+    fullName : function() 
+    {
+       return this.firstName + &quot; &quot; + this.lastName;
+    }
+};
+
+// #2 或者先创建一个对象再赋予赋予一个新方法
+var person=new Object();
+person.firstName = &quot;John&quot;;
+person.lastName = &quot;Doe&quot;;
+person.method=function(){
+  return this.firstname+this.lastname;
+}
+
+// #3 对象构造器的方法创建
+function person(firstname,lastname,age,eyecolor)
+{
+    this.firstname=firstname;
+    this.lastname=lastname;
+    this.age=age;
+    this.eyecolor=eyecolor;
+}
+var myFather=new person(&quot;John&quot;,&quot;Doe&quot;,50,&quot;blue&quot;);
+
+
+// 取值
+name=person.lastname;
+name=person[&quot;lastname&quot;];
+</code></pre>
+<h3 id="字符串-String"><a href="#字符串-String" class="headerlink" title="字符串-String"></a>字符串-String</h3><p>字符串属性</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>constructor</td>
+<td>返回创建字符串属性的函数</td>
+</tr>
+<tr>
+<td>length</td>
+<td>返回字符串的长度</td>
+</tr>
+<tr>
+<td>prototype</td>
+<td>向对象添加属性和方法</td>
+</tr>
+</tbody>
+</table>
+<p>常用方法</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">charAt()</td>
+<td>返回指定索引位置的字符，也可以直接 str[7] 这样取</td>
+</tr>
+<tr>
+<td style="text-align:left">indexOf()</td>
+<td>返回字符串中检索指定字符第一次出现的位置</td>
+</tr>
+<tr>
+<td style="text-align:left">lastIndexOf()</td>
+<td>返回字符串中检索指定字符最后一次出现的位置</td>
+</tr>
+<tr>
+<td style="text-align:left">match()</td>
+<td>找到一个或多个正则表达式的匹配</td>
+</tr>
+<tr>
+<td style="text-align:left">replace()</td>
+<td>替换与正则表达式匹配的子串</td>
+</tr>
+<tr>
+<td style="text-align:left">search()</td>
+<td>检索与正则表达式相匹配的值</td>
+</tr>
+<tr>
+<td style="text-align:left">slice()</td>
+<td>提取字符串的片断，并在新的字符串中返回被提取的部分，参数为开始和结束（可选）</td>
+</tr>
+<tr>
+<td style="text-align:left">split()</td>
+<td>把字符串分割为子字符串数组，第二个参数表示切割出多少个</td>
+</tr>
+<tr>
+<td style="text-align:left">substr()</td>
+<td>从起始索引号提取字符串中指定数目的字符</td>
+</tr>
+<tr>
+<td style="text-align:left">substring()</td>
+<td>提取字符串中两个指定的索引号之间的字符</td>
+</tr>
+<tr>
+<td style="text-align:left">toString()</td>
+<td>返回一个字符串对象值，Number.toSring()</td>
+</tr>
+<tr>
+<td style="text-align:left">valueOf()</td>
+<td>返回某个字符串对象的原始值</td>
+</tr>
+<tr>
+<td style="text-align:left">trim()</td>
+<td>移除字符串首尾空白</td>
+</tr>
+<tr>
+<td style="text-align:left">String()</td>
+<td>String(100 + 23)  // 将数字表达式转换为字符串并返回</td>
+</tr>
+</tbody>
+</table>
+<h3 id="数字-Number"><a href="#数字-Number" class="headerlink" title="数字-Number"></a>数字-Number</h3><p><strong>无穷大 Infinity：</strong></p>
+<pre><code class="JavaScript">var x = 2/0;    // Infinity    
+var y = -2/0;    // -Infinity
+</code></pre>
+<p><strong>非数字值 NaN：</strong></p>
+<p>可以用 <code>isNaN</code> 这个函数来判断一个值是否为 NaN 值</p>
+<pre><code class="JavaScript">var x = 1000 / &quot;Apple&quot;;
+isNaN(x); // 返回 true    
+var y = 100 / &quot;1000&quot;;
+isNaN(y); // 返回 false
+</code></pre>
+<h3 id="日期-Date"><a href="#日期-Date" class="headerlink" title="日期-Date"></a>日期-Date</h3><p>实现一个网页钟表</p>
+<pre><code class="JavaScript">function startTime(){
+    var today=new Date();        // 获取当前时间
+    var h=today.getHours();        // 获取时间的小时
+    var m=today.getMinutes();
+    var s=today.getSeconds();
+    m=checkTime(m);
+    s=checkTime(s);
+    document.getElementById(&#39;txt&#39;).innerHTML=h+&quot;:&quot;+m+&quot;:&quot;+s;
+    t=setTimeout(function(){startTime()},500);
+}
+// 在小于10的数字前加一个‘0’
+function checkTime(i){
+    if (i&lt;10){
+        i=&quot;0&quot; + i;
+    }
+    return i;
+}
+</code></pre>
+<p>四种初始化日期的方法</p>
+<pre><code class="JavaScript">new Date() // 当前日期和时间
+new Date(milliseconds) //返回从 1970 年 1 月 1 日至今的毫秒数
+new Date(dateString)
+new Date(year, month, day, hours, minutes, seconds, milliseconds)
+
+var today = new Date()
+var d1 = new Date(&quot;October 13, 1975 11:13:00&quot;)
+var d2 = new Date(79,5,24)
+var d3 = new Date(79,5,24,11,33,0)
+</code></pre>
+<h2 id="2-关键字"><a href="#2-关键字" class="headerlink" title="2. 关键字"></a>2. 关键字</h2><h3 id="typeof"><a href="#typeof" class="headerlink" title="typeof"></a>typeof</h3><p>typeof 用来检测变量的数据类型。</p>
+<pre><code class="JavaScript">typeof &quot;John&quot;                // 返回 string 
+typeof 3.14                  // 返回 number
+typeof false                 // 返回 boolean
+typeof [1,2,3,4]             // 返回 object
+typeof {name:&#39;John&#39;, age:34} // 返回 object
+typeof null                    // 返回 object
+typeof NaN                    // 返回 number
+typeof myCar                  // 返回 undefined (如果 myCar 没有声明)
+
+// 由于 Date 和 Array 的返回都为 Object ，所以无法通过它来判断一个对象到底是日期还是数组
+// 所以可以通过以下这种方式
+function isArray(myArray) {
+    return myArray.constructor.toString().indexOf(&quot;Array&quot;) &gt; -1;    // 为数组时返回 true
+}
+function isDate(myDate) {
+    return myDate.constructor.toString().indexOf(&quot;Date&quot;) &gt; -1;        // 为Date时返回 true
+}
+</code></pre>
+<h3 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h3><p>可通过 instanceof 操作符来判断对象的具体类型，语法格式:</p>
+<pre><code class="JavaScript">// var result = objectName instanceof objectType   返回布尔值
+arr = [1,2,3];
+if(arr instanceof Array){
+    document.write(&quot;arr 是一个数组&quot;);
+} else {
+    document.write(&quot;arr 不是一个数组&quot;);
+}
+</code></pre>
+<h3 id="undifined-和-null"><a href="#undifined-和-null" class="headerlink" title="undifined 和 null"></a>undifined 和 null</h3><p>undefined 这个值表示变量不含有值，可以用来将变量清空，也可以通过将变量的值设置为 null 来清空变量。</p>
+<p><strong>null</strong> 用于对象, <strong>undefined</strong> 用于变量，属性和方法。</p>
+<pre><code class="javascript">var x = 5;
+typeof x;    // 5
+var x = null;    
+typeof x;    // null
+var x = undefined;
+typeof x     // undefinded
+
+// 两者的布尔属性都为 false
+if(typeof a!=&quot;undefined&quot;){}    // 最好还是以这种方法，不然如果 a 没有被定义就会报错
+</code></pre>
+<h3 id="debugger-关键字"><a href="#debugger-关键字" class="headerlink" title="debugger 关键字"></a>debugger 关键字</h3><p>相当于设置一个断点；</p>
+<pre><code class="JavaScript">var x = 15 * 5;
+debugger;
+document.getElementbyId(&quot;demo&quot;).innerHTML = x;
+</code></pre>
+<h3 id="constructor-属性"><a href="#constructor-属性" class="headerlink" title="constructor 属性"></a>constructor 属性</h3><p>返回构造函数</p>
+<pre><code class="JavaScript">&quot;John&quot;.constructor                 // 返回函数 String()  { [native code] }
+(3.14).constructor                 // 返回函数 Number()  { [native code] }
+false.constructor                  // 返回函数 Boolean() { [native code] }
+[1,2,3,4].constructor              // 返回函数 Array()   { [native code] }
+{name:&#39;John&#39;, age:34}.constructor  // 返回函数 Object()  { [native code] }
+new Date().constructor             // 返回函数 Date()    { [native code] }
+function () {}.constructor         // 返回函数 Function(){ [native code] }
+</code></pre>
+<h2 id="3-正则表达式"><a href="#3-正则表达式" class="headerlink" title="3. 正则表达式"></a>3. 正则表达式</h2><h3 id="正则式和修饰符"><a href="#正则式和修饰符" class="headerlink" title="正则式和修饰符"></a>正则式和修饰符</h3><pre><code class="JavaScript">var patt = /runoob/i;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>修饰符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>i</td>
+<td>执行对大小写不敏感的匹配。</td>
+</tr>
+<tr>
+<td>g</td>
+<td>执行全局匹配（查找所有匹配而非在找到第一个匹配后停止）。</td>
+</tr>
+<tr>
+<td>m</td>
+<td>执行多行匹配。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="search"><a href="#search" class="headerlink" title="search"></a>search</h3><p>返回子串的起始位置</p>
+<pre><code class="javascript">var n = str.search(/Runoob/i);    // 用正则
+var n = str.search(&quot;Runoob&quot;);    // 用字符串
+</code></pre>
+<h3 id="replace"><a href="#replace" class="headerlink" title="replace"></a>replace</h3><p>查找并替换</p>
+<pre><code class="JavaScript">var txt = str.replace(/microsoft/i,&quot;Runoob&quot;);
+var txt = str.replace(&quot;Microsoft&quot;,&quot;Runoob&quot;);    // 同样可以用字符串
+</code></pre>
+<h3 id="RegExp-对象"><a href="#RegExp-对象" class="headerlink" title="RegExp 对象"></a>RegExp 对象</h3><pre><code class="javascript">var pattern = /e/;     // 构建一个正则对象
+
+// test 方法，用于检测是否匹配，匹配则返回true，否则返回false
+patt.test(&quot;The best things in life are free!&quot;);    // true
+/e/.test(&quot;The best things in life are free!&quot;);     // 你也可以这么写
+
+// exec 方法，用于返回一个匹配结果的数组
+/e/.exec(&quot;The best things in life are free!&quot;);
+</code></pre>
+<h2 id="4-函数"><a href="#4-函数" class="headerlink" title="4. 函数"></a>4. 函数</h2><h3 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h3><pre><code class="JavaScript">var x = function (a, b) {return a * b};
+var z = x(4, 3);
+</code></pre>
+<h3 id="自调用函数"><a href="#自调用函数" class="headerlink" title="自调用函数"></a>自调用函数</h3><p>创建了一个匿名的函数，并立即执行它，由于外部无法引用它内部的变量，因此在执行完后很快就会被释放，关键是这种机制不会污染全局对象。这种函数的的定义和调用是一体的。</p>
+<pre><code class="JavaScript">// 实际上是一个匿名自调用函数
+(function () {
+    var x = &quot;Hello!!&quot;;      // 我将调用自己
+})();
+</code></pre>
+<h3 id="显式参数-Parameters"><a href="#显式参数-Parameters" class="headerlink" title="显式参数(Parameters)"></a>显式参数(Parameters)</h3><pre><code class="JavaScript">function functionName(parameter1, parameter2, parameter3) {
+    // 要执行的代码……
+}
+</code></pre>
+<h3 id="隐式参数-Arguments"><a href="#隐式参数-Arguments" class="headerlink" title="隐式参数(Arguments)"></a>隐式参数(Arguments)</h3><ul>
+<li>arguments不管函数声明时的参数个数，而是调用实际传递给函数的参数;</li>
+<li>arguments[index]获得参数值；</li>
+<li>arguments.length获得实际传递的参数个数；</li>
+</ul>
+<pre><code class="javascript">function functionName(){
+    console.log(arguments);
+}
+
+// 还有一个 callee 属性，实现递归调用
+var sum = function(n){  
+    if(1==n) {  
+        return 1;  
+　  } else {  
+        return n + arguments.callee(n-1);  
+    }  
+}  
+console.log(sum(10));  
+</code></pre>
+<h3 id="默认参数"><a href="#默认参数" class="headerlink" title="默认参数"></a>默认参数</h3><p>两种写法：</p>
+<pre><code class="JavaScript">function myFunction(x, y) {
+    if (y === undefined) {
+          y = 0;
+    } 
+}
+// or
+function myFunction(x, y) {
+    y = y || 0;
+}
+</code></pre>
+<h3 id="call-和-apply"><a href="#call-和-apply" class="headerlink" title="call() 和 apply()"></a>call() 和 apply()</h3><p>在特定的作用域中调用函数,能改变函数的作用域，实际上是改变函数体内 <code>this</code> 的值 。</p>
+<p>说通俗一点就是，借你家函数用一下，call 和 apply 效果一行，只是传参不同。</p>
+<pre><code class="javascript">foo.call(this, arg1,arg2,arg3) == foo.apply(this, [arg1, arg2, arg3]) == this.foo(arg1, arg2, arg3)
+</code></pre>
+<p><strong>call方法:</strong><br>语法：call(thisObj，Object)<br>定义：调用一个对象的一个方法，以另一个对象替换当前对象。<br>说明：<br>call 方法可以用来代替另一个对象调用一个方法。call 方法可将一个函数的对象上下文从初始的上下文改变为由 thisObj 指定的新对象。<br>如果没有提供 thisObj 参数，那么 Global 对象被用作 thisObj。</p>
+<p><strong>apply方法:</strong><br>语法：apply(thisObj，[argArray])<br>定义：应用某一对象的一个方法，用另一个对象替换当前对象。<br>说明：<br>如果 argArray 不是一个有效的数组或者不是 arguments 对象，那么将导致一个 TypeError。<br>如果没有提供 argArray 和 thisObj 任何一个参数，那么 Global 对象将被用作 thisObj， 并且无法被传递任何参数。</p>
+<h2 id="5-其他"><a href="#5-其他" class="headerlink" title="5. 其他"></a>5. 其他</h2><h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><p>事件是指浏览器和用户的某种行为，以下是一些常见的事件：</p>
+<table>
+<thead>
+<tr>
+<th>事件</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>onchange</td>
+<td>HTML 元素改变</td>
+</tr>
+<tr>
+<td>onclick</td>
+<td>用户点击 HTML 元素</td>
+</tr>
+<tr>
+<td>onmouseover</td>
+<td>用户在一个HTML元素上移动鼠标</td>
+</tr>
+<tr>
+<td>onmouseout</td>
+<td>用户从一个HTML元素上移开鼠标</td>
+</tr>
+<tr>
+<td>onkeydown</td>
+<td>用户按下键盘按键</td>
+</tr>
+<tr>
+<td>onload</td>
+<td>浏览器已完成页面的加载</td>
+</tr>
+</tbody>
+</table>
+<h3 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h3><pre><code class="JavaScript">// JS 支持的一种遍历写法
+var person={fname:&quot;John&quot;,lname:&quot;Doe&quot;,age:25}; 
+
+for (x in person)  // x 为属性名
+{
+    txt=txt + person[x];
+}
+</code></pre>
+<h3 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h3><p>给一段代码块打上标签，然后就能通过 <code>continue</code> 和 <code>break</code> 跳出代码块。</p>
+<pre><code class="JavaScript">cars=[&quot;BMW&quot;,&quot;Volvo&quot;,&quot;Saab&quot;,&quot;Ford&quot;];
+list:                                 // 这里是标签
+{
+    document.write(cars[0] + &quot;&lt;br&gt;&quot;); 
+    document.write(cars[1] + &quot;&lt;br&gt;&quot;); 
+    document.write(cars[2] + &quot;&lt;br&gt;&quot;); 
+    break list;
+    document.write(cars[3] + &quot;&lt;br&gt;&quot;); 
+    document.write(cars[4] + &quot;&lt;br&gt;&quot;); 
+    document.write(cars[5] + &quot;&lt;br&gt;&quot;); 
+}
+</code></pre>
+<h3 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h3><pre><code class="javascript">function myFunction() {
+    var message, x;
+    message = document.getElementById(&quot;message&quot;);
+    message.innerHTML = &quot;&quot;;
+    x = document.getElementById(&quot;demo&quot;).value;
+    try {                                         // 测试错误
+        if(x == &quot;&quot;)  throw &quot;值为空&quot;;                // 抛出错误
+        if(isNaN(x)) throw &quot;不是数字&quot;;
+        x = Number(x);
+        if(x &lt; 5)    throw &quot;太小&quot;;
+        if(x &gt; 10)   throw &quot;太大&quot;;
+    }
+    catch(err) {                                // 处理错误
+        message.innerHTML = &quot;错误: &quot; + err;
+    }
+}
+</code></pre>
+<h3 id="变量提升"><a href="#变量提升" class="headerlink" title="变量提升"></a>变量提升</h3><p>JavaScript 中，函数及变量的声明都将被提升到函数的最顶部。</p>
+<p>所以 JavaScript 中，变量可以在使用后声明，也就是变量可以先使用再声明。</p>
+<p>但是初始化是不会被提升的。</p>
+<h3 id="严格模式"><a href="#严格模式" class="headerlink" title="严格模式"></a>严格模式</h3><p>严格模式是 ES5 新增的，在这个模式下你不能使用未声明的变量</p>
+<pre><code class="JavaScript">&quot;use strict&quot;;    // 只允许出现在脚本或函数的开头
+x = 3.14;       // 报错 (x 未定义)
+var x = 3.14    // 不报错
+</code></pre>
+<h3 id="“-”-号运算符"><a href="#“-”-号运算符" class="headerlink" title="“+” 号运算符"></a>“+” 号运算符</h3><ol>
+<li><p>和逻辑值进行运算时，false 变成 0，true 变成 1：</p>
+<pre><code class="javascript">var one=13;
+var two=true;
+var three=one+two;
+// 结果 three:14
+</code></pre>
+</li>
+<li><p>取模运算的结果符号只与左边值的符号有关：</p>
+<pre><code class="javascript">var x = 7 % 3; // 结果为 1
+var y = 7 % (-3); // 结果为 1
+var z = (-7) % 3; // 结果为 -1
+</code></pre>
+</li>
+<li><p>数字与 null(空值) 相加，null 转化为数字 0：</p>
+<pre><code class="javascript">var car=null+3+4;    // 结果为7
+</code></pre>
+<p>字符串与 null(空值) 相加，null 转化为字符串：</p>
+<pre><code class="javascript">var car=null+&quot;a&quot;;    // 结果为 nulla
+</code></pre>
+</li>
+<li><p>将变量转换为数字，不能转换的话变成 NaN：</p>
+<pre><code class="javascript">var y = &quot;5&quot;;      // y 是一个字符串
+var x = + y;      // x 是一个数字
+
+var y = &quot;John&quot;;   // y 是一个字符串
+var x = + y;      // x 是一个数字 (NaN)
+</code></pre>
+</li>
+<li><p>“-” 号</p>
+<pre><code class="javascript">&quot;5&quot; - 1     // 返回 4         &quot;5&quot; 转换为 5
+</code></pre>
+</li>
+</ol>
+<h3 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h3><p>注意 json 是键值都是包在双引号之中的：</p>
+<pre><code class="json">{
+    &quot;name&quot;:&quot;yangf&quot;,
+    &quot;sex&quot;:1
+}
+</code></pre>
+<p>把 Json 字符串解析为 JavaScript 对象：</p>
+<pre><code class="JavaScript">var obj = JSON.parse(text);        // text 为 Json 格式的字符串
+var jsonStr = JSON.stringify(obj);     // 上面的反函数
+</code></pre>
+<h3 id="javascript-void-0"><a href="#javascript-void-0" class="headerlink" title="javascript:void(0)"></a>javascript:void(0)</h3><p>表示一个死链接，和 <code>href=&quot;#[pos]&quot;</code> 存在区别，后者是一个锚点，默认为页面上端，而前者是纯粹的一个死链接。你也可以这么用 <code>href=&quot;javascript:void(alert(&#39;Warning!!!&#39;))&quot;</code></p>
+<h1 id="二、常见用法"><a href="#二、常见用法" class="headerlink" title="二、常见用法"></a>二、常见用法</h1><h3 id="1-正则校验中文"><a href="#1-正则校验中文" class="headerlink" title="1. 正则校验中文"></a>1. 正则校验中文</h3><pre><code class="JavaScript">var reg=/^[\u4E00-\u9FA5]{2,4}$/;   /*定义验证表达式*/
+</code></pre>
+<h3 id="2-表单校验"><a href="#2-表单校验" class="headerlink" title="2. 表单校验"></a>2. 表单校验</h3><p><strong>onsubmit=”return validateForm()”</strong></p>
+<pre><code class="html">&lt;script&gt;
+function validateForm() {
+    var x = document.forms[&quot;myForm&quot;][&quot;fname&quot;].value;
+    if (x == null || x == &quot;&quot;) {
+        alert(&quot;需要输入名字。&quot;);
+        return false;
+    }
+}
+&lt;/script&gt;
+
+&lt;form name=&quot;myForm&quot; action=&quot;demo_form.php&quot; onsubmit=&quot;return validateForm()&quot; method=&quot;post&quot;&gt;
+名字: &lt;input type=&quot;text&quot; name=&quot;fname&quot;&gt;
+&lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;
+&lt;/form&gt;
+</code></pre>
+<h3 id="3-算术运算"><a href="#3-算术运算" class="headerlink" title="3. 算术运算"></a>3. 算术运算</h3><p>主要用到 <code>Math</code> 对象，进行算术运算。</p>
+<pre><code class="JavaScript">Math.round(4.7);  // 5
+</code></pre>
+<h1 id="三、注意"><a href="#三、注意" class="headerlink" title="三、注意"></a>三、注意</h1><h3 id="1-var-与变量作用域"><a href="#1-var-与变量作用域" class="headerlink" title="1. var 与变量作用域"></a>1. var 与变量作用域</h3><pre><code class="JavaScript">var int a;        // 全局
+int b;            // 全局
+function get(){
+    int x;        // 全局
+    var int y;    // 局部
+}
+</code></pre>
+<h3 id="2-this"><a href="#2-this" class="headerlink" title="2. this"></a>2. this</h3><p>总是指向调用它所在方法的对象，或者说：this指向函数执行时的当前对象。</p>
+<h3 id="3-闭包"><a href="#3-闭包" class="headerlink" title="3. 闭包"></a>3. 闭包</h3><p>JavaScript 中子函数可以访问父函数的变量，但是父函数不可以访问子变量。</p>
+<p><strong>能够读取其他函数内部变量的函数</strong>，放到 JavaScript 中就是，定义在函数内部的函数，以为 JavaScript 是链式作用域，即子对象可以访问父对象的数据，但是反过来不行。所以父对象需要访问子对象变量数据时就要用到闭包。</p>
+<p><strong>闭包的用途：</strong></p>
+<ul>
+<li>读取函数内部的变量（这个前面解释了）</li>
+<li>让变量的值始终保存在内存中：如果闭包函数被赋给一个全局变量，那么闭包函数用到的局部变量将不会被回收</li>
+</ul>
+<p><strong>闭包的注意点：</strong></p>
+<ul>
+<li>由于闭包会使函数变量保存在内存中是，所以不能滥用闭包</li>
+<li>由于闭包函数可以在函数外改变函数内的变量，所以要注意你对函数变量的定义是公有还是私有</li>
+</ul>
+<h3 id="4-DOM"><a href="#4-DOM" class="headerlink" title="4. DOM"></a>4. DOM</h3><p>文档对象模型（Document Object Model），一棵树。获取 DOM 元素，操纵 HTML 文档：</p>
+<pre><code class="JavaScript">// 获取
+getElementById(&quot;main&quot;);
+getElementsByTagName(&quot;p&quot;);
+getElementsByClassName(&quot;intro&quot;);
+
+// 改变HTML属性
+document.getElementById(id).attribute=新属性值
+document.getElementById(&quot;image&quot;).src=&quot;landscape.jpg&quot;;
+
+// 改变CSS
+document.getElementById(id).style.property=新样式
+document.getElementById(&quot;p2&quot;).style.color=&quot;blue&quot;;
+
+// 事件
+document.getElementById(&quot;myBtn&quot;).onclick=function(){displayDate()};
+
+// 添加监听，最后一个参数选择冒泡（类元素先触发）或者捕获（外元素先触发）
+// 冒泡：false   捕获：true
+element.addEventListener(&quot;click&quot;, function(){ alert(&quot;Hello World!&quot;); }[, true/false]);
+
+// 移除监听
+element.removeEventListener(&quot;mousemove&quot;, myFunction);
+
+// 增删DOM元素
+
+// 增元素
+var para=document.createElement(&quot;p&quot;);
+var node=document.createTextNode(&quot;这是一个新段落。&quot;);
+para.appendChild(node);
+
+// 删除一个元素必需知道它的父元素
+var child=document.getElementById(&quot;p1&quot;);
+child.parentNode.removeChild(child);
+</code></pre>
+<blockquote>
+<p>onclick 和 addEventListener 的区别，前者定义第二个动作时会把第一个覆盖掉，而后者不会</p>
+</blockquote>
+<h3 id="5-BOM"><a href="#5-BOM" class="headerlink" title="5. BOM"></a>5. BOM</h3><p>浏览器对象模型 (<strong>B</strong>rowser <strong>O</strong>bject <strong>M</strong>odel (BOM)) 使 JavaScript 有能力与浏览器”对话”。</p>
+<p>最常用的有诸如 <code>alert</code> 和 <code>location</code></p>
+<h4 id="计时"><a href="#计时" class="headerlink" title="计时"></a>计时</h4><ul>
+<li>setInterval() - 间隔指定的毫秒数不停地执行指定的代码。</li>
+<li>setTimeout() - 在指定的毫秒数后执行指定代码。</li>
+</ul>
+<pre><code class="JavaScript">// 每三秒弹出一次
+var myVar = setInterval(function(){alert(&quot;Hello&quot;)},3000);
+// 停止执行
+clearInterval(myVar);
+
+// 三秒后执行
+var myVar = setTimeout(function(){alert(&quot;Hello&quot;)},3000);
+// 取消执行
+clearTimeout(myVar);
+</code></pre>
+<h4 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h4><pre><code class="JavaScript">// 设置cookie
+document.cookie=&quot;username=John Doe; expires=Thu, 18 Dec 2013 12:00:00 GMT; path=/&quot;;
+
+// 获取cookie
+var x = document.cookie;
+</code></pre>
+<h3 id="6-浮点型数据"><a href="#6-浮点型数据" class="headerlink" title="6. 浮点型数据"></a>6. 浮点型数据</h3><p>JavaScript 中的所有数据都是以 64 位<strong>浮点型数据(float)</strong> 来存储。</p>
+<p>所有的编程语言，包括 JavaScript，对浮点型数据的精确度都很难确定：</p>
+<pre><code class="JavaScript">var x = 0.1;
+var y = 0.2;
+var z = x + y            // z 的结果为 0.3
+if (z == 0.3)            // 返回 false
+
+var z = (x * 10 + y * 10) / 10;       // z 的结果为 0.3，可以这么写   
+</code></pre>
+<h3 id="7-传值和传址"><a href="#7-传值和传址" class="headerlink" title="7. 传值和传址"></a>7. 传值和传址</h3><p>在JS中，有两种不同的方式可以操作数据的值，分别是 <strong>传值</strong> 和 <strong>传址</strong>。</p>
+<p><strong>传值：</strong>数字(Number)、布尔类型(Boolean)、字符串(String)</p>
+<p><strong>传址：</strong>对象(Object) 、数组(Array)、函数(Function)</p>
+<p>如果要复制一个对象，简单的新建然后赋值是不行的，所以就涉及到了深拷贝和浅拷贝。</p>
+<p><a href="http://www.css88.com/archives/8319" target="_blank" rel="noopener"><strong>这里有一篇文章，后面好好整理一下</strong></a></p>
+<h1 id="四、框架"><a href="#四、框架" class="headerlink" title="四、框架"></a>四、框架</h1><h2 id="1-jQuery"><a href="#1-jQuery" class="headerlink" title="1. jQuery"></a>1. jQuery</h2><pre><code class="JavaScript">// 第一种写法：把要执行的函数用 $(document).ready(); 包起来
+$(document).ready(function(){
+  $(&quot;#hide&quot;).click(function(){
+    $(&quot;p&quot;).hide();
+  });
+  $(&quot;#show&quot;).click(function(){
+    $(&quot;p&quot;).show();
+  });
+});
+
+// 第二种写法：把要执行的函数作为参数传入
+function myFunction()
+{
+    $(&quot;#h01&quot;).attr(&quot;style&quot;,&quot;color:red&quot;).html(&quot;Hello jQuery&quot;)
+}
+$(document).ready(myFunction);
+</code></pre>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 changyan -->
+<div id="changyan-comment">
+    <!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="2018/04/12/快查-JavaScript/"  ></div>
+<script type="text/javascript">
+(function(){
+var appid = 'cyt4hOWBJ';
+var conf = '80d25ad8e61164f63c15273437d47890';
+var width = window.innerWidth || document.documentElement.clientWidth;
+if (width < 960) {
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+
+</div>
+<style>
+    #changyan-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/04/11/C-刷题常用操作/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(https://ooo.0o0.ooo/2017/06/19/5947a4c3a936a.jpg);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="https://ooo.0o0.ooo/2017/06/19/5947a26ed9af5.jpg" alt="Arony's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        sky.arony@qq.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">二月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="标签云">
+                
+                    <i class="material-icons sidebar-material-icons">label outline</i>
+                
+                标签云
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/gallery" title="相册">
+                
+                    <i class="material-icons sidebar-material-icons">photo</i>
+                
+                相册
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline" title="时间轴">
+                
+                    <i class="material-icons sidebar-material-icons">timeline</i>
+                
+                时间轴
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/about" title="关于我">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                关于我
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/links" title="友情链接">
+                
+                    <i class="material-icons sidebar-material-icons">link</i>
+                
+                友情链接
+            </a>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+        <a href="http://weibo.com/2112550135/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/skyArony" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+        <a href="http://space.bilibili.com/30387945/#!/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-bilibili">
+                <span class="visuallyhidden">Bilibili</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;2017&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Arony's 技术博客
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+    <!-- Leancloud -->
+    <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+    <script>
+        AV.initialize('MA3ePB77pgSwRAhI6NTRHcd5-gzGzoHsz', '5tEL3rl9PsLi9hrcoVky3VYp');
+    </script>
+    <script type="text/ls-javascript" id="leancloud-views-script">
+    function showTime(Counter) {
+        var query = new AV.Query(Counter);
+        $('.leancloud-views_num').each(function() {
+            var url = $(this).attr('id').trim();
+            query.equalTo('url', url);
+            query.find({
+                success: function(results) {
+                    if (results.length === 0) {
+                        var content = '0 ' + $(document.getElementById(url)).text();
+                        $(document.getElementById(url)).text(content);
+                        return;
+                    }
+                    for (var i = 0; i < results.length; i++) {
+                        var object = results[i];
+                        var content = object.get('time') + ' ' + $(document.getElementById(url)).text();
+                        $(document.getElementById(url)).text(content);
+                    }
+                },
+                error: function(object, error) {
+                    console.log('Error: ' + error.code + ' ' + error.message);
+                }
+            });
+        });
+    }
+
+    function addCount(Counter) {
+      var Counter = AV.Object.extend('Counter');
+      url = $('.leancloud-views_num').attr('id').trim();
+      title = $('.leancloud-views_num').attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+      query.equalTo('url', url);
+      query.find({
+          success: function(results) {
+            if (results.length > 0) {
+                var counter = results[0];
+                counter.fetchWhenSave(true);
+                counter.increment('time');
+                counter.save(null, {
+                    success: function(counter) {
+                        var content =  counter.get('time') + ' ' + $(document.getElementById(url)).text();
+                        $(document.getElementById(url)).text(content);
+                    },
+                    error: function(counter, error) {
+                        console.log('Failed to save Visitor num, with error message: ' + error.message);
+                    }
+                });
+            } else {
+              var newcounter = new Counter();
+              newcounter.set('title', title);
+              newcounter.set('url', url);
+              newcounter.set('time', 1);
+              newcounter.save(null, {
+                  success: function(newcounter) {
+                      console.log('newcounter.get(\'time\')='+newcounter.get('time'));
+                      var content = newcounter.get('time') + ' ' + $(document.getElementById(url)).text();
+                      $(document.getElementById(url)).text(content);
+                  },
+                  error: function(newcounter, error) {
+                      console.log('Failed to create');
+                  }
+              });
+            }
+        },
+        error: function(error) {
+            console.log('Error:' + error.code + ' ' + error.message);
+        }
+      });
+    }
+    $(function() {
+        var Counter = AV.Object.extend('Counter');
+        if ($('.leancloud-views_num').length === 1) {
+            addCount(Counter);
+        } else if ($('.post-title-link').length > 1) {
+            showTime(Counter);
+        }
+    });
+</script>
+
+
+
+
+
+
+   <!-- 畅言公共 js 代码 start -->
+<script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cyt4hOWBJ">
+</script>
+<!-- 畅言公共 js 代码 end -->
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
