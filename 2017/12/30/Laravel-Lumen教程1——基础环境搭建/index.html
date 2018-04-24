@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.2 -->
+    <script>
+        window.materialVersion = "1.5.2"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net"/>
+
+
+
+    <link rel="dns-prefetch" href="https://changyan.sohu.com"/>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            Laravel/Lumen教程（一）——基础环境搭建 | 
+        
+        Arony&#39;s 技术博客
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/logo.png">
+    <link rel="icon" href="/img/logo.png">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="遗世独立的理想乡">
+    <meta name="keywords" content="skyArony，三翼,Laravel,Lumen,PHP">
+    <meta name="theme-color" content="#607d8b">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/tranquil-heart.min.css?ul3p9I9MsbOxK0L+BHzDDg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #2780e3;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #607d8b !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #607d8b !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #607d8b !important;
+  }
+
+  .toTop {
+    background: #607d8b !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #607d8b;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #607d8b;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #607d8b;
+  }
+
+  .post-toc a:hover {
+    color: #2780e3;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg2018.png);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Arony&#39;s 技术博客">
+    <meta name="msapplication-starturl" content="http://blog.yfree.cc/2017/12/30/Laravel-Lumen教程1——基础环境搭建/">
+    <meta name="msapplication-navbutton-color" content="#607d8b">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Arony&#39;s 技术博客">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/logo.png">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://blog.yfree.cc/2017/12/30/Laravel-Lumen教程1——基础环境搭建/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Laravel/Lumen教程（一）——基础环境搭建 | Arony&#39;s 技术博客">
+    <meta property="og:image" content="/img/logo.png">
+    <meta property="og:description" content="遗世独立的理想乡">
+    <meta property="og:article:tag" content="Laravel"> <meta property="og:article:tag" content="Lumen"> <meta property="og:article:tag" content="PHP"> 
+
+    
+        <meta property="article:published_time" content="Sat Dec 30 2017 18:18:57 GMT+0800">
+        <meta property="article:modified_time" content="Fri Mar 23 2018 22:21:11 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://blog.yfree.cc/2017/12/30/Laravel-Lumen教程1——基础环境搭建/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://blog.yfree.cc/2017/12/30/Laravel-Lumen教程1——基础环境搭建/index.html",
+    "headline": "Laravel/Lumen教程（一）——基础环境搭建",
+    "datePublished": "Sat Dec 30 2017 18:18:57 GMT+0800",
+    "dateModified": "Fri Mar 23 2018 22:21:11 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Arony",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://ooo.0o0.ooo/2017/06/19/5947a26ed9af5.jpg"
+        },
+        "description": "遗世独立的理想乡"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Arony&#39;s 技术博客",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/logo.png"
+        }
+    },
+    "keywords": ",Laravel,Lumen,PHPskyArony，三翼",
+    "description": "遗世独立的理想乡",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+        <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1273154911&web_id=1273154911" language="JavaScript"></script>
+</div>
+    
+
+    <!-- Custom Head -->
+    
+        
+            <style>code{font-family: consolas, Menlo, 'PingFang SC', 'Microsoft YaHei', monospace;color:#c33;margin: 0 2px;padding: 0 5px;background-color: rgba(0,0,0,.04);border-radius: 3px;}</style>
+        
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#一、-Windows篇"><span class="post-toc-text">一、 Windows篇</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-下载最新版-phpstudy、mysql（压缩版）、PHPmyadmin"><span class="post-toc-text">1. 下载最新版 phpstudy、mysql（压缩版）、PHPmyadmin</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-更新-phpstudy-中的-mysql"><span class="post-toc-text">2. 更新 phpstudy 中的 mysql</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-更新-phpmyadmin-，不更新的话进行数据库迁移时可能报编码方面的错误"><span class="post-toc-text">3. 更新 phpmyadmin ，不更新的话进行数据库迁移时可能报编码方面的错误</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-按上述操作存在的问题："><span class="post-toc-text">4. 按上述操作存在的问题：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-安装-composer-环境"><span class="post-toc-text">5. 安装 composer 环境</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-安装-node-js-环境"><span class="post-toc-text">6. 安装 node.js 环境</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#二、-Linux篇"><span class="post-toc-text">二、 Linux篇</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用-docker-laradock-在-deepin-上搭建"><span class="post-toc-text">使用 docker + laradock 在 deepin 上搭建</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-安装-docker"><span class="post-toc-text">1. 安装 docker</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-安装docker-compose"><span class="post-toc-text">2. 安装docker-compose</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-安装laradock"><span class="post-toc-text">3. 安装laradock</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-安装-composer-和-node-js"><span class="post-toc-text">4. 安装 composer 和 node.js</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#直接在-Linux（deepin）-本地搭建环境"><span class="post-toc-text">直接在 Linux（deepin） 本地搭建环境</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-安装LNMP-和-phpmyadmin"><span class="post-toc-text">1. 安装LNMP 和 phpmyadmin</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-配置nginx："><span class="post-toc-text">2. 配置nginx：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-安装composer并设置到全局"><span class="post-toc-text">3. 安装composer并设置到全局</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#用-Homestead（基于虚拟机）搭建环境"><span class="post-toc-text">用 Homestead（基于虚拟机）搭建环境</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#坑1-box文件的下载以及add"><span class="post-toc-text">坑1: box文件的下载以及add</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#坑2-NFS"><span class="post-toc-text">坑2: NFS</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#坑3-NFS继续报错（卡在这不想继续弄了，感兴趣的可以继续）"><span class="post-toc-text">坑3: NFS继续报错（卡在这不想继续弄了，感兴趣的可以继续）</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#三、-mac-篇"><span class="post-toc-text">三、 mac 篇</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://osv9x79o9.bkt.clouddn.com/17-12-30/62162735.jpg)">
+    
+            <p class="article-headline-p">
+                Laravel/Lumen教程（一）——基础环境搭建
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="https://ooo.0o0.ooo/2017/06/19/5947a26ed9af5.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Arony</strong>
+        <span>12月 30, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Laravel/">Laravel</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Lumen/">Lumen</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/PHP/">PHP</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    <!-- Leancloud Views -->
+        <a class="post_share-link" href="#">
+            <li class="mdl-menu__item">
+                <span id="/2017/12/30/Laravel-Lumen教程1——基础环境搭建/" class="leancloud-views_num" data-flag-title="Laravel/Lumen教程（一）——基础环境搭建">
+     &nbsp;浏览量
+</span>
+
+            </li>
+        </a>
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Laravel/Lumen教程（一）——基础环境搭建&url=http://blog.yfree.cc/2017/12/30/Laravel-Lumen教程1——基础环境搭建/index.html&pic=http://blog.yfree.cc/img/logo.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.yfree.cc/2017/12/30/Laravel-Lumen教程1——基础环境搭建/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Arony&#39;s 技术博客&title=Laravel/Lumen教程（一）——基础环境搭建&summary=遗世独立的理想乡&pics=http://blog.yfree.cc/img/logo.png&url=http://blog.yfree.cc/2017/12/30/Laravel-Lumen教程1——基础环境搭建/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>网上搭建 Laravel/Lumen 环境的文章挺多的，但是一路操作下来还是很多坑，在此我整理了 Windows 和 Linux 下几种环境搭建方法。</p>
+<h1 id="一、-Windows篇"><a href="#一、-Windows篇" class="headerlink" title="一、 Windows篇"></a>一、 Windows篇</h1><h2 id="1-下载最新版-phpstudy、mysql（压缩版）、PHPmyadmin"><a href="#1-下载最新版-phpstudy、mysql（压缩版）、PHPmyadmin" class="headerlink" title="1. 下载最新版 phpstudy、mysql（压缩版）、PHPmyadmin"></a>1. 下载最新版 phpstudy、mysql（压缩版）、PHPmyadmin</h2><p>如果要用较新版本的 Laravel 或 Lumen ，对PHP以及其他软件的版本都有要求，然后 phpstudy 中mysql的版本较低，就需要手动来升级，当然如果所有环境都是手动搭建，没有使用 phpstudy 这样的工具可以忽略这里。</p>
+<h2 id="2-更新-phpstudy-中的-mysql"><a href="#2-更新-phpstudy-中的-mysql" class="headerlink" title="2. 更新 phpstudy 中的 mysql"></a>2. 更新 phpstudy 中的 mysql</h2><ol>
+<li>把 phpstud 目录下的 MYSQL 文件夹重命名备份，新建一个空MYSQL文件夹；</li>
+<li>把下载的压缩版 mysql ，解压到 MYSQL ，确保里面没有 data 文件夹，有的话删掉；</li>
+<li>以管理员权限进入其中的bin目录，执行 <code>mysqld --initialize</code> ，成功后执行 <code>mysqld -install</code> ,成功后再执行 <code>net start mysql</code> 进行启动测试；</li>
+<li><code>mysql -uroot -p</code> ，执行后要求输入密码，输入enter，提示错误，不用管；</li>
+<li>前往data文件夹找到err文件，记事本打开你们可以找到一个随机密码，复制随机密码（随机密码是 mysql5.7 以上才有的，以前的版本没有密码）;</li>
+<li>再次 <code>mysql -uroot -p</code> ，执行后输入刚刚复制的密码;</li>
+<li><p>修改密码，命令如下：</p>
+<pre><code>// 两种方法，优先试第一个
+SET PASSWORD = PASSWORD(&#39;root&#39;);
+
+//或
+
+update mysql.user set authentication_string=password(&#39;root&#39;) where user=&#39;root&#39; and Host = &#39;localhost&#39;;
+
+//原先改密码都是password列，但是5.7改成了authentication_string
+</code></pre></li>
+</ol>
+<h2 id="3-更新-phpmyadmin-，不更新的话进行数据库迁移时可能报编码方面的错误"><a href="#3-更新-phpmyadmin-，不更新的话进行数据库迁移时可能报编码方面的错误" class="headerlink" title="3. 更新 phpmyadmin ，不更新的话进行数据库迁移时可能报编码方面的错误"></a>3. 更新 phpmyadmin ，不更新的话进行数据库迁移时可能报编码方面的错误</h2><p>直接下载最新版，和更新 mysql 一样备份、新建、粘贴即可。</p>
+<h2 id="4-按上述操作存在的问题："><a href="#4-按上述操作存在的问题：" class="headerlink" title="4. 按上述操作存在的问题："></a>4. 按上述操作存在的问题：</h2><ol>
+<li>mysql 更新后一直常驻服务中，phpstudy的控制器不能控制其关闭，解决办法为到系统服务中设置mysql服务为手动模式，然后停止，然后在phpstudy上重启两个服务即可。</li>
+</ol>
+<h2 id="5-安装-composer-环境"><a href="#5-安装-composer-环境" class="headerlink" title="5. 安装 composer 环境"></a>5. 安装 composer 环境</h2><p>Windows 下建议使用<a href="http://docs.phpcomposer.com/00-intro.html#Installation-Windows" target="_blank" rel="noopener">自动安装程序</a>，会自动配置好环境变量，比较方便。配置国内镜像地址什么的就不多说了。</p>
+<h2 id="6-安装-node-js-环境"><a href="#6-安装-node-js-环境" class="headerlink" title="6. 安装 node.js 环境"></a>6. 安装 node.js 环境</h2><p>这个在 Laravel 渲染页面时需要用到，只用Lumen的话可以先不装。</p>
+<h1 id="二、-Linux篇"><a href="#二、-Linux篇" class="headerlink" title="二、 Linux篇"></a>二、 Linux篇</h1><p>Linux 下环境配置有多种选择：</p>
+<ul>
+<li>laradock（基于docker）</li>
+<li>直接在本地搭建</li>
+<li>Homestead（基于虚拟机）</li>
+</ul>
+<h2 id="使用-docker-laradock-在-deepin-上搭建"><a href="#使用-docker-laradock-在-deepin-上搭建" class="headerlink" title="使用 docker + laradock 在 deepin 上搭建"></a>使用 docker + laradock 在 deepin 上搭建</h2><h3 id="1-安装-docker"><a href="#1-安装-docker" class="headerlink" title="1. 安装 docker"></a>1. 安装 docker</h3><p>深度官方deepin已经集成了docker，不过不是docker-ce这样的最新版。要想使用最新版可以参考官网debian安装教程安装，不过由于深度在定制过程中进行了大量修改，所以使用官方教程是安装不成功的。具体需要几个地方进行调整。先说说安装步骤：</p>
+<p>1.如果以前安装过老版本，可以先卸载以前版本</p>
+<pre><code>sudo apt-get remove docker docker-engine
+</code></pre><p>2.安装docker-ce与密钥管理与下载相关的依赖库</p>
+<pre><code>sudo apt-get install apt-transport-https ca-certificates curl python-software-properties software-properties-common
+</code></pre><p>3.下载并安装密钥<br>建议选用国内源</p>
+<pre><code>官方源：
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
+国内源：
+curl -fsSL https://mirrors.ustc.edu.cn/docker-ce/linux/debian/gpg | sudo apt-key add -
+</code></pre><p>4.添加源</p>
+<pre><code>官方源：
+sudo add-apt-repository   &quot;deb [arch=amd64] https://download.docker.com/linux/debian   wheezy   stable&quot;
+
+国内源：
+sudo add-apt-repository   &quot;deb [arch=amd64] https://mirrors.ustc.edu.cn/docker-ce/linux/debian   wheezy   stable&quot;
+</code></pre><p>5.更新仓库缓存</p>
+<pre><code>sudo apt-get update
+</code></pre><p>6.安装docker-ce</p>
+<pre><code>sudo apt-get install docker-ce
+</code></pre><h3 id="2-安装docker-compose"><a href="#2-安装docker-compose" class="headerlink" title="2. 安装docker-compose"></a>2. 安装docker-compose</h3><pre><code>pip install docker-compose
+</code></pre><h3 id="3-安装laradock"><a href="#3-安装laradock" class="headerlink" title="3. 安装laradock"></a>3. 安装laradock</h3><p>1.首先将 Laradock 项目代码克隆到本地：</p>
+<pre><code>git clone https://github.com/Laradock/laradock.git
+</code></pre><p>2.进入 laradock 目录将 env-example 重命名为 .env：</p>
+<pre><code>cp env-example .env
+</code></pre><p>3.运行容器：</p>
+<pre><code>docker-compose up -d nginx mysql
+</code></pre><p>如果指定端口已经被占用，运行上述命令会报错，关闭相应的服务再重新运行上述命令即可。<br>如果找不到相关进程，在<code>.env</code>文件和<code>docker-compose.yml</code>文件中把nginx所用的403端口改成其他不冲突的即可。</p>
+<p>报错内容如下：</p>
+<blockquote>
+<p>ERROR: for cd993bb246d5_laradock_nginx_1  Cannot start service nginx: driver failed programming external connectivity on endpoint cd993bb246d5_laradock_nginx_1 (7649ab2378acba94e996a87b242e44b4aa559cb3fa3223c53845d5fde233cd60): Error starting userland proxy: listen tcp 0.0.0.0:443: bind: address already in use</p>
+</blockquote>
+<blockquote>
+<p>ERROR: for nginx  Cannot start service nginx: driver failed programming external connectivity on endpoint cd993bb246d5_laradock_nginx_1 (7649ab2378acba94e996a87b242e44b4aa559cb3fa3223c53845d5fde233cd60): Error starting userland proxy: listen tcp 0.0.0.0:443: bind: address already in use</p>
+</blockquote>
+<blockquote>
+<p>ERROR: Encountered errors while bringing up the project.</p>
+</blockquote>
+<p>4.进入容器并切换到laradock用户</p>
+<pre><code>docker-compose exec workspace bash
+su laradock
+</code></pre><p>直接以laradock身份进入会报错，我也不知道为什么</p>
+<p>报错内容如下：</p>
+<blockquote>
+<p>Traceback (most recent call last):<br>  File “/usr/local/bin/docker-compose”, line 11, in <module><br>    sys.exit(main())<br>  File “/usr/local/lib/python2.7/dist-packages/compose/cli/main.py”, line 68, in main<br>    command()<br>  File “/usr/local/lib/python2.7/dist-packages/compose/cli/main.py”, line 121, in perform_command<br>    handler(command, command_options)<br>  File “/usr/local/lib/python2.7/dist-packages/compose/cli/main.py”, line 417, in exec_command<br>    service = self.project.get_service(options[‘SERVICE’])<br>  File “/usr/local/lib/python2.7/dist-packages/compose/project.py”, line 147, in get_service<br>    raise NoSuchService(name)<br>  File “/usr/local/lib/python2.7/dist-packages/compose/project.py”, line 666, in <strong>init</strong><br>    self.msg = “No such service: %s” % self.name<br>UnicodeDecodeError: ‘ascii’ codec can’t decode byte 0xe2 in position 0: ordinal not in range(128)</module></p>
+</blockquote>
+<h3 id="4-安装-composer-和-node-js"><a href="#4-安装-composer-和-node-js" class="headerlink" title="4. 安装 composer 和 node.js"></a>4. 安装 composer 和 node.js</h3><p>参考本地环境搭建的步骤3 和 Windows 篇的步骤6。</p>
+<h2 id="直接在-Linux（deepin）-本地搭建环境"><a href="#直接在-Linux（deepin）-本地搭建环境" class="headerlink" title="直接在 Linux（deepin） 本地搭建环境"></a>直接在 Linux（deepin） 本地搭建环境</h2><h3 id="1-安装LNMP-和-phpmyadmin"><a href="#1-安装LNMP-和-phpmyadmin" class="headerlink" title="1. 安装LNMP 和 phpmyadmin"></a>1. 安装LNMP 和 phpmyadmin</h3><pre><code>sudo apt install lnmp
+
+sudo apt install phpmyadmin
+</code></pre><p>设置软链接</p>
+<pre><code>sudo ln -s /usr/share/phpmyadmin /var/www/html
+</code></pre><h3 id="2-配置nginx："><a href="#2-配置nginx：" class="headerlink" title="2. 配置nginx："></a>2. 配置nginx：</h3><p>打开<code>/etc/nginx/sites-available</code>目录，修改<code>default</code>：</p>
+<ul>
+<li>将<code>server_name _;</code>改成<code>server_name localhost;</code></li>
+<li>将其中php部分改成如下：</li>
+</ul>
+<pre><code># pass PHP scripts to FastCGI server
+#
+location ~ \.php$ {
+    include snippets/fastcgi-php.conf;
+
+    # With php-fpm (or other unix sockets):
+    fastcgi_pass unix:/var/run/php/php7.0-fpm.sock;
+    # With php-cgi (or other tcp sockets):
+    #fastcgi_pass 127.0.0.1:9000;
+}
+</code></pre><ul>
+<li>重启nginx</li>
+<li>打开<a href="http://localhost/phpmyadmin，可以正常打开则配置完毕" target="_blank" rel="noopener">http://localhost/phpmyadmin，可以正常打开则配置完毕</a></li>
+</ul>
+<h3 id="3-安装composer并设置到全局"><a href="#3-安装composer并设置到全局" class="headerlink" title="3. 安装composer并设置到全局"></a>3. 安装composer并设置到全局</h3><p>安装</p>
+<pre><code>curl -sS https://getcomposer.org/installer | php
+
+//or
+
+php -r &quot;readfile(&#39;https://getcomposer.org/installer&#39;);&quot; | php
+</code></pre><p>设置全局</p>
+<pre><code>sudo chmod a+x composer.phar
+sudo mv composer.phar /usr/local/bin/composer
+</code></pre><p>设置自动更新</p>
+<pre><code>sudo composer self-update
+</code></pre><p>设置国内镜像源</p>
+<pre><code>composer config -g repo.packagist composer https://packagist.phpcomposer.com
+</code></pre><h2 id="用-Homestead（基于虚拟机）搭建环境"><a href="#用-Homestead（基于虚拟机）搭建环境" class="headerlink" title="用 Homestead（基于虚拟机）搭建环境"></a>用 Homestead（基于虚拟机）搭建环境</h2><p>Homestead 环境我没有搭成功，坑比较多，这里给出一篇教程，感兴趣的可以按着来，下面我还会贴出我碰到的一些坑。</p>
+<p><a href="https://d.laravel-china.org/docs/5.5/homestead" target="_blank" rel="noopener">Laravel 虚拟开发环境 Homestead</a>。</p>
+<h3 id="坑1-box文件的下载以及add"><a href="#坑1-box文件的下载以及add" class="headerlink" title="坑1: box文件的下载以及add"></a><strong>坑1:</strong> box文件的下载以及add</h3><p>1.安装上面文档的指引，需要执行这个命令来下载box文件</p>
+<pre><code class="shell">vagrant box add laravel/homestead
+</code></pre>
+<blockquote>
+<p>由于下载box的时候需要挂 VPN ，而且下载文件大小比较大，为了节省时间，所以在下载的时候，按 ctrl+c 取消，复制下载地址，格式如下：<br><a href="https://atlas.hashicorp.com/laravel/boxes/homestead/versions/4.0.0/providers/virtualbox.box" target="_blank" rel="noopener">https://atlas.hashicorp.com/laravel/boxes/homestead/versions/4.0.0/providers/virtualbox.box</a><br>其中版本改成执行命令后系统默认选择的版本</p>
+</blockquote>
+<p>2.下载完之后放在任意一个英文目录下重命名为 homestead.box<br>3.在.box文件同目录下新建 metadata.json 文件</p>
+<pre><code class="json">{
+  &quot;name&quot;: &quot;laravel/homestead&quot;,
+  &quot;versions&quot;: [{
+    &quot;version&quot;: &quot;4.0.0&quot;,
+    &quot;providers&quot;: [{
+      &quot;name&quot;: &quot;virtualbox&quot;,
+      &quot;url&quot;: &quot;./homestead.box&quot;
+    }]
+  }]
+}
+</code></pre>
+<p>4.运行指令安装 box</p>
+<pre><code>vagrant box add metadata.json
+</code></pre><p>5.查看安装的box</p>
+<pre><code>vagrant box list
+
+laravel/homestead (virtualbox, 4.0.0)﻿​
+</code></pre><h3 id="坑2-NFS"><a href="#坑2-NFS" class="headerlink" title="坑2: NFS"></a><strong>坑2:</strong> NFS</h3><p>NFS是为了提高本机和虚拟机之间文件共享的效率，安装文档中也有提及。<br>但是但我们执行</p>
+<pre><code>vagrant up
+</code></pre><p>提示错误：</p>
+<blockquote>
+<p>It appears your machine doesn’t support NFS, or there is not an<br>adapter to enable NFS on this machine for Vagrant. Please verify<br>that `nfsd` is installed on your machine, and try again. If you’re<br>on Windows, NFS isn’t supported. If the problem persists, please<br>contact Vagrant support.</p>
+</blockquote>
+<p>这是因为我们没有安装nfs工具，我用的是deepin，所以我执行</p>
+<pre><code>sudo apt install nfs-kernel-server
+</code></pre><p>即可，其他系统改一下前面的包管理工具。</p>
+<h3 id="坑3-NFS继续报错（卡在这不想继续弄了，感兴趣的可以继续）"><a href="#坑3-NFS继续报错（卡在这不想继续弄了，感兴趣的可以继续）" class="headerlink" title="坑3: NFS继续报错（卡在这不想继续弄了，感兴趣的可以继续）"></a><strong>坑3:</strong> NFS继续报错（卡在这不想继续弄了，感兴趣的可以继续）</h3><p>在我输入<code>vagrant up</code>后，NFS居然又抱错了，如下：</p>
+<blockquote>
+<p>==&gt; homestead-7: Mounting NFS shared folders…<br>The following SSH command responded with a non-zero exit status.<br>Vagrant assumes that this means the command failed!</p>
+</blockquote>
+<blockquote>
+<p>mount -o vers=3,udp,actimeo=1,nolock 192.168.10.1:/home/arony/Code/Lumen /home/vagrant/code/Lumen<br>result=$?<br>if test $result -eq 0; then<br>if test -x /sbin/initctl &amp;&amp; command -v /sbin/init &amp;&amp; /sbin/init 2&gt;/dev/null –version | grep upstart; then<br>/sbin/initctl emit –no-wait vagrant-mounted MOUNTPOINT=/home/vagrant/code/Lumen<br><strong>……太占地方，省略</strong><br>mesg: ttyname failed: Inappropriate ioctl for device<br>mount.nfs: Connection timed out</p>
+</blockquote>
+<h1 id="三、-mac-篇"><a href="#三、-mac-篇" class="headerlink" title="三、 mac 篇"></a>三、 mac 篇</h1><p>可以参考 Linux，或者使用 mac 独有的 <a href="https://d.laravel-china.org/docs/5.5/valet" target="_blank" rel="noopener">valet</a>。</p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 changyan -->
+<div id="changyan-comment">
+    <!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="2017/12/30/Laravel-Lumen教程1——基础环境搭建/"  ></div>
+<script type="text/javascript">
+(function(){
+var appid = 'cyt4hOWBJ';
+var conf = '80d25ad8e61164f63c15273437d47890';
+var width = window.innerWidth || document.documentElement.clientWidth;
+if (width < 960) {
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+
+</div>
+<style>
+    #changyan-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2017/12/30/Laravel-Lumen教程2——安装Laravel-Lumen并新建项目/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/11/01/关于Markdown/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(https://ooo.0o0.ooo/2017/06/19/5947a4c3a936a.jpg);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="https://ooo.0o0.ooo/2017/06/19/5947a26ed9af5.jpg" alt="Arony's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        sky.arony@qq.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">二月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="标签云">
+                
+                    <i class="material-icons sidebar-material-icons">label outline</i>
+                
+                标签云
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/gallery" title="相册">
+                
+                    <i class="material-icons sidebar-material-icons">photo</i>
+                
+                相册
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline" title="时间轴">
+                
+                    <i class="material-icons sidebar-material-icons">timeline</i>
+                
+                时间轴
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/about" title="关于我">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                关于我
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/links" title="友情链接">
+                
+                    <i class="material-icons sidebar-material-icons">link</i>
+                
+                友情链接
+            </a>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+        <a href="http://weibo.com/2112550135/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/skyArony" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+        <a href="http://space.bilibili.com/30387945/#!/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-bilibili">
+                <span class="visuallyhidden">Bilibili</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;2017&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Arony's 技术博客
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+    <!-- Leancloud -->
+    <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+    <script>
+        AV.initialize('MA3ePB77pgSwRAhI6NTRHcd5-gzGzoHsz', '5tEL3rl9PsLi9hrcoVky3VYp');
+    </script>
+    <script type="text/ls-javascript" id="leancloud-views-script">
+    function showTime(Counter) {
+        var query = new AV.Query(Counter);
+        $('.leancloud-views_num').each(function() {
+            var url = $(this).attr('id').trim();
+            query.equalTo('url', url);
+            query.find({
+                success: function(results) {
+                    if (results.length === 0) {
+                        var content = '0 ' + $(document.getElementById(url)).text();
+                        $(document.getElementById(url)).text(content);
+                        return;
+                    }
+                    for (var i = 0; i < results.length; i++) {
+                        var object = results[i];
+                        var content = object.get('time') + ' ' + $(document.getElementById(url)).text();
+                        $(document.getElementById(url)).text(content);
+                    }
+                },
+                error: function(object, error) {
+                    console.log('Error: ' + error.code + ' ' + error.message);
+                }
+            });
+        });
+    }
+
+    function addCount(Counter) {
+      var Counter = AV.Object.extend('Counter');
+      url = $('.leancloud-views_num').attr('id').trim();
+      title = $('.leancloud-views_num').attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+      query.equalTo('url', url);
+      query.find({
+          success: function(results) {
+            if (results.length > 0) {
+                var counter = results[0];
+                counter.fetchWhenSave(true);
+                counter.increment('time');
+                counter.save(null, {
+                    success: function(counter) {
+                        var content =  counter.get('time') + ' ' + $(document.getElementById(url)).text();
+                        $(document.getElementById(url)).text(content);
+                    },
+                    error: function(counter, error) {
+                        console.log('Failed to save Visitor num, with error message: ' + error.message);
+                    }
+                });
+            } else {
+              var newcounter = new Counter();
+              newcounter.set('title', title);
+              newcounter.set('url', url);
+              newcounter.set('time', 1);
+              newcounter.save(null, {
+                  success: function(newcounter) {
+                      console.log('newcounter.get(\'time\')='+newcounter.get('time'));
+                      var content = newcounter.get('time') + ' ' + $(document.getElementById(url)).text();
+                      $(document.getElementById(url)).text(content);
+                  },
+                  error: function(newcounter, error) {
+                      console.log('Failed to create');
+                  }
+              });
+            }
+        },
+        error: function(error) {
+            console.log('Error:' + error.code + ' ' + error.message);
+        }
+      });
+    }
+    $(function() {
+        var Counter = AV.Object.extend('Counter');
+        if ($('.leancloud-views_num').length === 1) {
+            addCount(Counter);
+        } else if ($('.post-title-link').length > 1) {
+            showTime(Counter);
+        }
+    });
+</script>
+
+
+
+
+
+
+   <!-- 畅言公共 js 代码 start -->
+<script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cyt4hOWBJ">
+</script>
+<!-- 畅言公共 js 代码 end -->
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>

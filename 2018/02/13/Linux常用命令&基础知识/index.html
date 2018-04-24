@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.2 -->
+    <script>
+        window.materialVersion = "1.5.2"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net"/>
+
+
+
+    <link rel="dns-prefetch" href="https://changyan.sohu.com"/>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            Linux常用命令&amp;基础知识 | 
+        
+        Arony&#39;s 技术博客
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/logo.png">
+    <link rel="icon" href="/img/logo.png">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="遗世独立的理想乡">
+    <meta name="keywords" content="skyArony，三翼,Linux">
+    <meta name="theme-color" content="#607d8b">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/tranquil-heart.min.css?ul3p9I9MsbOxK0L+BHzDDg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #2780e3;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #607d8b !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #607d8b !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #607d8b !important;
+  }
+
+  .toTop {
+    background: #607d8b !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #607d8b;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #607d8b;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #607d8b;
+  }
+
+  .post-toc a:hover {
+    color: #2780e3;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg2018.png);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Arony&#39;s 技术博客">
+    <meta name="msapplication-starturl" content="http://blog.yfree.cc/2018/02/13/Linux常用命令&amp;基础知识/">
+    <meta name="msapplication-navbutton-color" content="#607d8b">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Arony&#39;s 技术博客">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/logo.png">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://blog.yfree.cc/2018/02/13/Linux常用命令&amp;基础知识/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Linux常用命令&amp;基础知识 | Arony&#39;s 技术博客">
+    <meta property="og:image" content="/img/logo.png">
+    <meta property="og:description" content="遗世独立的理想乡">
+    <meta property="og:article:tag" content="Linux"> 
+
+    
+        <meta property="article:published_time" content="Tue Feb 13 2018 00:44:40 GMT+0800">
+        <meta property="article:modified_time" content="Fri Mar 23 2018 22:21:40 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://blog.yfree.cc/2018/02/13/Linux常用命令&基础知识/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://blog.yfree.cc/2018/02/13/Linux常用命令&基础知识/index.html",
+    "headline": "Linux常用命令&基础知识",
+    "datePublished": "Tue Feb 13 2018 00:44:40 GMT+0800",
+    "dateModified": "Fri Mar 23 2018 22:21:40 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Arony",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://ooo.0o0.ooo/2017/06/19/5947a26ed9af5.jpg"
+        },
+        "description": "遗世独立的理想乡"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Arony&#39;s 技术博客",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/logo.png"
+        }
+    },
+    "keywords": ",LinuxskyArony，三翼",
+    "description": "遗世独立的理想乡",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+        <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1273154911&web_id=1273154911" language="JavaScript"></script>
+</div>
+    
+
+    <!-- Custom Head -->
+    
+        
+            <style>code{font-family: consolas, Menlo, 'PingFang SC', 'Microsoft YaHei', monospace;color:#c33;margin: 0 2px;padding: 0 5px;background-color: rgba(0,0,0,.04);border-radius: 3px;}</style>
+        
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#一、命令"><span class="post-toc-text">一、命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-常用命令"><span class="post-toc-text">1. 常用命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-1-搜索命令-——-grep-了解更多"><span class="post-toc-text">1.1 搜索命令 —— grep 了解更多</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-2-md5sum-amp-sha256sum"><span class="post-toc-text">1.2 md5sum &amp; sha256sum</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-3-source-bashrc"><span class="post-toc-text">1.3 source ~/.bashrc</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-4-安装软件"><span class="post-toc-text">1.4 安装软件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-5-who"><span class="post-toc-text">1.5 who</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-6-ps-aux"><span class="post-toc-text">1.6 ps -aux</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-7-service-network-restart-systemctl-restart-network"><span class="post-toc-text">1.7 service network restart \ systemctl restart network</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-8-ip-addr"><span class="post-toc-text">1.8 ip addr</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-9-查找已安装的软件-文件位置"><span class="post-toc-text">1.9 查找已安装的软件\文件位置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-10-CentOS-的包管理-——-yum"><span class="post-toc-text">1.10 CentOS 的包管理 —— yum</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-11-pwd"><span class="post-toc-text">1.11 pwd</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-12-设置开机启动，重启，启动-——-systemctl"><span class="post-toc-text">1.12 设置开机启动，重启，启动 —— systemctl</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-13-压缩与解压"><span class="post-toc-text">1.13 压缩与解压</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#zip-文件"><span class="post-toc-text">zip 文件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#tar-文件"><span class="post-toc-text">tar 文件</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-不常用命令"><span class="post-toc-text">2. 不常用命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-1-uname-r"><span class="post-toc-text">2.1 uname -r</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-2-date、cal"><span class="post-toc-text">2.2 date、cal</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-3-shutdown、-sbin-poweroff、init-0"><span class="post-toc-text">2.3 shutdown、/sbin/poweroff、init 0</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-4-sync"><span class="post-toc-text">2.4 sync</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#二、技巧"><span class="post-toc-text">二、技巧</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-键位"><span class="post-toc-text">1. 键位</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-1-Tab-键"><span class="post-toc-text">1.1 Tab 键</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-2-Ctrl-C"><span class="post-toc-text">1.2 Ctrl + C</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-3-Ctrl-D"><span class="post-toc-text">1.3 Ctrl + D</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-命令"><span class="post-toc-text">2. 命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-1-man-info"><span class="post-toc-text">2.1 man\info</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-2-usr-share-doc-下存有众多软件包的说明文档"><span class="post-toc-text">2.2 /usr/share/doc 下存有众多软件包的说明文档</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#三、软件"><span class="post-toc-text">三、软件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-系统常用软件"><span class="post-toc-text">1. 系统常用软件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-1-gcc"><span class="post-toc-text">1.1 gcc</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-2-wget"><span class="post-toc-text">1.2 wget</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-3-make"><span class="post-toc-text">1.3 make</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-4-net-tools-iproute2-操作"><span class="post-toc-text">1.4 net-tools \ iproute2 操作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-5-rz-和-sz"><span class="post-toc-text">1.5 rz 和 sz</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-6-ftp-和-lftp"><span class="post-toc-text">1.6 ftp 和 lftp</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-7-vsftp"><span class="post-toc-text">1.7 vsftp</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#四、重要系统文件"><span class="post-toc-text">四、重要系统文件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-账户、组相关"><span class="post-toc-text">1. 账户、组相关</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-1-etc-passwd-介绍"><span class="post-toc-text">1.1 /etc/passwd 介绍</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-2-etc-shadow-介绍"><span class="post-toc-text">1.2 /etc/shadow 介绍</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-3-etc-group-介绍"><span class="post-toc-text">1.3 /etc/group 介绍</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-4-etc-gshadow-介绍"><span class="post-toc-text">1.4 /etc/gshadow 介绍</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#五、常用操作"><span class="post-toc-text">五、常用操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-账户、组操作"><span class="post-toc-text">1. 账户、组操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-1-账户新建-——-useradd"><span class="post-toc-text">1.1 账户新建 —— useradd</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-2-账户密码修改-——-passwd"><span class="post-toc-text">1.2 账户密码修改 —— passwd</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-3-账户删除-——-userdel"><span class="post-toc-text">1.3 账户删除 —— userdel</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-4-账户修改-——-chsh-usermod"><span class="post-toc-text">1.4 账户修改 —— chsh \ usermod</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-文件所属、权限操作"><span class="post-toc-text">2. 文件所属、权限操作</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-文档新建操作"><span class="post-toc-text">3. 文档新建操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-1-nano"><span class="post-toc-text">3.1 nano</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-2-vi"><span class="post-toc-text">3.2 vi</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-3-touch"><span class="post-toc-text">3.3 touch</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#六、答疑解惑"><span class="post-toc-text">六、答疑解惑</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-apt-和-apt-get-有什么区别？-了解更多"><span class="post-toc-text">1. apt 和 apt-get 有什么区别？ 了解更多</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-deepin-桌面：对一些安装后没有图标的软件如何新建一个图标"><span class="post-toc-text">2. deepin 桌面：对一些安装后没有图标的软件如何新建一个图标</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-Linux-下各目录文件的作用"><span class="post-toc-text">3. Linux 下各目录文件的作用</span></a></li></ol></li></ol></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Pure Thumbnail -->
+            <div class="post_thumbnail-pure mdl-card__media mdl-color-text--grey-50" style="background-color:#222 !important">
+        
+    
+            <p class="article-headline-p">
+                Linux常用命令&基础知识
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="https://ooo.0o0.ooo/2017/06/19/5947a26ed9af5.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Arony</strong>
+        <span>2月 13, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Linux/">Linux</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    <!-- Leancloud Views -->
+        <a class="post_share-link" href="#">
+            <li class="mdl-menu__item">
+                <span id="/2018/02/13/Linux常用命令&amp;基础知识/" class="leancloud-views_num" data-flag-title="Linux常用命令&amp;基础知识">
+     &nbsp;浏览量
+</span>
+
+            </li>
+        </a>
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Linux常用命令&amp;基础知识&url=http://blog.yfree.cc/2018/02/13/Linux常用命令&amp;基础知识/index.html&pic=http://blog.yfree.cc/img/logo.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.yfree.cc/2018/02/13/Linux常用命令&amp;基础知识/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Arony&#39;s 技术博客&title=Linux常用命令&amp;基础知识&summary=遗世独立的理想乡&pics=http://blog.yfree.cc/img/logo.png&url=http://blog.yfree.cc/2018/02/13/Linux常用命令&基础知识/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>Linux 使用过程中，经常有一些命令或者其他一些细节，有时候搜到了但是因为用的频率不高总忘。所以单独开一篇文章来纪录我经常忘的一些命令和细节，仅供自己快速翻阅，勿喷。</p>
+<h1 id="一、命令"><a href="#一、命令" class="headerlink" title="一、命令"></a>一、命令</h1><h2 id="1-常用命令"><a href="#1-常用命令" class="headerlink" title="1. 常用命令"></a>1. 常用命令</h2><h3 id="1-1-搜索命令-——-grep-了解更多"><a href="#1-1-搜索命令-——-grep-了解更多" class="headerlink" title="1.1 搜索命令 —— grep 了解更多"></a>1.1 搜索命令 —— grep <a href="http://man.linuxde.net/grep" target="_blank" rel="noopener">了解更多</a></h3><p>一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹配的行打印出来。</p>
+<p>使用样例：</p>
+<pre><code>// 从结果中搜
+apt list | grep python
+
+// 从文件中搜
+grep match_pattern file_name
+
+grep &#39;temporary password&#39; /var/log/mysqld.log
+</code></pre><h3 id="1-2-md5sum-amp-sha256sum"><a href="#1-2-md5sum-amp-sha256sum" class="headerlink" title="1.2 md5sum &amp; sha256sum"></a>1.2 md5sum &amp; sha256sum</h3><p>文件校验</p>
+<pre><code>// MD5校验
+md5sum /path/filename
+
+// SHA-256校验
+sha256sum /path/filename
+</code></pre><h3 id="1-3-source-bashrc"><a href="#1-3-source-bashrc" class="headerlink" title="1.3 source ~/.bashrc"></a>1.3 source ~/.bashrc</h3><p>刷新全局变量的设置</p>
+<pre><code>source ~/.bashrc
+</code></pre><h3 id="1-4-安装软件"><a href="#1-4-安装软件" class="headerlink" title="1.4 安装软件"></a>1.4 安装软件</h3><p><strong>.deb文件</strong></p>
+<pre><code>sudo dpkg -i 软件包名.deb
+</code></pre><p><strong>.rmp文件</strong></p>
+<pre><code>// 转换为 .deb文件
+sudo alien package_file.rpm
+</code></pre><p><strong>.tar.gz文件</strong><br>把文件解压缩到你想安装的目录，然后在根目录下或者 <code>bin</code> 一般会有一个 <code>.sh</code> 文件用来安装。</p>
+<h3 id="1-5-who"><a href="#1-5-who" class="headerlink" title="1.5 who"></a>1.5 who</h3><p>查看当前有哪些用户在线。</p>
+<h3 id="1-6-ps-aux"><a href="#1-6-ps-aux" class="headerlink" title="1.6 ps -aux"></a>1.6 ps -aux</h3><p>查看当前所有任务。</p>
+<h3 id="1-7-service-network-restart-systemctl-restart-network"><a href="#1-7-service-network-restart-systemctl-restart-network" class="headerlink" title="1.7 service network restart \ systemctl restart network"></a>1.7 service network restart \ systemctl restart network</h3><p>重启网络服务。</p>
+<h3 id="1-8-ip-addr"><a href="#1-8-ip-addr" class="headerlink" title="1.8 ip addr"></a>1.8 ip addr</h3><p>查看IP地址。</p>
+<h3 id="1-9-查找已安装的软件-文件位置"><a href="#1-9-查找已安装的软件-文件位置" class="headerlink" title="1.9 查找已安装的软件\文件位置"></a>1.9 查找已安装的软件\文件位置</h3><p><strong>rpm</strong></p>
+<pre><code class="shell">#查询已安装的以 mysql 开头的包
+rpm  -qa mysql*
+
+#查询已安装的 mysql 包
+rpm -qa | grep mysql
+</code></pre>
+<p><strong>yum</strong></p>
+<pre><code class="shell"># 列出已经安装好的的包
+yum list | grep installed
+</code></pre>
+<p><strong>whereis</strong></p>
+<pre><code class="shell"># 有时候可以借助查找文件的方式找到对应包的路径
+whereis mysql
+</code></pre>
+<p><strong>find</strong></p>
+<pre><code class="shell"># find 查找路径 查找参数
+
+# 在根目录下查找以.conf结尾的文件
+find / -name *.conf
+</code></pre>
+<p><strong>locate</strong></p>
+<pre><code class="shell">locate 查找的文件
+</code></pre>
+<p><strong>ps</strong></p>
+<pre><code class="shell"># 可以通过查找进程的方法找到对应的包的路径
+ps -ef|grep mysql
+
+# 可以简写成
+pgrep mysql
+</code></pre>
+<h3 id="1-10-CentOS-的包管理-——-yum"><a href="#1-10-CentOS-的包管理-——-yum" class="headerlink" title="1.10 CentOS 的包管理 —— yum"></a>1.10 CentOS 的包管理 —— yum</h3><p>软件的安装有 <code>rpm</code>、<code>yum</code> 和编译安装三种方法，<code>yum</code> 安装最为简单，因为它可以自动解决包之间的依赖关系。</p>
+<p><strong>1.13.1 包的查找和安装</strong></p>
+<pre><code class="shell"># 从源中查找可使用的包
+yum list 包名
+
+yum search 包关键字 #这个的区别在于会匹配到所有含关键字的包
+
+# 从源中安装指定的包
+yum install 包名
+</code></pre>
+<p><strong>1.13.2 源的更换</strong></p>
+<pre><code class="shell"># 备份源
+cd /etc/yum.repos.d/
+mv CentOS-Base.repo CentOS-Base.repo_bak
+
+# 更改源
+wget -O /etc/yum.repos.d/CentOS-Base.repo 源地址
+
+# 清除缓存
+yum clean all
+yum makecache
+
+# 查看设置好的源
+yum repolist
+</code></pre>
+<h3 id="1-11-pwd"><a href="#1-11-pwd" class="headerlink" title="1.11 pwd"></a>1.11 pwd</h3><p>查看当前所在路径。</p>
+<h3 id="1-12-设置开机启动，重启，启动-——-systemctl"><a href="#1-12-设置开机启动，重启，启动-——-systemctl" class="headerlink" title="1.12 设置开机启动，重启，启动 —— systemctl"></a>1.12 设置开机启动，重启，启动 —— systemctl</h3><table>
+<thead>
+<tr>
+<th>任务</th>
+<th>旧指令</th>
+<th>新指令</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>使某服务自动启动</td>
+<td>chkconfig –level 3 httpd on</td>
+<td>systemctl enable httpd.service</td>
+</tr>
+<tr>
+<td>使某服务不自动启动</td>
+<td>chkconfig –level 3 httpd off</td>
+<td>systemctl disable httpd.service</td>
+</tr>
+<tr>
+<td>检查服务状态</td>
+<td>service httpd status</td>
+<td>systemctl status httpd.service</td>
+</tr>
+<tr>
+<td>显示所有已启动的服务</td>
+<td>chkconfig –list</td>
+<td>systemctl list-units –type=service</td>
+</tr>
+<tr>
+<td>启动某服务</td>
+<td>service httpd start</td>
+<td>systemctl start httpd.service</td>
+</tr>
+<tr>
+<td>停止某服务</td>
+<td>service httpd stop</td>
+<td>systemctl stop httpd.service</td>
+</tr>
+<tr>
+<td>重启某服务</td>
+<td>service httpd restart</td>
+<td>systemctl restart httpd.service</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="shell"># 查看所有 systemd 服务
+systemctl list-unit-files
+</code></pre>
+<h3 id="1-13-压缩与解压"><a href="#1-13-压缩与解压" class="headerlink" title="1.13 压缩与解压"></a>1.13 压缩与解压</h3><h4 id="zip-文件"><a href="#zip-文件" class="headerlink" title="zip 文件"></a>zip 文件</h4><pre><code># 安装软件包zip
+yum list zip
+
+
+# 压缩，-q 表示不显示中间输出，-R表示递归压缩
+zip -q -r html.zip /home/Blinux/html
+
+#解压
+unzip test.zip
+</code></pre><h4 id="tar-文件"><a href="#tar-文件" class="headerlink" title="tar 文件"></a>tar 文件</h4><pre><code>-A或--catenate：新增文件到以存在的备份文件；
+-B：设置区块大小；
+-c或--create：建立新的备份文件；
+-C &lt;目录&gt;：这个选项用在解压缩，若要在特定目录解压缩，可以使用这个选项。
+-d：记录文件的差别；
+-x或--extract或--get：从备份文件中还原文件；
+-t或--list：列出备份文件的内容；
+-z或--gzip或--ungzip：通过gzip指令处理备份文件；
+-Z或--compress或--uncompress：通过compress指令处理备份文件；
+-f&lt;备份文件&gt;或--file=&lt;备份文件&gt;：指定备份文件；
+-v或--verbose：显示指令执行过程；
+-r：添加文件到已经压缩的文件；
+-u：添加改变了和现有的文件到已经存在的压缩文件；
+-j：支持bzip2解压文件；
+-v：显示操作过程；
+-l：文件系统边界设置；
+-k：保留原有文件不覆盖；
+-m：保留文件不被覆盖；
+-w：确认压缩文件的正确性；
+-p或--same-permissions：用原来的文件权限还原文件；
+-P或--absolute-names：文件名使用绝对名称，不移除文件名称前的“/”号；
+-N &lt;日期格式&gt; 或 --newer=&lt;日期时间&gt;：只将较指定日期更新的文件保存到备份文件里；
+--exclude=&lt;范本样式&gt;：排除符合范本样式的文件。
+</code></pre><p>几种 tar 文件</p>
+<pre><code>tar -cvf log.tar log2012.log    仅打包，不压缩！ 
+tar -zcvf log.tar.gz log2012.log   打包后，以 gzip 压缩 
+tar -jcvf log.tar.bz2 log2012.log  打包后，以 bzip2 压缩 
+</code></pre><p>在选项f之后的文件档名是自己取的，我们习惯上都用 .tar 来作为辨识。 如果加z选项，则以.tar.gz或.tgz来代表gzip压缩过的tar包；如果加j选项，则以.tar.bz2来作为tar包名。</p>
+<p><strong>压缩</strong></p>
+<pre><code>tar -zxvf /opt/soft/test/log.tar.gz
+</code></pre><p><strong>查看压缩包内容</strong></p>
+<pre><code>tar -ztvf log.tar.gz
+</code></pre><p><strong>解压</strong></p>
+<pre><code># 解压部分文件
+tar -zxvf /opt/soft/test/log30.tar.gz log2013.log
+
+# 解压全部
+tar -zxvf log30.tar.g
+</code></pre><p><strong>其实你只要记以下这个即可</strong></p>
+<pre><code>压　缩：tar -jcv -f filename.tar.bz2 要被压缩的文件或目录名称
+查　询：tar -jtv -f filename.tar.bz2
+解压缩：tar -jxv -f filename.tar.bz2 -C 欲解压缩的目录
+</code></pre><hr>
+<h2 id="2-不常用命令"><a href="#2-不常用命令" class="headerlink" title="2. 不常用命令"></a>2. 不常用命令</h2><h3 id="2-1-uname-r"><a href="#2-1-uname-r" class="headerlink" title="2.1 uname -r"></a>2.1 uname -r</h3><p>查看内核版本。</p>
+<h3 id="2-2-date、cal"><a href="#2-2-date、cal" class="headerlink" title="2.2 date、cal"></a>2.2 date、cal</h3><p>查看日期和日历。</p>
+<h3 id="2-3-shutdown、-sbin-poweroff、init-0"><a href="#2-3-shutdown、-sbin-poweroff、init-0" class="headerlink" title="2.3 shutdown、/sbin/poweroff、init 0"></a>2.3 shutdown、/sbin/poweroff、init 0</h3><p>关机、重启。</p>
+<pre><code class="shell"># 关机
+shutdown -h 
+# 马上关机
+shutdown -h now 
+
+# 重启
+shutdown -r
+reboot
+init 6
+</code></pre>
+<h3 id="2-4-sync"><a href="#2-4-sync" class="headerlink" title="2.4 sync"></a>2.4 sync</h3><p>将数据同步写入硬盘，避免重启或关机时的数据丢失。</p>
+<h1 id="二、技巧"><a href="#二、技巧" class="headerlink" title="二、技巧"></a>二、技巧</h1><h2 id="1-键位"><a href="#1-键位" class="headerlink" title="1. 键位"></a>1. 键位</h2><h3 id="1-1-Tab-键"><a href="#1-1-Tab-键" class="headerlink" title="1.1 Tab 键"></a>1.1 Tab 键</h3><p>按一下补齐命令，按两下显示可选择的命令或文件。</p>
+<h3 id="1-2-Ctrl-C"><a href="#1-2-Ctrl-C" class="headerlink" title="1.2 Ctrl + C"></a>1.2 Ctrl + C</h3><p>中止当前命令。</p>
+<h3 id="1-3-Ctrl-D"><a href="#1-3-Ctrl-D" class="headerlink" title="1.3 Ctrl + D"></a>1.3 Ctrl + D</h3><p>相当于 exit 命令。</p>
+<hr>
+<h2 id="2-命令"><a href="#2-命令" class="headerlink" title="2. 命令"></a>2. 命令</h2><h3 id="2-1-man-info"><a href="#2-1-man-info" class="headerlink" title="2.1 man\info"></a>2.1 man\info</h3><p><code>man + 你想要查询的命令</code> 就会显示说吗，按 <code>q</code> 可返回。<code>\stirng</code> 和 <code>?string</code> 分布向下和向上选择字符串。</p>
+<h3 id="2-2-usr-share-doc-下存有众多软件包的说明文档"><a href="#2-2-usr-share-doc-下存有众多软件包的说明文档" class="headerlink" title="2.2 /usr/share/doc 下存有众多软件包的说明文档"></a>2.2 /usr/share/doc 下存有众多软件包的说明文档</h3><h1 id="三、软件"><a href="#三、软件" class="headerlink" title="三、软件"></a>三、软件</h1><h2 id="1-系统常用软件"><a href="#1-系统常用软件" class="headerlink" title="1. 系统常用软件"></a>1. 系统常用软件</h2><h3 id="1-1-gcc"><a href="#1-1-gcc" class="headerlink" title="1.1 gcc"></a>1.1 gcc</h3><p>用于编译C。</p>
+<h3 id="1-2-wget"><a href="#1-2-wget" class="headerlink" title="1.2 wget"></a>1.2 wget</h3><p>wget 是一个从网络上自动下载文件的自由工具，支持通过 HTTP、HTTPS、FTP 三个最常见的 TCP/IP协议 下载，并可以使用 HTTP 代理。</p>
+<h3 id="1-3-make"><a href="#1-3-make" class="headerlink" title="1.3 make"></a>1.3 make</h3><p>用于编译和安装。</p>
+<h3 id="1-4-net-tools-iproute2-操作"><a href="#1-4-net-tools-iproute2-操作" class="headerlink" title="1.4 net-tools \ iproute2 操作"></a>1.4 net-tools \ iproute2 <a href="http://blog.jobbole.com/97270/" target="_blank" rel="noopener">操作</a></h3><p>iproute2的出现旨在从功能上取代net-tools</p>
+<h3 id="1-5-rz-和-sz"><a href="#1-5-rz-和-sz" class="headerlink" title="1.5 rz 和 sz"></a>1.5 rz 和 sz</h3><p>用于通过命令行下载和上传文件，包名为 <code>lrzsz</code>，<code>rz</code> 为上传， <code>sz</code> 为下载。</p>
+<h3 id="1-6-ftp-和-lftp"><a href="#1-6-ftp-和-lftp" class="headerlink" title="1.6 ftp 和 lftp"></a>1.6 ftp 和 lftp</h3><p>用于访问 ftp 服务器，<code>yum install ftp</code> 和 <code>yum install lftp</code> 安装。</p>
+<h3 id="1-7-vsftp"><a href="#1-7-vsftp" class="headerlink" title="1.7 vsftp"></a>1.7 vsftp</h3><p>用户设置 ftp 账户，包名为 <code>vsftpd</code>，安装后设置开机启动然后启动。</p>
+<h1 id="四、重要系统文件"><a href="#四、重要系统文件" class="headerlink" title="四、重要系统文件"></a>四、重要系统文件</h1><h2 id="1-账户、组相关"><a href="#1-账户、组相关" class="headerlink" title="1. 账户、组相关"></a>1. 账户、组相关</h2><p>三个重要文件：</p>
+<p><strong>/etc/passwd</strong>: 存储账户的文件。</p>
+<p><strong>/etc/shadow</strong>: 存储密码的文件。</p>
+<p><strong>/etc/group</strong>: 存储组的文件。</p>
+<p>关于权限：</p>
+<p><strong>-rwxrwxrwx</strong>: 第一个字符的含意。</p>
+<p>d —— 目录<br>- —— 文件<br>l —— 连接文件<br>b —— 可供存储的接口设备<br>c —— 串行端口设备，例如键盘和鼠标</p>
+<h3 id="1-1-etc-passwd-介绍"><a href="#1-1-etc-passwd-介绍" class="headerlink" title="1.1 /etc/passwd 介绍"></a>1.1 /etc/passwd 介绍</h3><p>从其中取一行作为示例：</p>
+<pre><code># ：作为分隔符，分成七个字段
+root:x:0:0:root:/root:/bin/bash
+</code></pre><p>七个字段分别为：</p>
+<ol>
+<li>账户名</li>
+<li>密码：在以前 UNIX 的时候，密码是存在这的，但后来为了安全改了，这里现在一般都是 x</li>
+<li>UID：0 是系统管理员，1~499 是系统账号，其中 1~99 为系统自行创建的系统账号，100~499 为用户有系统账号需要时可以使用的UID，500~65535 为可登陆账号。</li>
+<li>GID</li>
+<li>用户信息说明</li>
+<li>主文件夹</li>
+<li>Shell：/bin/bash 表示能用 shell 登陆，/sbin/nologin 表示不能用 shell 登陆。</li>
+</ol>
+<h3 id="1-2-etc-shadow-介绍"><a href="#1-2-etc-shadow-介绍" class="headerlink" title="1.2 /etc/shadow 介绍"></a>1.2 /etc/shadow 介绍</h3><p>从中取几行作为示例：</p>
+<pre><code># ：作为分隔符，分成九个字段
+root:$6$XE6mMo/$ugMPYPDW9.hv7royLYKwKg0EkBBzhT2Od.SH0KpDTI7ixp5Z4kTGm:17599:0:99999:7:::
+bin:*:17110:0:99999:7:::
+daemon:*:17110:0:99999:7:::
+</code></pre><ol>
+<li>账号名称</li>
+<li>密码</li>
+<li>最近更动密码的日期：从1970年1月1日以来的天数。</li>
+<li>密码不可被更动的天数（与第3个字段相比）</li>
+<li>密码需要重新更改的天数（与第3个字段相比）</li>
+<li>密码需要更改期限前的警告天数（与第5个字段相比）</li>
+<li>密码过期后的账号宽限时间（密码失效日）（与第5个字段相比）：密码有效期为第三个字段 + 第五个字段。如果过期用户没有改密码，会在在用户登录的时候提醒更改密码之后才能操作，这段时间就是宽限时间。</li>
+<li>账号失效日期：账号失效日期，无论前面的密码字段是怎么设置的密码有效期，只要超过这个日期，账号就失效了。</li>
+<li>保留字段</li>
+</ol>
+<h3 id="1-3-etc-group-介绍"><a href="#1-3-etc-group-介绍" class="headerlink" title="1.3 /etc/group 介绍"></a>1.3 /etc/group 介绍</h3><p>依旧从文件中取几行来做示例：</p>
+<pre><code># ：作为分隔符，分成四个字段
+root:x:0:
+bin:x:1:
+daemon:x:2:
+</code></pre><ol>
+<li>用户组名称</li>
+<li>用户组密码：和前面一样，密码已经移动到 /etc/gshadow 去了，这里只有一个 x</li>
+<li>GID</li>
+<li>此用户组支持的账号名称: 某个账号想要加入此用户组时，填入这个字段，多个账户用逗号隔开</li>
+</ol>
+<p><strong>次要用户组和初始用户组</strong><br>初始用户组是创建账号时自动拥有的，不需要填入 /etc/group 的第四个字段。填入 /etc/group 的用户属于<strong>次要用户组</strong>。</p>
+<p><strong>有效用户组</strong><br>那当一个用户属于两个用户组并新建了一个文件或者文件夹时，这个文件或文件夹的所属组到底是哪个？<br>这就涉及到<strong>有效用户组</strong>的概念了，通过 <code>groups</code> 命令可以列出当前用户的所属组，其中排在第一个的就是有效用户组，有效用户组会是当前用户新建文件或者文件夹的所属组。</p>
+<p><strong>更改有效用户组</strong><br>如何更改有效用户组呢？可以使用 <code>newgrp</code> 命令，当前用户输入 <code>newgrp 所属的另一个用户组</code>，即可把当前用户组更改为所选择的用户组。<br>不过值得注意的是：这个是通过新建一个 Shell 来完成的，命令运行完后，你可以用 <code>exit</code> 回到先前的 Shell。</p>
+<h3 id="1-4-etc-gshadow-介绍"><a href="#1-4-etc-gshadow-介绍" class="headerlink" title="1.4 /etc/gshadow 介绍"></a>1.4 /etc/gshadow 介绍</h3><p>依旧从文件中取几行来做示例：</p>
+<pre><code># ：作为分隔符，分成四个字段
+root:::
+bin:::root,bin
+utempter:!::
+</code></pre><ol>
+<li>用户组名</li>
+<li>密码列，如果为！表示为无合法密码，所以无用户组管理员</li>
+<li>用户组管理员账号</li>
+<li>用户组的所属账号</li>
+</ol>
+<p>这个文件的主要作用是创建组管理员，例如有些只能使用 root 账户管理的事务，可能很多时候 root 账户比较忙碌，就可以添加一个用户组来解决这个问题。不过由于现在有 sudo 命名，所以这个组管理员的功能已经很少使用了。</p>
+<h1 id="五、常用操作"><a href="#五、常用操作" class="headerlink" title="五、常用操作"></a>五、常用操作</h1><h2 id="1-账户、组操作"><a href="#1-账户、组操作" class="headerlink" title="1. 账户、组操作"></a>1. 账户、组操作</h2><h3 id="1-1-账户新建-——-useradd"><a href="#1-1-账户新建-——-useradd" class="headerlink" title="1.1 账户新建 —— useradd"></a>1.1 账户新建 —— useradd</h3><p>通过这个命令可以新建一个账户，有以下这些常用参数：</p>
+<ol>
+<li>[-d 目录绝对路径]：指定某个目录成为主文件夹；</li>
+<li>[-r]：创建一个系统账户，系统账户默认不会创建用户文件夹；</li>
+<li>[-s shell]： shell 可选 /bin/bash 和 /sbin/nologin</li>
+</ol>
+<pre><code># 创建一个账户，新建的账户没有密码，还无法登录
+useradd Test
+</code></pre><p>运行上面的命令会创建一个叫做 <code>Test</code> 的账户，并创建一个 /home/Test 的用户主文件夹，权限为700.同时还会创建一个和用户名一样的组。</p>
+<p>然后你查看 /etc/passwd 和 /etc/goup 你会发现，密码字段的一些属性，已经默认规定好了，这个默认属性是哪里来的呢？<br>答案就在 /etc/default/useradd 这个文件中。</p>
+<h3 id="1-2-账户密码修改-——-passwd"><a href="#1-2-账户密码修改-——-passwd" class="headerlink" title="1.2 账户密码修改 —— passwd"></a>1.2 账户密码修改 —— passwd</h3><p>密码的修改有两种途径，一种是用 root 账户修改指定账户的密码，一种是账户登录后自己修改自己的密码。</p>
+<pre><code># root 修改其他账户的密码
+passwd Test
+
+# 账户修改自己的密码，账户修改自己的密码时要先输入旧密码
+passwd
+</code></pre><h3 id="1-3-账户删除-——-userdel"><a href="#1-3-账户删除-——-userdel" class="headerlink" title="1.3 账户删除 —— userdel"></a>1.3 账户删除 —— userdel</h3><p>建议只有在账号真的确定不要使用的时候再删除，否则可以用各种方法让账户先失效。</p>
+<pre><code># r 参数连同主文件夹一起删除
+userdel -r username
+</code></pre><p>一般账号使用一段时间后总会生成一些属于这个账号的文件，这些文件无法通过上面的命令删除，所以可以通过 <code>find / -user username</code> 找出来一一删除。</p>
+<h3 id="1-4-账户修改-——-chsh-usermod"><a href="#1-4-账户修改-——-chsh-usermod" class="headerlink" title="1.4 账户修改 —— chsh \ usermod"></a>1.4 账户修改 —— chsh \ usermod</h3><p>使用这个命令可以修改账户的可用shell，有两个参数。</p>
+<pre><code># 列出系统可用的 shell
+chsh -l
+
+# 修改当前用户的 shell
+chsh -s /sbin/nologin
+
+# usermod 也可以
+usermod -s /bin/bash username
+
+# 添加用户的附加群组
+usermod -G groupname username
+</code></pre><h2 id="2-文件所属、权限操作"><a href="#2-文件所属、权限操作" class="headerlink" title="2. 文件所属、权限操作"></a>2. 文件所属、权限操作</h2><h2 id="3-文档新建操作"><a href="#3-文档新建操作" class="headerlink" title="3. 文档新建操作"></a>3. 文档新建操作</h2><h3 id="3-1-nano"><a href="#3-1-nano" class="headerlink" title="3.1 nano"></a>3.1 nano</h3><p>打开一个文件，不存在则新建 —— nano<br><code>F1</code> 打开帮助文档。</p>
+<h3 id="3-2-vi"><a href="#3-2-vi" class="headerlink" title="3.2 vi"></a>3.2 vi</h3><h3 id="3-3-touch"><a href="#3-3-touch" class="headerlink" title="3.3 touch"></a>3.3 touch</h3><h1 id="六、答疑解惑"><a href="#六、答疑解惑" class="headerlink" title="六、答疑解惑"></a>六、答疑解惑</h1><h3 id="1-apt-和-apt-get-有什么区别？-了解更多"><a href="#1-apt-和-apt-get-有什么区别？-了解更多" class="headerlink" title="1. apt 和 apt-get 有什么区别？ 了解更多"></a>1. <code>apt</code> 和 <code>apt-get</code> 有什么区别？ <a href="https://www.sysgeek.cn/apt-vs-apt-get/" target="_blank" rel="noopener">了解更多</a></h3><blockquote>
+<p>简单来说就是：apt = apt-get、apt-cache 和 apt-config 中最常用命令选项的集合。另外 apt 命令可以在某些操作时显示进度条。以上应该是最直观的解释。</p>
+</blockquote>
+<p>而 <code>apt-cache</code> 和 <code>apt-config</code> 是低级但含有众多功能的命令，不过使用频率很低。</p>
+<h3 id="2-deepin-桌面：对一些安装后没有图标的软件如何新建一个图标"><a href="#2-deepin-桌面：对一些安装后没有图标的软件如何新建一个图标" class="headerlink" title="2. deepin 桌面：对一些安装后没有图标的软件如何新建一个图标"></a>2. deepin 桌面：对一些安装后没有图标的软件如何新建一个图标</h3><p>管理员权限打开 <code>/usr/share/applications</code> ,新建 <code>名字.desktop</code>,写入：</p>
+<pre><code>[Desktop Entry] 
+Type=Application 
+Name=Pycharm 
+GenericName=Pycharm3 
+Comment=Pycharm3:The Python IDE 
+Exec=sh /home/sky/Application/pycharm-2017.3.3/bin/pycharm.sh   # 程序路径
+Icon=/home/sky/Application/pycharm-2017.3.3/bin/pycharm.png     # 图标路径
+Terminal=false
+StartupNotify=true
+Type=Application
+Categories=Application;Development;
+</code></pre><h3 id="3-Linux-下各目录文件的作用"><a href="#3-Linux-下各目录文件的作用" class="headerlink" title="3. Linux 下各目录文件的作用"></a>3. Linux 下各目录文件的作用</h3><p>/bin 二进制可执行命令<br>/dev 设备特殊文件<br>/etc 系统管理和配置文件<br>/etc/rc.d 启动的配置文件和脚本<br>/home 用户主目录的基点，比如用户user的主目录就是/home/user，可以用~user表示<br>/lib 标准程序设计库，又叫动态链接共享库，作用类似windows里的.dll文件<br>/sbin 系统管理命令，这里存放的是系统管理员使用的管理程序<br>/tmp 公用的临时文件存储点<br>/root 系统管理员的主目录（呵呵，特权阶级）<br>/mnt 系统提供这个目录是让用户临时挂载其他的文件系统。<br>/lost+found 这个目录平时是空的，系统非正常关机而留下“无家可归”的文件（windows下叫什么.chk）就在这里<br>/proc 虚拟的目录，是系统内存的映射。可直接访问这个目录来获取系统信息。<br>/var 某些大文件的溢出区，比方说各种服务的日志文件<br>/usr 最庞大的目录，要用到的应用程序和文件几乎都在这个目录。其中包含：<br>/usr/x11r6 存放x window的目录<br>/usr/bin 众多的应用程序<br>/usr/sbin 超级用户的一些管理程序<br>/usr/doc linux文档<br>/usr/include linux下开发和编译应用程序所需要的头文件<br>/usr/lib 常用的动态链接库和软件包的配置文件<br>/usr/man 帮助文档<br>/usr/src 源代码，linux内核的源代码就放在/usr/src/linux里<br>/usr/local/bin 本地增加的命令<br>/usr/local/lib 本地增加的库</p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 changyan -->
+<div id="changyan-comment">
+    <!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="2018/02/13/Linux常用命令&amp;基础知识/"  ></div>
+<script type="text/javascript">
+(function(){
+var appid = 'cyt4hOWBJ';
+var conf = '80d25ad8e61164f63c15273437d47890';
+var width = window.innerWidth || document.documentElement.clientWidth;
+if (width < 960) {
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+
+</div>
+<style>
+    #changyan-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/03/16/记一次完整的Linux环境配置/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/02/13/快查-Python/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(https://ooo.0o0.ooo/2017/06/19/5947a4c3a936a.jpg);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="https://ooo.0o0.ooo/2017/06/19/5947a26ed9af5.jpg" alt="Arony's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        sky.arony@qq.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">二月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="标签云">
+                
+                    <i class="material-icons sidebar-material-icons">label outline</i>
+                
+                标签云
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/gallery" title="相册">
+                
+                    <i class="material-icons sidebar-material-icons">photo</i>
+                
+                相册
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline" title="时间轴">
+                
+                    <i class="material-icons sidebar-material-icons">timeline</i>
+                
+                时间轴
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/about" title="关于我">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                关于我
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/links" title="友情链接">
+                
+                    <i class="material-icons sidebar-material-icons">link</i>
+                
+                友情链接
+            </a>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+        <a href="http://weibo.com/2112550135/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/skyArony" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+        <a href="http://space.bilibili.com/30387945/#!/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-bilibili">
+                <span class="visuallyhidden">Bilibili</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;2017&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Arony's 技术博客
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+    <!-- Leancloud -->
+    <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+    <script>
+        AV.initialize('MA3ePB77pgSwRAhI6NTRHcd5-gzGzoHsz', '5tEL3rl9PsLi9hrcoVky3VYp');
+    </script>
+    <script type="text/ls-javascript" id="leancloud-views-script">
+    function showTime(Counter) {
+        var query = new AV.Query(Counter);
+        $('.leancloud-views_num').each(function() {
+            var url = $(this).attr('id').trim();
+            query.equalTo('url', url);
+            query.find({
+                success: function(results) {
+                    if (results.length === 0) {
+                        var content = '0 ' + $(document.getElementById(url)).text();
+                        $(document.getElementById(url)).text(content);
+                        return;
+                    }
+                    for (var i = 0; i < results.length; i++) {
+                        var object = results[i];
+                        var content = object.get('time') + ' ' + $(document.getElementById(url)).text();
+                        $(document.getElementById(url)).text(content);
+                    }
+                },
+                error: function(object, error) {
+                    console.log('Error: ' + error.code + ' ' + error.message);
+                }
+            });
+        });
+    }
+
+    function addCount(Counter) {
+      var Counter = AV.Object.extend('Counter');
+      url = $('.leancloud-views_num').attr('id').trim();
+      title = $('.leancloud-views_num').attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+      query.equalTo('url', url);
+      query.find({
+          success: function(results) {
+            if (results.length > 0) {
+                var counter = results[0];
+                counter.fetchWhenSave(true);
+                counter.increment('time');
+                counter.save(null, {
+                    success: function(counter) {
+                        var content =  counter.get('time') + ' ' + $(document.getElementById(url)).text();
+                        $(document.getElementById(url)).text(content);
+                    },
+                    error: function(counter, error) {
+                        console.log('Failed to save Visitor num, with error message: ' + error.message);
+                    }
+                });
+            } else {
+              var newcounter = new Counter();
+              newcounter.set('title', title);
+              newcounter.set('url', url);
+              newcounter.set('time', 1);
+              newcounter.save(null, {
+                  success: function(newcounter) {
+                      console.log('newcounter.get(\'time\')='+newcounter.get('time'));
+                      var content = newcounter.get('time') + ' ' + $(document.getElementById(url)).text();
+                      $(document.getElementById(url)).text(content);
+                  },
+                  error: function(newcounter, error) {
+                      console.log('Failed to create');
+                  }
+              });
+            }
+        },
+        error: function(error) {
+            console.log('Error:' + error.code + ' ' + error.message);
+        }
+      });
+    }
+    $(function() {
+        var Counter = AV.Object.extend('Counter');
+        if ($('.leancloud-views_num').length === 1) {
+            addCount(Counter);
+        } else if ($('.post-title-link').length > 1) {
+            showTime(Counter);
+        }
+    });
+</script>
+
+
+
+
+
+
+   <!-- 畅言公共 js 代码 start -->
+<script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cyt4hOWBJ">
+</script>
+<!-- 畅言公共 js 代码 end -->
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>

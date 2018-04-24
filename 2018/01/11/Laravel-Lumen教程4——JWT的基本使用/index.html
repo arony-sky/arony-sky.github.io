@@ -1,0 +1,1488 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.2 -->
+    <script>
+        window.materialVersion = "1.5.2"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net"/>
+
+
+
+    <link rel="dns-prefetch" href="https://changyan.sohu.com"/>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            Laravel/Lumen教程（四）——JWT的基本使用 | 
+        
+        Arony&#39;s 技术博客
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/logo.png">
+    <link rel="icon" href="/img/logo.png">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="遗世独立的理想乡">
+    <meta name="keywords" content="skyArony，三翼,Laravel,Lumen,PHP,JWT">
+    <meta name="theme-color" content="#607d8b">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/tranquil-heart.min.css?ul3p9I9MsbOxK0L+BHzDDg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #2780e3;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #607d8b !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #607d8b !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #607d8b !important;
+  }
+
+  .toTop {
+    background: #607d8b !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #607d8b;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #607d8b;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #607d8b;
+  }
+
+  .post-toc a:hover {
+    color: #2780e3;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg2018.png);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Arony&#39;s 技术博客">
+    <meta name="msapplication-starturl" content="http://blog.yfree.cc/2018/01/11/Laravel-Lumen教程4——JWT的基本使用/">
+    <meta name="msapplication-navbutton-color" content="#607d8b">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Arony&#39;s 技术博客">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/logo.png">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://blog.yfree.cc/2018/01/11/Laravel-Lumen教程4——JWT的基本使用/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Laravel/Lumen教程（四）——JWT的基本使用 | Arony&#39;s 技术博客">
+    <meta property="og:image" content="/img/logo.png">
+    <meta property="og:description" content="遗世独立的理想乡">
+    <meta property="og:article:tag" content="Laravel"> <meta property="og:article:tag" content="Lumen"> <meta property="og:article:tag" content="PHP"> <meta property="og:article:tag" content="JWT"> 
+
+    
+        <meta property="article:published_time" content="Thu Jan 11 2018 18:15:57 GMT+0800">
+        <meta property="article:modified_time" content="Fri Mar 23 2018 22:59:22 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://blog.yfree.cc/2018/01/11/Laravel-Lumen教程4——JWT的基本使用/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://blog.yfree.cc/2018/01/11/Laravel-Lumen教程4——JWT的基本使用/index.html",
+    "headline": "Laravel/Lumen教程（四）——JWT的基本使用",
+    "datePublished": "Thu Jan 11 2018 18:15:57 GMT+0800",
+    "dateModified": "Fri Mar 23 2018 22:59:22 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Arony",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://ooo.0o0.ooo/2017/06/19/5947a26ed9af5.jpg"
+        },
+        "description": "遗世独立的理想乡"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Arony&#39;s 技术博客",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/logo.png"
+        }
+    },
+    "keywords": ",Laravel,Lumen,PHP,JWTskyArony，三翼",
+    "description": "遗世独立的理想乡",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+        <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1273154911&web_id=1273154911" language="JavaScript"></script>
+</div>
+    
+
+    <!-- Custom Head -->
+    
+        
+            <style>code{font-family: consolas, Menlo, 'PingFang SC', 'Microsoft YaHei', monospace;color:#c33;margin: 0 2px;padding: 0 5px;background-color: rgba(0,0,0,.04);border-radius: 3px;}</style>
+        
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#一、安装之前"><span class="post-toc-text">一、安装之前</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#二、安装及基础配置"><span class="post-toc-text">二、安装及基础配置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-使用-composer-安装"><span class="post-toc-text">1. 使用 composer 安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-修改配置文件"><span class="post-toc-text">2. 修改配置文件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-1-取消一些行的注释"><span class="post-toc-text">2.1 取消一些行的注释</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Lumen-————-bootstrap-app-php"><span class="post-toc-text">Lumen ———— bootstrap/app.php</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-2-添加服务提供者"><span class="post-toc-text">2.2 添加服务提供者</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Lumen"><span class="post-toc-text">Lumen</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Laravel"><span class="post-toc-text">Laravel</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-3-发布配置文件到config文件夹"><span class="post-toc-text">2.3 发布配置文件到config文件夹</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Laravel-1"><span class="post-toc-text">Laravel</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Lumen-1"><span class="post-toc-text">Lumen</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#auth-php"><span class="post-toc-text">auth.php</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-4-配置jwt-secret"><span class="post-toc-text">2.4 配置jwt_secret</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-5-更新你的User模型"><span class="post-toc-text">2.5 更新你的User模型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-6-配置-auth-php"><span class="post-toc-text">2.6 配置 auth.php</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#三、简单demo"><span class="post-toc-text">三、简单demo</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-新建-AuthController"><span class="post-toc-text">1. 新建 AuthController</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-设定路由"><span class="post-toc-text">2. 设定路由</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-1-一个值得注意的地方"><span class="post-toc-text">2.1 一个值得注意的地方</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-Token-的获取、使用、删除和刷新"><span class="post-toc-text">3. Token 的获取、使用、删除和刷新</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-1-获取一个-token"><span class="post-toc-text">3.1 获取一个 token</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-2-带上-token-访问受保护的资源"><span class="post-toc-text">3.2 带上 token 访问受保护的资源</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#不带-token-的错误返回"><span class="post-toc-text">不带 token 的错误返回</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#附带-token-进行访问的两种方式"><span class="post-toc-text">附带 token 进行访问的两种方式</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-3-删除一个-token"><span class="post-toc-text">3.3 删除一个 token</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-4-刷新你的-token"><span class="post-toc-text">3.4 刷新你的 token</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-token-的组成、创建以及解析"><span class="post-toc-text">4. token 的组成、创建以及解析</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-1-token-的组成"><span class="post-toc-text">4.1 token 的组成</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#头部（header）"><span class="post-toc-text">头部（header）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#载荷（Payload）"><span class="post-toc-text">载荷（Payload）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#签名（Signature）"><span class="post-toc-text">签名（Signature）</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-2-token-的创建"><span class="post-toc-text">4.2 token 的创建</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#a-基于请求中的参数"><span class="post-toc-text">a) 基于请求中的参数</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#b-基于users表中的用户信息-数组"><span class="post-toc-text">b) 基于users表中的用户信息 + 数组</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#c-基于任何你喜欢的东西，为更高级的定制提供了可能（这是从文档直接复制的，没做具体实验，以后用到这再更新）"><span class="post-toc-text">c) 基于任何你喜欢的东西，为更高级的定制提供了可能（这是从文档直接复制的，没做具体实验，以后用到这再更新）</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-3-token-的解析"><span class="post-toc-text">4.3 token 的解析</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#a-把-token-解析到对象，会返回一个对象"><span class="post-toc-text">a) 把 token 解析到对象，会返回一个对象</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#b-获取到原先嵌入到-token-的-user-信息"><span class="post-toc-text">b) 获取到原先嵌入到 token 的 user 信息</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#c-获取-token-，如果-token-被设置则会返回，否则会尝试使用方法从请求中解析-token-，如果token未被设置或不能解析最终返回false。"><span class="post-toc-text">c) 获取 token ，如果 token 被设置则会返回，否则会尝试使用方法从请求中解析 token ，如果token未被设置或不能解析最终返回false。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#d-甚至可以设置-token-。"><span class="post-toc-text">d) 甚至可以设置 token 。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#e-获取载荷"><span class="post-toc-text">e) 获取载荷</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#f-如果是前端"><span class="post-toc-text">f) 如果是前端</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-解释一下-JWTAuth-和-Auth"><span class="post-toc-text">5. 解释一下 JWTAuth:: 和 Auth::</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-1-区别"><span class="post-toc-text">5.1 区别</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#刷新-token"><span class="post-toc-text">刷新 token</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#注销-token"><span class="post-toc-text">注销 token</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#设置-custom-claims"><span class="post-toc-text">设置 custom claims</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-Token-的相关属性设置"><span class="post-toc-text">6. Token 的相关属性设置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-1-有效时间、刷新时间、宽限时间"><span class="post-toc-text">6.1 有效时间、刷新时间、宽限时间</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#有效时间"><span class="post-toc-text">有效时间</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#刷新时间"><span class="post-toc-text">刷新时间</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#宽限时间"><span class="post-toc-text">宽限时间</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7-关于-JWT-的讨论"><span class="post-toc-text">7. 关于 JWT 的讨论</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-1-为什么用-JWT？"><span class="post-toc-text">7.1 为什么用 JWT？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-2-token-的刷新问题？"><span class="post-toc-text">7.2 token 的刷新问题？</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#token-为什么要刷新吗？"><span class="post-toc-text">token 为什么要刷新吗？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#a-token-有效期多久合适，刷新频率多久合适？"><span class="post-toc-text">a) token 有效期多久合适，刷新频率多久合适？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#b-有没有必要每次都刷新-token-？"><span class="post-toc-text">b) 有没有必要每次都刷新 token ？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#token-的刷新总结"><span class="post-toc-text">token 的刷新总结</span></a></li></ol></li></ol></li></ol></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://osv9x79o9.bkt.clouddn.com/18-1-12/98107758.jpg)">
+    
+            <p class="article-headline-p">
+                Laravel/Lumen教程（四）——JWT的基本使用
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="https://ooo.0o0.ooo/2017/06/19/5947a26ed9af5.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Arony</strong>
+        <span>1月 11, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/JWT/">JWT</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Laravel/">Laravel</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Lumen/">Lumen</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/PHP/">PHP</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    <!-- Leancloud Views -->
+        <a class="post_share-link" href="#">
+            <li class="mdl-menu__item">
+                <span id="/2018/01/11/Laravel-Lumen教程4——JWT的基本使用/" class="leancloud-views_num" data-flag-title="Laravel/Lumen教程（四）——JWT的基本使用">
+     &nbsp;浏览量
+</span>
+
+            </li>
+        </a>
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Laravel/Lumen教程（四）——JWT的基本使用&url=http://blog.yfree.cc/2018/01/11/Laravel-Lumen教程4——JWT的基本使用/index.html&pic=http://blog.yfree.cc/img/logo.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.yfree.cc/2018/01/11/Laravel-Lumen教程4——JWT的基本使用/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Arony&#39;s 技术博客&title=Laravel/Lumen教程（四）——JWT的基本使用&summary=遗世独立的理想乡&pics=http://blog.yfree.cc/img/logo.png&url=http://blog.yfree.cc/2018/01/11/Laravel-Lumen教程4——JWT的基本使用/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p><strong>JWT</strong> 全称 <strong>JSON Web Tokens</strong> ，是一个非常轻巧的规范。这个规范允许我们使用JWT在用户和服务器之间传递安全可靠的信息。它的两大使用场景是：认证和数据交换。</p>
+<h1 id="一、安装之前"><a href="#一、安装之前" class="headerlink" title="一、安装之前"></a>一、安装之前</h1><p>先摆出几个参考资料，可以把连接都打开，方便查阅：</p>
+<ul>
+<li><a href="https://github.com/tymondesigns/jwt-auth/wiki/Installation" target="_blank" rel="noopener">项目Wiki</a></li>
+<li><a href="https://mp.weixin.qq.com/s/KVUQE2DUetNB2kqxHs0VDg" target="_blank" rel="noopener">公众号coding01</a>，<a href="https://juejin.im/post/5a0812a16fb9a0451704ad96" target="_blank" rel="noopener">JWT安装及简单例子</a></li>
+<li><a href="http://jwt-auth.readthedocs.io/en/docs/laravel-installation/" target="_blank" rel="noopener">官方安装指导文档</a></li>
+<li><a href="https://jwt.io/introduction/" target="_blank" rel="noopener">JWT的介绍</a></li>
+</ul>
+<h1 id="二、安装及基础配置"><a href="#二、安装及基础配置" class="headerlink" title="二、安装及基础配置"></a>二、安装及基础配置</h1><h2 id="1-使用-composer-安装"><a href="#1-使用-composer-安装" class="headerlink" title="1. 使用 composer 安装"></a>1. 使用 composer 安装</h2><p><strong>命令行安装</strong></p>
+<p>执行</p>
+<pre><code>// 建议使用1.0以上版本
+composer require tymon/jwt-auth 1.*@rc
+</code></pre><p><strong>配置文件安装</strong></p>
+<p>打开 <code>composer.json</code> 文件,增加以下内容：</p>
+<pre><code class="php">// 我当时可用的版本是这个
+&quot;require&quot;: {&quot;dingo/api&quot;:&quot;1.*@rc&quot;}
+</code></pre>
+<p>执行</p>
+<pre><code>composer update
+</code></pre><h2 id="2-修改配置文件"><a href="#2-修改配置文件" class="headerlink" title="2. 修改配置文件"></a>2. 修改配置文件</h2><h3 id="2-1-取消一些行的注释"><a href="#2-1-取消一些行的注释" class="headerlink" title="2.1 取消一些行的注释"></a>2.1 取消一些行的注释</h3><h4 id="Lumen-————-bootstrap-app-php"><a href="#Lumen-————-bootstrap-app-php" class="headerlink" title="Lumen ———— bootstrap/app.php"></a>Lumen ———— bootstrap/app.php</h4><p>把以下的注释取消</p>
+<pre><code class="php">// 如果你是安装教程一步一步来的，这一行应该前面已经取消了
+$app-&gt;withFacades();
+
+// 增加 auth 中间件
+$app-&gt;routeMiddleware([
+    &#39;auth&#39; =&gt; App\Http\Middleware\Authenticate::class,
+]);
+
+// 认证所需
+$app-&gt;register(App\Providers\AuthServiceProvider::class);
+</code></pre>
+<h3 id="2-2-添加服务提供者"><a href="#2-2-添加服务提供者" class="headerlink" title="2.2 添加服务提供者"></a>2.2 添加服务提供者</h3><h4 id="Lumen"><a href="#Lumen" class="headerlink" title="Lumen"></a>Lumen</h4><p><strong>bootstrap/app.php</strong> 文件中，在服务提供者位置添加</p>
+<pre><code class="php">// 有些文档里是说添加 Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class ，可能是以前版本的，我也不是很清楚
+$app-&gt;register(\Tymon\JWTAuth\Providers\LumenServiceProvider::class);
+</code></pre>
+<h4 id="Laravel"><a href="#Laravel" class="headerlink" title="Laravel"></a>Laravel</h4><p><strong>config/app.php</strong> 中 添加：</p>
+<pre><code class="php">&#39;providers&#39; =&gt; [
+    ...
+    Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
+]
+</code></pre>
+<h3 id="2-3-发布配置文件到config文件夹"><a href="#2-3-发布配置文件到config文件夹" class="headerlink" title="2.3 发布配置文件到config文件夹"></a>2.3 发布配置文件到config文件夹</h3><h4 id="Laravel-1"><a href="#Laravel-1" class="headerlink" title="Laravel"></a>Laravel</h4><pre><code>php artisan vendor:publish --provider=&quot;Tymon\JWTAuth\Providers\LaravelServiceProvider&quot;
+</code></pre><p>成功后config文件夹中会多一个 <code>jwt.php</code> 配置文件</p>
+<h4 id="Lumen-1"><a href="#Lumen-1" class="headerlink" title="Lumen"></a>Lumen</h4><p><strong>Lumen</strong> 中没有 <code>publish</code> 命令，直接在 <code>Vendor/tymon/jwt-auth/config</code> 目录找到文件 <code>config.php</code> 复制到 <code>\config</code> 下并重命名为 <code>jwt.php</code> 即可。</p>
+<h4 id="auth-php"><a href="#auth-php" class="headerlink" title="auth.php"></a>auth.php</h4><p>除此之外，把 <code>\vendor\laravel\lumen-framework\config\auth.php</code> 也复制到 <code>config</code> 文件夹</p>
+<h3 id="2-4-配置jwt-secret"><a href="#2-4-配置jwt-secret" class="headerlink" title="2.4 配置jwt_secret"></a>2.4 配置jwt_secret</h3><pre><code>php artisan jwt:secret
+</code></pre><p>执行后会在 <code>.env</code> 文件生成 <code>JWT_SECRET</code></p>
+<h3 id="2-5-更新你的User模型"><a href="#2-5-更新你的User模型" class="headerlink" title="2.5 更新你的User模型"></a>2.5 更新你的User模型</h3><pre><code class="php">// 引入这个
+use Tymon\JWTAuth\Contracts\JWTSubject;
+
+// 添加到 implements 后
+class User extends Model implements AuthenticatableContract, AuthorizableContract, JWTSubject
+
+// 添加以下方法
+/**
+ * Get the identifier that will be stored in the subject claim of the JWT.
+ *
+ * @return mixed
+  */
+public function getJWTIdentifier()
+{
+    return $this-&gt;getKey();
+}
+
+/**
+ * Return a key value array, containing any custom claims to be added to the JWT.
+ *
+ * @return array
+  */
+public function getJWTCustomClaims()
+{
+    return [];
+}
+</code></pre>
+<h3 id="2-6-配置-auth-php"><a href="#2-6-配置-auth-php" class="headerlink" title="2.6 配置 auth.php"></a>2.6 配置 auth.php</h3><p>在这里，我们告诉 <code>api</code> guard 使用 <code>jwt</code> 驱动程序，我们将 <code>api</code> guard 设置为默认值。</p>
+<pre><code class="php">&#39;defaults&#39; =&gt; [
+    &#39;guard&#39; =&gt; &#39;api&#39;,
+    &#39;passwords&#39; =&gt; &#39;users&#39;,
+],
+
+...
+
+&#39;guards&#39; =&gt; [
+    &#39;api&#39; =&gt; [
+        &#39;driver&#39; =&gt; &#39;jwt&#39;,
+        &#39;provider&#39; =&gt; &#39;users&#39;,
+    ],
+],
+
+...
+
+&#39;providers&#39; =&gt; [
+    &#39;users&#39; =&gt; [
+        &#39;driver&#39; =&gt; &#39;eloquent&#39;,
+        &#39;model&#39; =&gt; \App\User::class
+    ]
+],
+</code></pre>
+<h1 id="三、简单demo"><a href="#三、简单demo" class="headerlink" title="三、简单demo"></a>三、简单demo</h1><h2 id="1-新建-AuthController"><a href="#1-新建-AuthController" class="headerlink" title="1. 新建 AuthController"></a>1. 新建 <code>AuthController</code></h2><pre><code class="php">&lt;?php
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Controller;
+use Tymon\JWTAuth\Facades\JWTAuth;
+
+class AuthController extends Controller
+{
+    /**
+     * 添加一个认证中间件，因为获取token无需认证，所以把createToken除外
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this-&gt;middleware(&#39;auth:api&#39;, [&#39;except&#39; =&gt; [&#39;createToken&#39;, &#39;refreshToken&#39;]]);
+    }
+
+    /**
+     * 创建并获取一个token，要求附带email和password（数据来源users表）
+     *
+     * @param  \Illuminate\Http\Request  $request
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function createToken(Request $request)
+    {
+        $credentials = $request-&gt;only(&#39;email&#39;, &#39;password&#39;);
+
+        if ($token = JWTAuth::attempt($credentials)) {
+            return $this-&gt;respondWithToken($token);
+        }
+
+        return response()-&gt;json([&#39;error&#39; =&gt; &#39;Unauthorized&#39;], 401);
+    }
+
+    /**
+     * 注销，把所给token加入黑名单
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function deleteToken()
+    {
+        Auth::logout();
+
+        return response()-&gt;json([&#39;message&#39; =&gt; &#39;Successfully logged out&#39;]);
+    }
+
+    /**
+     * 刷新token，如果开启黑名单，以前的token便会失效，指的注意的是用上面的getToken再获取一次Token并不算做刷新，两次获得的Token是并行的，即两个都可用。
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function refreshToken()
+    {
+        return $this-&gt;respondWithToken(JWTAuth::parseToken()-&gt;refresh());
+    }
+
+    /**
+     * 将返回结果包装
+     *
+     * @param  string $token
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    protected function respondWithToken($token)
+    {
+        return response()-&gt;json([
+            &#39;access_token&#39; =&gt; $token,
+            &#39;token_type&#39; =&gt; &#39;bearer&#39;,
+            &#39;expires_in&#39; =&gt; JWTAuth::factory()-&gt;getTTL() * 60
+        ]);
+    }
+
+    /**
+     * 获取当前token的鉴权用户
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function me()
+    {
+        return response()-&gt;json(JWTAuth::user());
+    }
+
+    /**
+     * Get the guard to be used during authentication.
+     *
+     * @return \Illuminate\Contracts\Auth\Guard
+     */
+    public function guard()
+    {
+        return JWTAuth::guard();
+    }
+}
+</code></pre>
+<h2 id="2-设定路由"><a href="#2-设定路由" class="headerlink" title="2. 设定路由"></a>2. 设定路由</h2><p>此处用了 <code>dingo</code> 的路由，<code>UserController</code> 的内容参考以前的教程</p>
+<pre><code class="php">// dingo 使用自有的路由器，所以你需要先获取其实例
+$api = app(&#39;Dingo\Api\Routing\Router&#39;);
+
+// 必须定义一个版本分组，“v1”来自于 .env 文件，必须填写才生效
+$api-&gt;version(&#39;v1&#39;, [&#39;namespace&#39; =&gt; &#39;App\Http\Controllers&#39;], function ($api) {
+  // 认证部分：获取token
+  $api-&gt;get(&#39;/auth/token&#39;, &#39;AuthController@createToken&#39;);
+  // 认证部分：刷新token
+  $api-&gt;patch(&#39;/auth/token&#39;, &#39;AuthController@refreshToken&#39;);
+  // 认证部分：删除token
+  $api-&gt;delete(&#39;/auth/token&#39;, &#39;AuthController@deleteToken&#39;);
+
+  // jwt-auth的路由保护，放在这里面的就需要带上token访问
+  $api-&gt;group([&#39;middleware&#39; =&gt; &#39;auth:api&#39;], function ($api) {
+      // 资源获取：users
+      $api-&gt;resource(&#39;users&#39;, &#39;UserController&#39;);
+  });
+});
+</code></pre>
+<h3 id="2-1-一个值得注意的地方"><a href="#2-1-一个值得注意的地方" class="headerlink" title="2.1 一个值得注意的地方"></a>2.1 一个值得注意的地方</h3><blockquote>
+<p>这里有一个十分令人疑惑的地方： <code>&#39;middleware&#39; =&gt; &#39;auth:api&#39;</code>，你会发现把 <code>:api</code> 去掉也是没问题的，到底怎么回事？</p>
+</blockquote>
+<p>去文档看，这种 <code>路由名:参数</code> 的写法是用来传参的。但是这里并不是传参的，打开 <code>config/auth.php</code>：</p>
+<pre><code class="php">&#39;guards&#39; =&gt; [
+    &#39;api&#39; =&gt; [
+        &#39;driver&#39; =&gt; &#39;jwt&#39;,
+        &#39;provider&#39; =&gt; &#39;users&#39;,
+    ],
+    &#39;web&#39; =&gt; []
+],
+</code></pre>
+<p>仔细想了想，终于理解了：在 <code>Laravel</code> 中有 <code>web.php</code>、<code>api.php</code> 等多个路由，这个几个路由会分别对应这 <code>guards</code> 中一个数组，而 <code>JWT</code> 用 <code>auth</code> 中间件，后面的 <code>:api</code> 就表示用 <code>guards</code> 中 <code>api</code> 数组指定的 <code>driver</code> 和 <code>provider</code>，当只有一个 <code>api</code> 数组的时候，就可以省去 <code>:api</code>。</p>
+<h2 id="3-Token-的获取、使用、删除和刷新"><a href="#3-Token-的获取、使用、删除和刷新" class="headerlink" title="3. Token 的获取、使用、删除和刷新"></a>3. <code>Token</code> 的获取、使用、删除和刷新</h2><p>以下用 <code>postman</code> 演示：</p>
+<h3 id="3-1-获取一个-token"><a href="#3-1-获取一个-token" class="headerlink" title="3.1 获取一个 token"></a>3.1 获取一个 <code>token</code></h3><p><img src="/Laravel-Lumen教程4——JWT的基本使用/Lumen-获取Token.jpg" alt="GET 方式获取一个 token"></p>
+<h3 id="3-2-带上-token-访问受保护的资源"><a href="#3-2-带上-token-访问受保护的资源" class="headerlink" title="3.2 带上 token 访问受保护的资源"></a>3.2 带上 <code>token</code> 访问受保护的资源</h3><h4 id="不带-token-的错误返回"><a href="#不带-token-的错误返回" class="headerlink" title="不带 token 的错误返回"></a>不带 token 的错误返回</h4><p>这时候如果不带上 <code>token</code> 去访问受保护的资源会返回 <code>Unauthorized.</code> 在<code>\app\Http\Middleware\Authenticate.php 39行</code> 设置。</p>
+<h4 id="附带-token-进行访问的两种方式"><a href="#附带-token-进行访问的两种方式" class="headerlink" title="附带 token 进行访问的两种方式"></a>附带 token 进行访问的两种方式</h4><p><strong>1. 加到 url 中</strong><br><code>?token=你的token</code></p>
+<p><img src="/Laravel-Lumen教程4——JWT的基本使用/Lumen-用token获取数据.jpg" alt="用 token 获取数据-URL方式"></p>
+<p><strong>2. 加到 header 中</strong><br>在 <code>header</code> 中 添加 <code>Authorization</code> ，值为 <code>Bearer 你的token</code> 注意中间有个空格。</p>
+<p><img src="/Laravel-Lumen教程4——JWT的基本使用/Lumen-用token获取数据2.jpg" alt="用 token 获取数据-header方式"></p>
+<h3 id="3-3-删除一个-token"><a href="#3-3-删除一个-token" class="headerlink" title="3.3 删除一个 token"></a>3.3 删除一个 token</h3><p><img src="/Laravel-Lumen教程4——JWT的基本使用/Lumen-Delete方式删除token.jpg" alt="DELETE 方式删除一个 token"></p>
+<p>删除 <code>token</code> 后，token就会失效，无法再利用其获取数据。</p>
+<h3 id="3-4-刷新你的-token"><a href="#3-4-刷新你的-token" class="headerlink" title="3.4 刷新你的 token"></a>3.4 刷新你的 token</h3><p><img src="/Laravel-Lumen教程4——JWT的基本使用/LUMEN-PATCH方式刷新token.jpg" alt="PATCH 方式刷新token"></p>
+<p>刷新后，旧 <code>token</code> 将会失效,但是你可以设置一个宽限时间，这个在后面具体说。</p>
+<h2 id="4-token-的组成、创建以及解析"><a href="#4-token-的组成、创建以及解析" class="headerlink" title="4. token 的组成、创建以及解析"></a>4. <code>token</code> 的组成、创建以及解析</h2><h3 id="4-1-token-的组成"><a href="#4-1-token-的组成" class="headerlink" title="4.1 token 的组成"></a>4.1 <code>token</code> 的组成</h3><p>一个JWT实际上就是一个字符串，它由三部分组成，头部、载荷与签名，中间用 <code>.</code> 分隔，例如：<code>xxxxx.yyyyy.zzzzz</code></p>
+<h4 id="头部（header）"><a href="#头部（header）" class="headerlink" title="头部（header）"></a>头部（header）</h4><p>头部通常由两部分组成：令牌的类型（即JWT）和正在使用的散列算法（如HMAC SHA256 或 RSA.）。<br>例如：</p>
+<pre><code class="json">{
+  &quot;alg&quot;: &quot;HS256&quot;,
+  &quot;typ&quot;: &quot;JWT&quot;
+}
+</code></pre>
+<p>然后用 <code>Base64Url</code> 编码得到头部，即 <code>xxxxx</code>。</p>
+<h4 id="载荷（Payload）"><a href="#载荷（Payload）" class="headerlink" title="载荷（Payload）"></a>载荷（Payload）</h4><p>载荷中放置了 <code>token</code> 的一些基本信息，以帮助接受它的服务器来理解这个 <code>token</code>，载荷的属性也分三类：预定义（Registered）、公有（public）和私有（private），接下来主要介绍预定义的。</p>
+<pre><code class="json">{
+  &quot;sub&quot;: &quot;1&quot;,
+  &quot;iss&quot;: &quot;http://localhost:8000/auth/login&quot;,
+  &quot;iat&quot;: 1451888119,
+  &quot;exp&quot;: 1454516119,
+  &quot;nbf&quot;: 1451888119,
+  &quot;jti&quot;: &quot;37c107e4609ddbcc9c096ea5ee76c667&quot;
+}
+</code></pre>
+<p>这里面的前6个字段都是由JWT的<a href="https://tools.ietf.org/html/draft-ietf-oauth-json-web-token-32" target="_blank" rel="noopener">标准</a>所定义的，也就是预定义（Registered claims）的。</p>
+<blockquote>
+<ul>
+<li>sub: 该JWT所面向的用户</li>
+<li>iss: 该JWT的签发者</li>
+<li>iat(issued at): 在什么时候签发的token</li>
+<li>exp(expires): token什么时候过期</li>
+<li>nbf(not before)：token在此时间之前不能被接收处理</li>
+<li>jti：JWT ID为web token提供唯一标识</li>
+</ul>
+</blockquote>
+<p>将上面的 <code>json</code> 进行 <code>Base64Url</code> 编码得到载荷，，即 <code>yyyyy</code>。</p>
+<h4 id="签名（Signature）"><a href="#签名（Signature）" class="headerlink" title="签名（Signature）"></a>签名（Signature）</h4><p>签名时需要用到前面编码过的两个字符串，如果以 <code>HMACSHA256</code> 加密，就如下：</p>
+<pre><code class="php">HMACSHA256(
+    base64UrlEncode(header) + &quot;.&quot; +
+    base64UrlEncode(payload),
+    secret
+)
+</code></pre>
+<p>加密后再进行 <code>base64url</code> 编码最后得到的字符串就是 <code>token</code> 的第三部分 <code>zzzzz</code>。</p>
+<p>组合便可以得到 <code>token：xxxxx.yyyyy.zzzzz</code>。</p>
+<p>PHP 代码示例</p>
+<pre><code class="php">// 这里要开启true
+$zzzzz = $this-&gt;base64url_encode(hash_hmac(&#39;sha256&#39;, &#39;xxxxx.yyyyy&#39;, getenv(&#39;JWT_SECRET&#39;), true));
+
+protected function base64url_encode($data) {
+    return rtrim(strtr(base64_encode($data), &#39;+/&#39;, &#39;-_&#39;), &#39;=&#39;);
+}
+</code></pre>
+<p>这里插一嘴签名的作用：保证 JWT 没有被篡改过，原理如下：</p>
+<blockquote>
+<p>HMAC 算法是不可逆算法，类似 MD5 和 hash ，但多一个密钥，密钥（即上面的secret）由客户端和服务端共享，服务端把 token 发给客户端后，客户端可以把其中的头部和载荷再加上事先共享的 secret 再进行一次 HMAC 加密，得到的结果和 token 的第三段进行对比，如果一样则表明数据没有被篡改。</p>
+</blockquote>
+<h3 id="4-2-token-的创建"><a href="#4-2-token-的创建" class="headerlink" title="4.2 token 的创建"></a>4.2 <code>token</code> 的创建</h3><p>前面的 <code>AuthController.php</code> 中有两行展现了这一种 <code>token</code> 的创建方法，即用用户所给的账号和密码进行<strong>尝试</strong>，密码正确则用对应的 <code>User</code> 信息返回一个 <code>token</code> 。</p>
+<pre><code class="php">// 用 request 中的 email 和 password ，验证后返回token
+$credentials = $request-&gt;only(&#39;email&#39;, &#39;password&#39;);
+$token = JWTAuth::attempt($credentials);
+</code></pre>
+<p>但 <code>token</code> 的创建方法不止这一种，接下来介绍 <code>token</code> 的三种创建方法。</p>
+<h4 id="a-基于请求中的参数"><a href="#a-基于请求中的参数" class="headerlink" title="a) 基于请求中的参数"></a>a) 基于请求中的参数</h4><p>这就是刚刚说的哪一种，贴出具体代码。</p>
+<pre><code class="php">use Illuminate\Support\Facades\Auth;
+use Tymon\JWTAuth\Facades\JWTAuth;
+use Tymon\JWTAuth\Exceptions\JWTException;
+
+class AuthenticateController extends Controller
+{
+    public function authenticate(Request $request)
+    {
+        // grab credentials from the request
+        $credentials = $request-&gt;only(&#39;email&#39;, &#39;password&#39;);     // 获取请求中的 email 和 password 值
+
+        try {
+            // attempt to verify the credentials and create a token for the user
+            if (! $token = JWTAuth::attempt($credentials)) {
+                return response()-&gt;json([&#39;error&#39; =&gt; &#39;invalid_credentials&#39;], 401);
+            }
+        } catch (JWTException $e) {
+            // something went wrong whilst attempting to encode the token
+            return response()-&gt;json([&#39;error&#39; =&gt; &#39;could_not_create_token&#39;], 500);
+        }
+
+        // all good so return the token
+        return response()-&gt;json(compact(&#39;token&#39;));
+    }
+}
+</code></pre>
+<h4 id="b-基于users表中的用户信息-数组"><a href="#b-基于users表中的用户信息-数组" class="headerlink" title="b) 基于users表中的用户信息 + 数组"></a>b) 基于users表中的用户信息 + 数组</h4><p>基于用户信息，使用 <code>fromeUser</code> 方法。</p>
+<pre><code class="php">$user = User::first();
+
+$token = JWTAuth::fromUser($user);
+</code></pre>
+<p>基于用户信息 + 自定义的数组信息</p>
+<pre><code class="php">$customClaims = [&#39;foo&#39; =&gt; &#39;bar&#39;, &#39;baz&#39; =&gt; &#39;bob&#39;];
+
+// jwt-0.5
+JWTAuth::attempt($credentials, $customClaims);  //对应可以用JWTAuth::authenticate()取回$user
+// or
+JWTAuth::fromUser($user, $customClaims);  // 对应的可以用JWTAuth::toUser($token)取回$user
+
+// jwt-1.0
+$customClaims = [&#39;from&#39; =&gt; &#39;sky31 Development&#39;, &#39;to&#39; =&gt; &#39;sky31 developer&#39;];
+$token = JWTAuth::customClaims($customClaims)-&gt;attempt($credentials) // 用JWTAuth::parseToken()-&gt;getPayload() 获取载荷，载荷中包括你刚刚插入的 customClaims 信息
+$token = JWTAuth::customClaims($customClaims)-&gt;fromUser($user)
+
+</code></pre>
+<p>数组信息会在 <code>token</code> 解码时得到，同时越大的数组会生成越长的 <code>token</code> ，所以不建议放太多的数据。同时因为载荷是用 <code>Base64Url</code> 编码，所以相当于明文，因此绝对不能放密码等敏感信息。</p>
+<h4 id="c-基于任何你喜欢的东西，为更高级的定制提供了可能（这是从文档直接复制的，没做具体实验，以后用到这再更新）"><a href="#c-基于任何你喜欢的东西，为更高级的定制提供了可能（这是从文档直接复制的，没做具体实验，以后用到这再更新）" class="headerlink" title="c) 基于任何你喜欢的东西，为更高级的定制提供了可能（这是从文档直接复制的，没做具体实验，以后用到这再更新）"></a>c) 基于任何你喜欢的东西，为更高级的定制提供了可能（这是从文档直接复制的，没做具体实验，以后用到这再更新）</h4><p>您可以将声明直接链接到 <code>Tymon\JWTAuth\PayloadFactory</code> 实例（或使用 <code>JWTFactory Facade</code> ）</p>
+<pre><code class="php">$customClaims = [&#39;foo&#39; =&gt; &#39;bar&#39;, &#39;baz&#39; =&gt; &#39;bob&#39;];
+$payload = JWTFactory::make($customClaims);
+$token = JWTAuth::encode($payload);
+</code></pre>
+<pre><code class="php">// add a custom claim with a key of `foo` and a value of [&#39;bar&#39; =&gt; &#39;baz&#39;]
+$payload = JWTFactory::sub(123)-&gt;aud(&#39;foo&#39;)-&gt;foo([&#39;bar&#39; =&gt; &#39;baz&#39;])-&gt;make();
+
+$token = JWTAuth::encode($payload);
+</code></pre>
+<h3 id="4-3-token-的解析"><a href="#4-3-token-的解析" class="headerlink" title="4.3 token 的解析"></a>4.3 <code>token</code> 的解析</h3><h4 id="a-把-token-解析到对象，会返回一个对象"><a href="#a-把-token-解析到对象，会返回一个对象" class="headerlink" title="a) 把 token 解析到对象，会返回一个对象"></a>a) 把 <code>token</code> 解析到对象，会返回一个对象</h4><pre><code class="php">// this will set the token on the object  把请求发送过来的直接解析到对象
+JWTAuth::parseToken();
+</code></pre>
+<h4 id="b-获取到原先嵌入到-token-的-user-信息"><a href="#b-获取到原先嵌入到-token-的-user-信息" class="headerlink" title="b) 获取到原先嵌入到 token 的 user 信息"></a>b) 获取到原先嵌入到 <code>token</code> 的 <code>user</code> 信息</h4><pre><code class="php">// and you can continue to chain methods
+$user = JWTAuth::parseToken()-&gt;authenticate();
+// or
+$user = JWTAuth::parseToken()-&gt;toUser();
+</code></pre>
+<h4 id="c-获取-token-，如果-token-被设置则会返回，否则会尝试使用方法从请求中解析-token-，如果token未被设置或不能解析最终返回false。"><a href="#c-获取-token-，如果-token-被设置则会返回，否则会尝试使用方法从请求中解析-token-，如果token未被设置或不能解析最终返回false。" class="headerlink" title="c) 获取 token ，如果 token 被设置则会返回，否则会尝试使用方法从请求中解析 token ，如果token未被设置或不能解析最终返回false。"></a>c) 获取 <code>token</code> ，如果 <code>token</code> 被设置则会返回，否则会尝试使用方法从请求中解析 <code>token</code> ，如果token未被设置或不能解析最终返回false。</h4><pre><code class="php">$token = JWTAuth::parseToken()-&gt;getToken();
+</code></pre>
+<h4 id="d-甚至可以设置-token-。"><a href="#d-甚至可以设置-token-。" class="headerlink" title="d) 甚至可以设置 token 。"></a>d) 甚至可以设置 <code>token</code> 。</h4><pre><code class="php">JWTAuth::setToken(&#39;foo.bar.baz&#39;);
+</code></pre>
+<h4 id="e-获取载荷"><a href="#e-获取载荷" class="headerlink" title="e) 获取载荷"></a>e) 获取载荷</h4><p><code>checkOrFail()</code> 或 <code>getPayload()</code> 或 <code>payload()</code></p>
+<pre><code class="php">// 获取所有载荷
+$payload = JWTAuth::parseToken()-&gt;getPayload()
+
+// 获取载荷属性
+JWTAuth::getClaim(&#39;exp&#39;)
+</code></pre>
+<h4 id="f-如果是前端"><a href="#f-如果是前端" class="headerlink" title="f) 如果是前端"></a>f) 如果是前端</h4><p>直接 <code>base64</code> 解码 <code>token</code> 的前两段即可以知道所需的信息。</p>
+<h2 id="5-解释一下-JWTAuth-和-Auth"><a href="#5-解释一下-JWTAuth-和-Auth" class="headerlink" title="5. 解释一下 JWTAuth:: 和 Auth::"></a>5. 解释一下 <code>JWTAuth::</code> 和 <code>Auth::</code></h2><blockquote>
+<p>在此解释一下为什么都是用的 <code>JWTAuth::</code> ，而在网上看到的还有 <code>Auth::</code> 和 <code>$this-&gt;guard()</code>？</p>
+<p>查看源码，会发现 <code>JWTAuth</code> 通过 <code>Facade</code> 方式从而可以静态访问 <code>JWTAuth</code> 的方法，而 <code>JWTAuth</code> 又继承自 <code>JWT</code> ，<code>JWT</code> 中使用了 <code>CustomClaims</code> 这个 <code>trait</code> 查看这两个类可以查看方法的具体实现。</p>
+</blockquote>
+<h3 id="5-1-区别"><a href="#5-1-区别" class="headerlink" title="5.1 区别"></a>5.1 区别</h3><h4 id="刷新-token"><a href="#刷新-token" class="headerlink" title="刷新 token"></a>刷新 <code>token</code></h4><pre><code class="php">Auth::refresh();
+
+JWTAuth::parseToken()-&gt;refresh();
+</code></pre>
+<h4 id="注销-token"><a href="#注销-token" class="headerlink" title="注销 token"></a>注销 <code>token</code></h4><pre><code class="php">Auth::logout();
+
+JWTAuth::parseToken()-&gt;invalidate();  // invalidate 还有部分参数可选
+</code></pre>
+<h4 id="设置-custom-claims"><a href="#设置-custom-claims" class="headerlink" title="设置 custom claims"></a>设置 <code>custom claims</code></h4><pre><code class="php">// 只发现 JWTAuth:: 可以做到
+$customClaims = [&#39;xm&#39; =&gt; &#39;yf&#39;, &#39;sex&#39; =&gt; &#39;male&#39;];
+$token = JWTAuth::customClaims($customClaims)-&gt;attempt($credentials)
+</code></pre>
+<h2 id="6-Token-的相关属性设置"><a href="#6-Token-的相关属性设置" class="headerlink" title="6. Token 的相关属性设置"></a>6. <code>Token</code> 的相关属性设置</h2><h3 id="6-1-有效时间、刷新时间、宽限时间"><a href="#6-1-有效时间、刷新时间、宽限时间" class="headerlink" title="6.1 有效时间、刷新时间、宽限时间"></a>6.1 有效时间、刷新时间、宽限时间</h3><p>一个 <code>token</code> 一般来说有三个时间属性，其配置都在 <strong>config/jwt.php</strong> 内。</p>
+<h4 id="有效时间"><a href="#有效时间" class="headerlink" title="有效时间"></a>有效时间</h4><p>有效时间指的的是你获得 <code>token</code> 后，在多少时间内可以凭这个 <code>token</code> 去获取内容，逾时无效。</p>
+<pre><code class="php">// 单位：分钟
+&#39;ttl&#39; =&gt; env(&#39;JWT_TTL&#39;, 60)
+</code></pre>
+<h4 id="刷新时间"><a href="#刷新时间" class="headerlink" title="刷新时间"></a>刷新时间</h4><p>刷新时间指的是在这个时间内可以凭旧 <code>token</code> 换取一个新 <code>token</code>。例如 <code>token</code> 有效时间为 60 分钟，刷新时间为 20160 分钟，在 60 分钟内可以通过这个 <code>token</code> 获取新 <code>token</code>，但是超过 60 分钟是不可以的，然后你可以一直循环获取，直到总时间超过 20160 分钟，不能再获取。</p>
+<pre><code class="php">// 单位：分钟
+&#39;refresh_ttl&#39; =&gt; env(&#39;JWT_REFRESH_TTL&#39;, 20160)
+</code></pre>
+<h4 id="宽限时间"><a href="#宽限时间" class="headerlink" title="宽限时间"></a>宽限时间</h4><p>宽限时间是为了解决并发请求的问题，假如宽限时间为 0s ，那么在新旧 <code>token</code> 交接的时候，并发请求就会出错，所以需要设定一个宽限时间，在宽限时间内，旧 <code>token</code> 仍然能够正常使用。</p>
+<pre><code class="php">// 宽限时间需要开启黑名单（默认是开启的），黑名单保证过期token不可再用，最好打开
+&#39;blacklist_enabled&#39; =&gt; env(&#39;JWT_BLACKLIST_ENABLED&#39;, true)
+
+// 设定宽限时间，单位：秒
+&#39;blacklist_grace_period&#39; =&gt; env(&#39;JWT_BLACKLIST_GRACE_PERIOD&#39;, 60)
+</code></pre>
+<h2 id="7-关于-JWT-的讨论"><a href="#7-关于-JWT-的讨论" class="headerlink" title="7. 关于 JWT 的讨论"></a>7. 关于 <code>JWT</code> 的讨论</h2><h3 id="7-1-为什么用-JWT？"><a href="#7-1-为什么用-JWT？" class="headerlink" title="7.1 为什么用 JWT？"></a>7.1 为什么用 <code>JWT</code>？</h3><p>首先因为 <code>HTTP</code> 是无状态的协议，每一个请求都不会受到前后请求的状态影响，所以就需要 <strong>维护和验证登录状态</strong> 。</p>
+<p><strong>传统方法</strong>：<code>cookies</code> 和 <code>session</code>  </p>
+<p><strong>只用cookies</strong>：由于用于验证的敏感信息都保存在本地，即使进行了加密，也并不是特别安全。  </p>
+<p><strong>session</strong>：需要在 <code>cookies</code> 中保存 <code>sessionID</code> ，然后在服务器中保存 <code>session</code> ，其中包括会话ID和用户ID ，同时由于 <code>session</code> 常常保存在内存中，所以会对服务器造成比较大的压力。</p>
+<p>再加上 <code>cookies</code> 的不可跨域名性（子域名之间也算跨域名），跨域操作也存在问题。</p>
+<p><strong>JWT</strong>：<br>使用 <code>JWT</code> 可以做到前后端脱离，解决跨域问题，消除服务器存储session的压力，但是同时增加了计算压力。这两者怎么选择，开发者可以自行考虑。</p>
+<h3 id="7-2-token-的刷新问题？"><a href="#7-2-token-的刷新问题？" class="headerlink" title="7.2 token 的刷新问题？"></a>7.2 <code>token</code> 的刷新问题？</h3><h4 id="token-为什么要刷新吗？"><a href="#token-为什么要刷新吗？" class="headerlink" title="token 为什么要刷新吗？"></a><code>token</code> 为什么要刷新吗？</h4><p>首先 <code>Basic Auth</code> 是一种最简单的认证方法，但是由于每次请求都带用户名和密码，频繁的传输肯定不安全，所以才有 <code>cookies</code> 和 <code>session</code> 的运用。如果 <code>token</code> 不刷新，那么 <code>token</code> 就相当于上面的用户名+密码，只要获取到了，就可以一直盗用，因此 <code>token</code> 设置有效期并能够进行刷新是必要的。</p>
+<h4 id="a-token-有效期多久合适，刷新频率多久合适？"><a href="#a-token-有效期多久合适，刷新频率多久合适？" class="headerlink" title="a) token 有效期多久合适，刷新频率多久合适？"></a>a) <code>token</code> 有效期多久合适，刷新频率多久合适？</h4><p>有效期越长，风险性越高，有效性越短，刷新频率越高，刷新就会存在刷新开销，所以这需要综合考虑。我个人一般考虑的范围是：15min ~ 120min。</p>
+<h4 id="b-有没有必要每次都刷新-token-？"><a href="#b-有没有必要每次都刷新-token-？" class="headerlink" title="b) 有没有必要每次都刷新 token ？"></a>b) 有没有必要每次都刷新 <code>token</code> ？</h4><p>上面考虑的 15min ~ 120min，会存在一个问题，就是<strong>重放攻击</strong>风险，防御这个风险，在 <code>JWT</code> 可用的方案是每次请求后都刷新一次 <code>token</code> ，但这样又会存在一个新的问题：并发请求。一次并发请求是用的一个 <code>token</code> ，第一个完成的请求会导致后面的请求全部失败。可用的解决方案是设置<strong>宽限时间</strong>，即一个 <code>token</code> 刷新后，旧 <code>token</code> 仍然短暂的可用。可惜这样并不能完美的解决重放攻击，只是增大了不法者攻击的成本。这个问题在 <code>JWT</code> 中并没有很好的解决。</p>
+<pre><code class="php">// 每次刷新的话需要用到第二个中间件
+// 第一个中间件和前面保护的路由的 auth 相同（猜的，我也不确定）
+protected $routeMiddleware = [
+    ...
+    &#39;jwt.auth&#39; =&gt; &#39;Tymon\JWTAuth\Middleware\GetUserFromToken&#39;,
+    &#39;jwt.refresh&#39; =&gt; &#39;Tymon\JWTAuth\Middleware\RefreshToken&#39;,
+];
+</code></pre>
+<h4 id="token-的刷新总结"><a href="#token-的刷新总结" class="headerlink" title="token 的刷新总结"></a><code>token</code> 的刷新总结</h4><p>因为无法完全解决重放攻击，所以在因重放攻击会导致巨大安全问题和损失的地方，建议使用其他安全认证措施。而日常 <code>Api</code> 使用建议如下设置： </p>
+<pre><code>有效时间：15min ~ 120min
+刷新时间：7天 ~ 30天
+宽限时间：60s
+</code></pre>
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 changyan -->
+<div id="changyan-comment">
+    <!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="2018/01/11/Laravel-Lumen教程4——JWT的基本使用/"  ></div>
+<script type="text/javascript">
+(function(){
+var appid = 'cyt4hOWBJ';
+var conf = '80d25ad8e61164f63c15273437d47890';
+var width = window.innerWidth || document.documentElement.clientWidth;
+if (width < 960) {
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+
+</div>
+<style>
+    #changyan-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/02/13/快查-Python/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/12/31/Laravel-Lumen教程3——dingo的基本使用/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(https://ooo.0o0.ooo/2017/06/19/5947a4c3a936a.jpg);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="https://ooo.0o0.ooo/2017/06/19/5947a26ed9af5.jpg" alt="Arony's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        sky.arony@qq.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">二月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="标签云">
+                
+                    <i class="material-icons sidebar-material-icons">label outline</i>
+                
+                标签云
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/gallery" title="相册">
+                
+                    <i class="material-icons sidebar-material-icons">photo</i>
+                
+                相册
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline" title="时间轴">
+                
+                    <i class="material-icons sidebar-material-icons">timeline</i>
+                
+                时间轴
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/about" title="关于我">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                关于我
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/links" title="友情链接">
+                
+                    <i class="material-icons sidebar-material-icons">link</i>
+                
+                友情链接
+            </a>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+        <a href="http://weibo.com/2112550135/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/skyArony" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+        <a href="http://space.bilibili.com/30387945/#!/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-bilibili">
+                <span class="visuallyhidden">Bilibili</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;2017&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Arony's 技术博客
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+    <!-- Leancloud -->
+    <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+    <script>
+        AV.initialize('MA3ePB77pgSwRAhI6NTRHcd5-gzGzoHsz', '5tEL3rl9PsLi9hrcoVky3VYp');
+    </script>
+    <script type="text/ls-javascript" id="leancloud-views-script">
+    function showTime(Counter) {
+        var query = new AV.Query(Counter);
+        $('.leancloud-views_num').each(function() {
+            var url = $(this).attr('id').trim();
+            query.equalTo('url', url);
+            query.find({
+                success: function(results) {
+                    if (results.length === 0) {
+                        var content = '0 ' + $(document.getElementById(url)).text();
+                        $(document.getElementById(url)).text(content);
+                        return;
+                    }
+                    for (var i = 0; i < results.length; i++) {
+                        var object = results[i];
+                        var content = object.get('time') + ' ' + $(document.getElementById(url)).text();
+                        $(document.getElementById(url)).text(content);
+                    }
+                },
+                error: function(object, error) {
+                    console.log('Error: ' + error.code + ' ' + error.message);
+                }
+            });
+        });
+    }
+
+    function addCount(Counter) {
+      var Counter = AV.Object.extend('Counter');
+      url = $('.leancloud-views_num').attr('id').trim();
+      title = $('.leancloud-views_num').attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+      query.equalTo('url', url);
+      query.find({
+          success: function(results) {
+            if (results.length > 0) {
+                var counter = results[0];
+                counter.fetchWhenSave(true);
+                counter.increment('time');
+                counter.save(null, {
+                    success: function(counter) {
+                        var content =  counter.get('time') + ' ' + $(document.getElementById(url)).text();
+                        $(document.getElementById(url)).text(content);
+                    },
+                    error: function(counter, error) {
+                        console.log('Failed to save Visitor num, with error message: ' + error.message);
+                    }
+                });
+            } else {
+              var newcounter = new Counter();
+              newcounter.set('title', title);
+              newcounter.set('url', url);
+              newcounter.set('time', 1);
+              newcounter.save(null, {
+                  success: function(newcounter) {
+                      console.log('newcounter.get(\'time\')='+newcounter.get('time'));
+                      var content = newcounter.get('time') + ' ' + $(document.getElementById(url)).text();
+                      $(document.getElementById(url)).text(content);
+                  },
+                  error: function(newcounter, error) {
+                      console.log('Failed to create');
+                  }
+              });
+            }
+        },
+        error: function(error) {
+            console.log('Error:' + error.code + ' ' + error.message);
+        }
+      });
+    }
+    $(function() {
+        var Counter = AV.Object.extend('Counter');
+        if ($('.leancloud-views_num').length === 1) {
+            addCount(Counter);
+        } else if ($('.post-title-link').length > 1) {
+            showTime(Counter);
+        }
+    });
+</script>
+
+
+
+
+
+
+   <!-- 畅言公共 js 代码 start -->
+<script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cyt4hOWBJ">
+</script>
+<!-- 畅言公共 js 代码 end -->
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
